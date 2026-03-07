@@ -1,0 +1,348 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700&display=swap');
+
+:root {
+    --bg-light: #f8fafc;
+    --primary-blue: #0ea5e9;
+    /* Slightly deeper blue for light mode readability */
+    --accent-blue: #38bdf8;
+    --text-main: #0f172a;
+    --text-muted: #475569;
+    --card-bg: rgba(255, 255, 255, 0.8);
+    --border-light: rgba(0, 0, 0, 0.05);
+}
+
+body {
+    font-family: 'Times New Roman', Times, serif;
+    background-color: var(--bg-light);
+    color: var(--text-main);
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+.font-heading {
+    font-family: 'Outfit', sans-serif;
+}
+
+/* Optimized Glass Effect for Light Mode */
+.glass {
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.03), 0 2px 4px -2px rgb(0 0 0 / 0.03);
+    /* Removed backdrop-filter for high scrolling performance */
+}
+
+.glass-hover {
+    transition: all 0.25s ease;
+    contain: content;
+    /* Rendering Optimization */
+}
+
+.glass-hover:hover {
+    border: 1px solid rgba(14, 165, 233, 0.3);
+    transform: translateY(-4px);
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.08);
+}
+
+/* New DR Pill Badge */
+.dr-pill {
+    background: #f8fafc;
+    border: 1px solid #f1f5f9;
+    padding: 4px 12px 4px 6px;
+    border-radius: 999px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #1e293b;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.02);
+}
+
+.dr-circle-svg {
+    transform: rotate(-90deg);
+}
+
+.dr-circle-bg {
+    fill: none;
+    stroke: #f1f5f9;
+    stroke-width: 3;
+}
+
+.dr-circle-progress {
+    fill: none;
+    stroke: var(--primary-blue);
+    stroke-width: 3;
+    stroke-linecap: round;
+    transition: stroke-dashoffset 0.6s ease;
+}
+
+/* Visit Button Styles */
+.visit-btn {
+    background: var(--primary-blue);
+    color: white !important;
+    padding: 8px 16px;
+    border-radius: 10px;
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 6px -1px rgba(14, 165, 233, 0.15);
+}
+
+.visit-btn:hover {
+    background: #0284c7;
+    transform: scale(1.02);
+    box-shadow: 0 6px 12px -2px rgba(14, 165, 233, 0.25);
+}
+
+.visit-btn i {
+    width: 14px;
+    height: 14px;
+}
+
+.neon-glow {
+    box-shadow: 0 0 15px rgba(14, 165, 233, 0.15);
+}
+
+.neon-glow:hover {
+    box-shadow: 0 0 25px rgba(14, 165, 233, 0.3);
+}
+
+/* Custom Mega Menu Styles */
+.mega-menu {
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    background: white;
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+}
+
+.group:hover .mega-menu {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Performance Optimized Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.4s ease-out forwards;
+    will-change: transform, opacity;
+    /* Hint to browser for performance */
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-blue);
+}
+
+/* Utility for light mode text */
+/* Marquee Animation */
+@keyframes marquee-left {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+@keyframes marquee-right {
+    0% {
+        transform: translateX(-50%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.marquee-container {
+    overflow: hidden;
+    padding: 20px 0;
+    position: relative;
+    width: 100%;
+}
+
+.marquee-content {
+    display: flex;
+    gap: 24px;
+    width: max-content;
+}
+
+.marquee-left {
+    animation: marquee-left 40s linear infinite;
+}
+
+.marquee-right {
+    animation: marquee-right 40s linear infinite;
+}
+
+.marquee-container:hover .marquee-content {
+    animation-play-state: paused;
+}
+
+.review-card-mini {
+    background: white;
+    padding: 24px;
+    border-radius: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
+    width: 320px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.review-card-mini:hover {
+    border-color: rgba(14, 165, 233, 0.2);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+}
+
+.review-stars {
+    color: #fbbf24;
+    display: flex;
+    gap: 2px;
+}
+
+.review-text {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #475569;
+    font-style: italic;
+}
+
+.text-slate-400 {
+    color: #64748b !important;
+}
+
+.text-white {
+    color: var(--text-main);
+}
+
+/* Reset general white to dark */
+.bg-deep-blue {
+    background-color: var(--bg-light);
+}
+
+/* Portfolio Styles */
+.portfolio-filter.active {
+    background: var(--primary-blue);
+    color: white !important;
+}
+
+.portfolio-item {
+    display: block;
+    transition: all 0.5s ease;
+}
+
+.aspect-video {
+    aspect-ratio: 16 / 9;
+}
+
+.bg-gradient-to-t {
+    background-image: linear-gradient(to top, var(--tw-gradient-stops));
+}
+
+.from-slate-900\/80 {
+    --tw-gradient-from: rgb(15 23 42 / 0.8) var(--tw-gradient-from-position);
+    --tw-gradient-to: rgb(15 23 42 / 0) var(--tw-gradient-to-position);
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+/* Modal and Detail Styles (Future) */
+#portfolio-grid>div {
+    contain: content;
+}
+
+.border-white\/5 {
+    border-color: rgba(0, 0, 0, 0.05);
+}
+
+/* 3D Hero Effects & Premium Typography */
+.perspective-1000 {
+    perspective: 1000px;
+}
+
+.rotate-3d {
+    transform: rotateX(10deg) rotateY(-10deg) scale3d(1, 1, 1);
+    transform-style: preserve-3d;
+    transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.rotate-3d:hover {
+    transform: rotateX(0deg) rotateY(0deg) scale3d(1.02, 1.02, 1.02);
+}
+
+.floating {
+    animation: floating 3.5s ease-in-out infinite;
+}
+
+.floating-delayed {
+    animation: floating 3.5s ease-in-out 1.75s infinite;
+}
+
+@keyframes floating {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-20px) rotate(2deg);
+    }
+
+    100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+}
+
+.glass-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.text-gradient-premium {
+    background: linear-gradient(135deg, #0ea5e9 0%, #6366f1 50%, #a855f7 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}

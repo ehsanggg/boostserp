@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BoostSERP | Case Study: Teamflow</title>
+    <meta name="description"
+        content="How we scaled TeamFlow's Domain Rating from DR 12 to DR 36 with 1600%+ growth in unique linking domains.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { 'primary-blue': '#0ea5e9', 'teamflow-teal': '#14b8a6' },
+                    fontFamily: { 'sans': ['"Times New Roman"', 'serif'], 'heading': ['"Times New Roman"', 'serif'] }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="assets/styles.css">
+    <style>
+        .text-gradient {
+            background: linear-gradient(135deg, #0ea5e9 0%, #2563eb 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .marquee {
+            display: flex;
+            width: max-content;
+            animation: scroll 30s linear infinite;
+        }
+
+        .marquee:hover {
+            animation-play-state: paused;
+        }
+    </style>
+</head>
+
+<body class="bg-white">
+    <!-- Header -->
+    <header class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-100">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="/" class="flex items-center gap-2 group">
+                <span class="text-xl font-bold font-heading tracking-tight italic text-slate-900">Boost<span
+                        class="text-primary-blue">SERP</span></span>
+            </a>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="/"
+                    class="text-slate-600 hover:text-primary-blue font-bold tracking-tight transition-colors">Home</a>
+                <a href="portfolio"
+                    class="text-slate-600 hover:text-primary-blue font-bold tracking-tight transition-colors">Portfolio</a>
+
+                <!-- Services Dropdown -->
+                <div class="relative group">
+                    <button
+                        class="text-slate-600 hover:text-primary-blue font-bold tracking-tight transition-colors flex items-center gap-1">
+                        Services
+                        <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
+                    </button>
+                    <div
+                        class="absolute left-0 mt-2 w-48 bg-white border border-slate-100 rounded-xl shadow-xl py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                        <a href="seo-services"
+                            class="block px-4 py-2 text-sm font-bold text-slate-600 hover:bg-slate-50 hover:text-primary-blue">SEO
+                            Services</a>
+                        <a href="link-building"
+                            class="block px-4 py-2 text-sm font-bold text-slate-600 hover:bg-slate-50 hover:text-primary-blue">Link
+                            Building</a>
+                        <a href="guest-posting"
+                            class="block px-4 py-2 text-sm font-bold text-slate-600 hover:bg-slate-50 hover:text-primary-blue">Guest
+                            Posting</a>
+                    </div>
+                </div>
+
+                <a href="directories"
+                    class="text-slate-600 hover:text-primary-blue font-bold tracking-tight transition-colors">Directories</a>
+                <a href="submission-service"
+                    class="text-slate-600 hover:text-primary-blue font-bold tracking-tight transition-colors">Pricing</a>
+                <a href="contact"
+                    class="text-slate-600 hover:text-primary-blue font-bold tracking-tight transition-colors">Contact</a>
+                <a href="contact"
+                    class="bg-primary-blue text-white px-6 py-2 rounded-xl font-bold hover:bg-slate-900 transition-all text-center">Submit
+                    Your Directory</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="pt-32 pb-24">
+        <!-- Hero Section -->
+        <section class="container mx-auto px-6 mb-20">
+            <div class="max-w-4xl mx-auto text-center">
+                <span
+                    class="inline-block px-4 py-1.5 bg-teamflow-teal/10 border border-teamflow-teal/20 rounded-full text-teamflow-teal text-sm font-bold tracking-widest mb-6 uppercase">
+                    Rapid Authority Growth
+                </span>
+                <h1
+                    class="text-4xl md:text-6xl font-black font-heading mb-8 leading-tight text-slate-900 tracking-tight">
+                    Scaling TeamFlow: <br />
+                    <span class="text-gradient-teamflow">From DR 12 to DR 36</span>
+                </h1>
+                <p class="text-lg text-slate-500 leading-relaxed font-medium max-w-3xl mx-auto">
+                    Transforming a burgeoning SaaS company from an invisible startup into a recognized niche authority
+                    through content-led link building.
+                </p>
+
+                <div class="flex flex-wrap items-center justify-center gap-6 mt-12">
+                    <div class="px-8 py-4 bg-slate-50 rounded-3xl border border-slate-100 shadow-sm">
+                        <p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">DR Growth</p>
+                        <p class="text-3xl font-black text-primary-blue font-heading">+200%</p>
+                    </div>
+                    <div class="px-8 py-4 bg-slate-50 rounded-3xl border border-slate-100 shadow-sm">
+                        <p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">Linking Domains</p>
+                        <p class="text-3xl font-black text-teamflow-teal font-heading">1600%+</p>
+                    </div>
+                    <div class="px-8 py-4 bg-slate-50 rounded-3xl border border-slate-100 shadow-sm">
+                        <p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">Total Backlinks</p>
+                        <p class="text-3xl font-black text-slate-900 font-heading">7K+</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Narrative Section -->
+        <section class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto">
+                <!-- Case Study Content -->
+                <article class="prose prose-lg max-w-none text-slate-600 space-y-12">
+
+                    <!-- Overview -->
+                    <div
+                        class="bg-white p-10 rounded-[40px] border border-slate-100 shadow-2xl relative overflow-hidden mb-16">
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-primary-blue/5 rounded-bl-[100px] -z-10"></div>
+                        <h2 class="text-3xl font-bold text-slate-900 mb-6 font-heading">Project Overview</h2>
+                        <p class="leading-relaxed mb-6">
+                            TeamFlow, a B2B SaaS platform for remote team management, faced a common startup hurdle:
+                            having a superior product while remaining invisible to potential customers. With a starting
+                            <strong>Domain Rating of 12</strong>, the site lacked the ranking power to compete for
+                            high-intent keywords like "remote team collaboration software."
+                        </p>
+                        <p class="leading-relaxed">
+                            Through a multi-phased authority building campaign, we transformed TeamFlow into a dominant
+                            niche player, scaling their <strong>DR to 36</strong> and securing over <strong>2,200 unique
+                                linking domains</strong> in just a few months.
+                        </p>
+                    </div>
+
+                    <!-- The Evidence (Image from User) -->
+                    <div class="mb-16">
+                        <h3 class="text-2xl font-bold text-slate-900 mb-8 text-center font-heading">Documenting the
+                            Growth Journey</h3>
+                        <div
+                            class="rounded-[40px] overflow-hidden border border-slate-200 shadow-2xl transform hover:scale-[1.01] transition-transform">
+                            <img src="assets/images/case-studies/teamflow/dr-comparison.png"
+                                alt="TeamFlow DR Growth Comparison" class="w-full h-auto">
+                        </div>
+                        <p class="text-sm text-center text-slate-400 mt-4 italic font-medium">Ahrefs performance data
+                            visualizing the authority growth from DR 12 to 36.</p>
+                    </div>
+
+                    <!-- Strategy Breakdown -->
+                    <div class="space-y-16">
+                        <div>
+                            <h2 class="text-3xl font-bold text-slate-900 mb-8 font-heading">Our Multi-Phased Strategic
+                                Solution</h2>
+
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                                <div
+                                    class="p-8 bg-slate-50 rounded-3xl border border-slate-100 transform hover:-translate-y-2 transition-all">
+                                    <div
+                                        class="w-12 h-12 bg-white rounded-2xl flex items-center justify-center shadow-md mb-6">
+                                        <i data-lucide="search" class="text-primary-blue w-6 h-6"></i>
+                                    </div>
+                                    <h4 class="font-bold text-slate-900 mb-4 font-heading">Phase 1: Audit</h4>
+                                    <p class="text-sm leading-relaxed text-slate-500">Deep content audit to identify
+                                        linkable 'Authority Pillars' and proprietary niche data assets.</p>
+                                </div>
+                                <div
+                                    class="p-8 bg-slate-50 rounded-3xl border border-slate-100 transform hover:-translate-y-2 transition-all">
+                                    <div
+                                        class="w-12 h-12 bg-white rounded-2xl flex items-center justify-center shadow-md mb-6">
+                                        <i data-lucide="edit-3" class="text-primary-blue w-6 h-6"></i>
+                                    </div>
+                                    <h4 class="font-bold text-slate-900 mb-4 font-heading">Phase 2: assets</h4>
+                                    <p class="text-sm leading-relaxed text-slate-500">Creating high-value data reports
+                                        and integration playbooks that authoritative blogs naturally want to cite.</p>
+                                </div>
+                                <div
+                                    class="p-8 bg-slate-50 rounded-3xl border border-slate-100 transform hover:-translate-y-2 transition-all">
+                                    <div
+                                        class="w-12 h-12 bg-white rounded-2xl flex items-center justify-center shadow-md mb-6">
+                                        <i data-lucide="send" class="text-primary-blue w-6 h-6"></i>
+                                    </div>
+                                    <h4 class="font-bold text-slate-900 mb-4 font-heading">Phase 3: Outreach</h4>
+                                    <p class="text-sm leading-relaxed text-slate-500">Systematic, white-hat outreach to
+                                        DR 50+ tech blogs, resource pages, and niche-specific media outlets.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Technical Details -->
+                        <div class="grid md:grid-cols-2 gap-12">
+                            <div>
+                                <h3 class="text-2xl font-bold text-slate-900 mb-6 font-heading">Key Tactics Used</h3>
+                                <ul class="space-y-4">
+                                    <li class="flex items-start gap-3">
+                                        <div
+                                            class="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center shrink-0 mt-1">
+                                            <i data-lucide="check" class="text-green-600 w-4 h-4"></i>
+                                        </div>
+                                        <p class="text-slate-600"><strong>Proprietary Niche Data:</strong> Leveraged
+                                            internal productivity trends to build cited industry reports.</p>
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <div
+                                            class="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center shrink-0 mt-1">
+                                            <i data-lucide="check" class="text-green-600 w-4 h-4"></i>
+                                        </div>
+                                        <p class="text-slate-600"><strong>Integration Playbooks:</strong> Detailed
+                                            guides on SaaS connectivity that earned links from technical reviewers.</p>
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <div
+                                            class="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center shrink-0 mt-1">
+                                            <i data-lucide="check" class="text-green-600 w-4 h-4"></i>
+                                        </div>
+                                        <p class="text-slate-600"><strong>Authoritative Guest Posting:</strong> Secured
+                                            dofollow mentions on Tier-1 SaaS marketplaces and blogs.</p>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="bg-slate-900 p-10 rounded-[40px] border border-slate-800 shadow-2xl">
+                                <h3 class="text-2xl font-bold text-white mb-6 font-heading">The Outcome</h3>
+                                <div class="space-y-6">
+                                    <div class="flex justify-between items-center border-b border-slate-800 pb-4">
+                                        <span class="text-slate-400">Authority Milestone</span>
+                                        <span class="text-primary-blue font-bold">DR 36 Achieved</span>
+                                    </div>
+                                    <div class="flex justify-between items-center border-b border-slate-800 pb-4">
+                                        <span class="text-slate-400">Linking Domain Expansion</span>
+                                        <span class="text-teamflow-teal font-bold">1600% Growth</span>
+                                    </div>
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-slate-400">Backlink Portfolio</span>
+                                        <span class="text-white font-bold">7.0K Total</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Client Reviews Section -->
+                    <div class="mt-32">
+                        <h3
+                            class="text-2xl font-black text-slate-900 mb-12 font-heading text-center italic tracking-tight underline decoration-primary-blue/30 decoration-4 underline-offset-8">
+                            Client Success Stories</h3>
+                        <div class="marquee-container overflow-hidden py-10">
+                            <div class="marquee gap-8">
+                                <!-- Review 1 -->
+                                <div
+                                    class="w-[450px] bg-white border border-slate-100 p-8 rounded-[32px] shadow-xl shadow-slate-200/50 flex-shrink-0">
+                                    <div class="flex text-amber-400 mb-4">
+                                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                                    </div>
+                                    <p class="text-slate-600 font-medium mb-6 leading-relaxed italic">"BoostSERP's
+                                        authority building is second to none. Our DR went from 12 to 45 in record time.
+                                        Professional and results-driven."</p>
+                                    <div class="flex items-center gap-4">
+                                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop"
+                                            class="w-12 h-12 rounded-full border-2 border-primary-blue/20"
+                                            alt="James Wilson">
+                                        <div>
+                                            <h4 class="text-sm font-black text-slate-900">James Wilson</h4>
+                                            <p class="text-xs font-bold text-slate-400 uppercase tracking-widest">CEO,
+                                                TechStream</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Review 2 -->
+                                <div
+                                    class="w-[450px] bg-white border border-slate-100 p-8 rounded-[32px] shadow-xl shadow-slate-200/50 flex-shrink-0">
+                                    <div class="flex text-amber-400 mb-4">
+                                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                                    </div>
+                                    <p class="text-slate-600 font-medium mb-6 leading-relaxed italic">"The link profile
+                                        they built for us is incredibly clean and powerful. Best SEO decision we made
+                                        for our business growth."</p>
+                                    <div class="flex items-center gap-4">
+                                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop"
+                                            class="w-12 h-12 rounded-full border-2 border-primary-blue/20"
+                                            alt="Robert Miller">
+                                        <div>
+                                            <h4 class="text-sm font-black text-slate-900">Robert Miller</h4>
+                                            <p class="text-xs font-bold text-slate-400 uppercase tracking-widest">
+                                                Founder, DevApps</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Review 3 -->
+                                <div
+                                    class="w-[450px] bg-white border border-slate-100 p-8 rounded-[32px] shadow-xl shadow-slate-200/50 flex-shrink-0">
+                                    <div class="flex text-amber-400 mb-4">
+                                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                                    </div>
+                                    <p class="text-slate-600 font-medium mb-6 leading-relaxed italic">"Professional,
+                                        transparent, and results-driven. They actually deliver what they promise. Our
+                                        organic reach is at an all-time high."</p>
+                                    <div class="flex items-center gap-4">
+                                        <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=100&h=100&fit=crop"
+                                            class="w-12 h-12 rounded-full border-2 border-primary-blue/20"
+                                            alt="William Scott">
+                                        <div>
+                                            <h4 class="text-sm font-black text-slate-900">William Scott</h4>
+                                            <p class="text-xs font-bold text-slate-400 uppercase tracking-widest">Ops
+                                                Manager, CloudNine</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Duplicate for Infinite Scroll -->
+                                <div
+                                    class="w-[450px] bg-white border border-slate-100 p-8 rounded-[32px] shadow-xl shadow-slate-200/50 flex-shrink-0">
+                                    <div class="flex text-amber-400 mb-4">
+                                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                                    </div>
+                                    <p class="text-slate-600 font-medium mb-6 leading-relaxed italic">"BoostSERP's
+                                        authority building is second to none. Our DR went from 12 to 45 in record time.
+                                        Professional and results-driven."</p>
+                                    <div class="flex items-center gap-4">
+                                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop"
+                                            class="w-12 h-12 rounded-full border-2 border-primary-blue/20"
+                                            alt="James Wilson">
+                                        <div>
+                                            <h4 class="text-sm font-black text-slate-900">James Wilson</h4>
+                                            <p class="text-xs font-bold text-slate-400 uppercase tracking-widest">CEO,
+                                                TechStream</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Enhanced Call to Action -->
+                    <div class="mt-24 relative overflow-hidden bg-slate-900 rounded-[50px] p-12 md:p-20 text-center">
+                        <div class="absolute inset-0 opacity-20"
+                            style="background-image: radial-gradient(#38bdf8 0.5px, transparent 0.5px); background-size: 24px 24px;">
+                        </div>
+                        <div class="relative z-10">
+                            <h2 class="text-4xl md:text-5xl font-black text-white mb-8 font-heading italic">Ready to
+                                Scale Your Authority?</h2>
+                            <p class="text-xl text-slate-400 mb-12 max-w-3xl mx-auto leading-relaxed font-medium">
+                                Don't let your competition dominate the search results. Get a custom growth strategy
+                                tailored to your niche. Our experts are ready to help you skyrocket your domain
+                                authority.
+                            </p>
+                            <div class="flex flex-col sm:flex-row items-center justify-center gap-6">
+                                <a href="contact"
+                                    class="w-full sm:w-auto bg-primary-blue hover:bg-white hover:text-primary-blue text-white px-12 py-6 rounded-2xl font-black text-xl transition-all shadow-2xl shadow-primary-blue/20 transform hover:-translate-y-1 active:scale-95 flex items-center justify-center gap-3">
+                                    <span>Let's Discuss Your Project</span>
+                                    <i data-lucide="arrow-right" class="w-6 h-6"></i>
+                                </a>
+                                <p class="text-slate-500 font-bold text-sm uppercase tracking-widest">Response in < 24
+                                        Hours</p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 pt-20 pb-10">
+        <div class="container mx-auto px-6 text-center">
+            <div class="flex items-center justify-center gap-2 mb-8">
+                <div class="w-12 h-12 bg-primary-blue rounded-xl flex items-center justify-center shadow-lg">
+                    <i data-lucide="rocket" class="text-white w-7 h-7"></i>
+                </div>
+                <span class="text-2xl font-black font-heading italic text-slate-900 tracking-tighter">Boost<span
+                        class="text-primary-blue">SERP</span></span>
+            </div>
+            <p class="text-slate-400 max-w-md mx-auto mb-12 font-medium">Empowering startups to dominate organic search
+                with data-backed strategies.</p>
+            <div class="flex space-x-6 justify-center mb-6 text-sm font-bold text-slate-500">
+                <a href="privacy" class="hover:text-primary-blue transition-colors">Privacy Policy</a>
+                <a href="terms" class="hover:text-primary-blue transition-colors">Terms of Service</a>
+                <a href="disclaimer" class="hover:text-primary-blue transition-colors">Disclaimer</a>
+            </div>
+            <div class="flex space-x-6 justify-center mb-6 text-sm font-bold text-slate-500">
+                <a href="/" class="hover:text-primary-blue transition-colors">Home</a>
+                <a href="submission-service" class="hover:text-primary-blue transition-colors">Pricing</a>
+                <a href="contact" class="hover:text-primary-blue transition-colors">Contact</a>
+            </div>
+            <div class="border-t border-slate-800 pt-10 text-slate-500 text-sm">
+                &copy; 2026 BoostSERP. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>

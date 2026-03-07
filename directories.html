@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Directories | BoostSERP</title>
+    <meta name="description"
+        content="Browse our complete list of 135+ high-authority startup directories to boost your SEO.">
+
+    <!-- Speed Optimizations -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.tailwindcss.com">
+    <link rel="preconnect" href="https://unpkg.com">
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'deep-blue': '#0f172a',
+                        'primary-blue': '#0ea5e9',
+                        'slate-dark': '#1e293b',
+                    },
+                    fontFamily: {
+                        'sans': ['"Times New Roman"', 'serif'],
+                        'heading': ['"Times New Roman"', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="assets/styles.css">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body class="bg-white text-slate-900 selection:bg-primary-blue/30">
+
+    <!-- Sticky Header -->
+    <!-- Header -->
+    <header class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-100">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="/" class="flex items-center gap-2 group">
+                <span class="text-xl font-bold font-heading tracking-tight italic text-slate-900">Boost<span
+                        class="text-primary-blue">SERP</span></span>
+            </a>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="/"
+                    class="text-slate-600 hover:text-primary-blue font-bold tracking-tight transition-colors">Home</a>
+                <a href="portfolio"
+                    class="text-slate-600 hover:text-primary-blue font-bold tracking-tight transition-colors">Portfolio</a>
+
+                <!-- Services Dropdown -->
+                <div class="relative group">
+                    <button
+                        class="text-slate-600 hover:text-primary-blue font-bold tracking-tight transition-colors flex items-center gap-1">
+                        Services
+                        <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
+                    </button>
+                    <div
+                        class="absolute left-0 mt-2 w-48 bg-white border border-slate-100 rounded-xl shadow-xl py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                        <a href="seo-services"
+                            class="block px-4 py-2 text-sm font-bold text-slate-600 hover:bg-slate-50 hover:text-primary-blue">SEO
+                            Services</a>
+                        <a href="link-building"
+                            class="block px-4 py-2 text-sm font-bold text-slate-600 hover:bg-slate-50 hover:text-primary-blue">Link
+                            Building</a>
+                        <a href="guest-posting"
+                            class="block px-4 py-2 text-sm font-bold text-slate-600 hover:bg-slate-50 hover:text-primary-blue">Guest
+                            Posting</a>
+                    </div>
+                </div>
+
+                <a href="directories"
+                    class="text-slate-600 hover:text-primary-blue font-bold tracking-tight transition-colors border-b-2 border-primary-blue">Directories</a>
+                <a href="submission-service"
+                    class="text-slate-600 hover:text-primary-blue font-bold tracking-tight transition-colors">Pricing</a>
+                <a href="contact"
+                    class="text-slate-600 hover:text-primary-blue font-bold tracking-tight transition-colors">Contact</a>
+                <a href="contact"
+                    class="inline-flex items-center gap-3 bg-primary-blue hover:bg-slate-900 text-white px-10 py-4 rounded-2xl font-black transition-all text-lg shadow-xl shadow-primary-blue/20 transform hover:-translate-y-1 active:scale-95">
+                    <span>Submit Your Directory</span>
+                    <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="py-20 bg-slate-50 min-h-screen">
+        <div class="container mx-auto px-6">
+            <!-- Breadcrumbs -->
+            <div class="flex items-center space-x-2 text-sm text-slate-400 mb-8">
+                <a href="/" class="hover:text-primary-blue transition-colors">Home</a>
+                <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                <span class="text-slate-600">All Directories</span>
+            </div>
+
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-8">
+                <div>
+                    <h1 class="text-5xl font-extrabold font-heading mb-4 text-slate-900">Directory Explorer</h1>
+                    <p class="text-slate-500 text-lg">Browse our verified list of 135+ directories to find your perfect
+                        launchpad.</p>
+                </div>
+
+                <!-- Filters -->
+                <div class="flex items-center space-x-2 bg-white border border-slate-200 p-1.5 rounded-2xl shadow-sm">
+                    <button onclick="filterDirectories('all')"
+                        class="filter-btn active px-6 py-2 rounded-xl font-bold transition-all bg-primary-blue text-white shadow-md">All</button>
+                    <button onclick="filterDirectories('Free')"
+                        class="filter-btn px-6 py-2 rounded-xl font-bold transition-all text-slate-500 hover:text-primary-blue">Free</button>
+                    <button onclick="filterDirectories('Paid')"
+                        class="filter-btn px-6 py-2 rounded-xl font-bold transition-all text-slate-500 hover:text-primary-blue">Paid</button>
+                </div>
+            </div>
+
+            <div id="directory-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                <!-- Cards will be injected by JavaScript -->
+            </div>
+
+            <div id="load-more-container" class="mt-16 text-center">
+                <button onclick="loadMore()"
+                    class="bg-white border border-slate-200 text-slate-900 px-12 py-5 rounded-2xl font-bold hover:bg-slate-50 transition-all transform active:scale-95 text-xl shadow-sm">
+                    Load More Directories
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-white border-t border-slate-100 pt-20 pb-10 mt-20">
+        <div class="container mx-auto px-6 text-center">
+            <div class="flex items-center justify-center space-x-8 mb-12">
+                <a href="/" class="text-slate-600 hover:text-primary-blue font-bold transition-colors">Home</a>
+                <a href="submission-service"
+                    class="text-slate-600 hover:text-primary-blue font-bold transition-colors">Pricing</a>
+                <a href="portfolio"
+                    class="text-slate-600 hover:text-primary-blue font-bold transition-colors">Portfolio</a>
+                <a href="contact"
+                    class="text-slate-600 hover:text-primary-blue font-bold transition-colors">Contact</a>
+            </div>
+            <div class="w-8 h-8 bg-primary-blue rounded flex items-center justify-center">
+                <i data-lucide="rocket" class="text-white w-5 h-5"></i>
+            </div>
+            <span class="text-xl font-bold font-heading italic">Boost<span class="text-primary-blue">SERP</span></span>
+        </div>
+        <div class="flex space-x-6 justify-center mb-6 text-sm font-bold text-slate-400">
+            <a href="privacy" class="hover:text-primary-blue transition-colors">Privacy Policy</a>
+            <a href="terms" class="hover:text-primary-blue transition-colors">Terms of Service</a>
+            <a href="disclaimer" class="hover:text-primary-blue transition-colors">Disclaimer</a>
+        </div>
+        <p class="text-slate-500 max-w-lg mx-auto mb-12 font-medium">
+            Professional directory submission service to boost your search visibility and organic traffic.
+        </p>
+        <p>&copy; 2026 BoostSERP. Results Driven SEO.</p>
+        </div>
+    </footer>
+
+    <script src="data/directories.js"></script>
+    <script src="scripts/app.js"></script>
+    <script>
+        // Init Lucide Icons
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>

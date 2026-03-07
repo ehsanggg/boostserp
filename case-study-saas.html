@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BoostSERP | Case Study: SaaS Growth</title>
+    <meta name="description"
+        content="How we scaled a competitive SaaS platform to 2.75M+ impressions using modern AI SEO strategies, AIO, and GEO.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { 'primary-blue': '#0ea5e9', 'saas-indigo': '#4f46e5' },
+                    fontFamily: { 'sans': ['"Times New Roman"', 'serif'], 'heading': ['"Times New Roman"', 'serif'] }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="assets/styles.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .marquee {
+            display: flex;
+            width: max-content;
+            animation: scroll 30s linear infinite;
+        }
+
+        .marquee:hover {
+            animation-play-state: paused;
+        }
+    </style>
+</head>
+
+<body class="bg-white text-slate-900 selection:bg-primary-blue/30 overflow-x-hidden">
+
+    <!-- Header -->
+    <!-- Header -->
+    <header class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-100">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="/" class="flex items-center gap-2 group">
+                <span class="text-xl font-bold font-heading tracking-tight italic text-slate-900">Boost<span
+                        class="text-primary-blue">SERP</span></span>
+            </a>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="/"
+                    class="text-slate-600 hover:text-primary-blue font-bold tracking-tight transition-colors">Home</a>
+                <a href="portfolio"
+                    class="text-slate-600 hover:text-primary-blue font-bold tracking-tight transition-colors">Portfolio</a>
+
+                <!-- Services Dropdown -->
+                <div class="relative group">
+                    <button
+                        class="text-slate-600 hover:text-primary-blue font-bold tracking-tight transition-colors flex items-center gap-1">
+                        Services
+                        <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
+                    </button>
+                    <div
+                        class="absolute left-0 mt-2 w-48 bg-white border border-slate-100 rounded-xl shadow-xl py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                        <a href="seo-services"
+                            class="block px-4 py-2 text-sm font-bold text-slate-600 hover:bg-slate-50 hover:text-primary-blue">SEO
+                            Services</a>
+                        <a href="link-building"
+                            class="block px-4 py-2 text-sm font-bold text-slate-600 hover:bg-slate-50 hover:text-primary-blue">Link
+                            Building</a>
+                        <a href="guest-posting"
+                            class="block px-4 py-2 text-sm font-bold text-slate-600 hover:bg-slate-50 hover:text-primary-blue">Guest
+                            Posting</a>
+                    </div>
+                </div>
+
+                <a href="directories"
+                    class="text-slate-600 hover:text-primary-blue font-bold tracking-tight transition-colors">Directories</a>
+                <a href="submission-service"
+                    class="text-slate-600 hover:text-primary-blue font-bold tracking-tight transition-colors">Pricing</a>
+                <a href="contact"
+                    class="text-slate-600 hover:text-primary-blue font-bold tracking-tight transition-colors">Contact</a>
+                <a href="contact"
+                    class="bg-primary-blue text-white px-6 py-2 rounded-xl font-bold hover:bg-slate-900 transition-all text-center">Submit
+                    Your Directory</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="py-20">
+        <article class="container mx-auto px-6 max-w-5xl">
+            <!-- Hero Header -->
+            <header class="mb-20 text-center animate-fade-in">
+                <span
+                    class="inline-block px-4 py-1.5 bg-saas-indigo/10 border border-saas-indigo/20 rounded-full text-saas-indigo text-sm font-bold tracking-widest mb-6 uppercase">Modern
+                    SaaS Growth</span>
+                <h1
+                    class="text-4xl md:text-5xl font-black font-heading mb-8 leading-tight text-slate-900 tracking-tight">
+                    Scaling 2.75M+ Impressions: <br />
+                    <span class="bg-gradient-to-r from-saas-indigo to-primary-blue bg-clip-text text-transparent">A Deep
+                        Dive into Modern SaaS SEO</span>
+                </h1>
+                <p class="text-lg text-slate-500 leading-relaxed font-medium max-w-3xl mx-auto">
+                    In an era of AI-driven search, we successfully captured the generative landscape to drive explosive
+                    organic visibility for a high-growth SaaS platform.
+                </p>
+            </header>
+
+            <!-- Snapshot Stats -->
+            <div
+                class="bg-white p-8 rounded-3xl border border-slate-100 shadow-xl shadow-slate-200/50 grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
+                <div class="text-center md:text-left">
+                    <p class="text-sm font-bold text-slate-400 uppercase tracking-widest mb-2">Total Impressions</p>
+                    <p class="text-2xl font-black text-primary-blue font-heading">2,750,000+</p>
+                </div>
+                <div class="text-center md:text-left">
+                    <p class="text-sm font-bold text-slate-400 uppercase tracking-widest mb-2">Total Clicks</p>
+                    <p class="text-2xl font-black text-slate-900 font-heading">4,100+</p>
+                </div>
+                <div class="text-center md:text-left">
+                    <p class="text-sm font-bold text-slate-400 uppercase tracking-widest mb-2">Date Range</p>
+                    <p class="text-2xl font-black text-green-500 font-heading">3 Months</p>
+                </div>
+            </div>
+
+            <!-- GSC Image -->
+            <section class="rounded-3xl border border-slate-100 overflow-hidden shadow-2xl mb-20 bg-slate-50">
+                <div class="p-4 flex items-center space-x-2 border-b border-slate-200 bg-white">
+                    <div class="w-3 h-3 bg-red-400 rounded-full"></div>
+                    <div class="w-3 h-3 bg-amber-400 rounded-full"></div>
+                    <div class="w-3 h-3 bg-green-400 rounded-full"></div>
+                    <span class="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-2">Google Search
+                        Console Performance Snapshot</span>
+                </div>
+                <img src="assets/images/case-studies/saas-gsc.png" alt="SaaS GSC Performance Proof"
+                    class="w-full h-auto">
+            </section>
+
+            <!-- Main Content -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-16">
+                <div class="lg:col-span-8 space-y-16">
+
+                    <section>
+                        <h2
+                            class="text-3xl font-bold text-slate-900 mb-6 font-heading border-l-4 border-saas-indigo pl-6">
+                            Where Have I Been?</h2>
+                        <div class="prose prose-lg prose-slate max-w-none text-slate-600 leading-relaxed">
+                            <p>
+                                For the past few months, I have been fully focused on scaling several high-impact client
+                                projects. Instead of sharing frequent updates, I dedicated my time to deep research,
+                                experimentation, and execution to achieve measurable growth for these businesses.
+                            </p>
+                            <p>
+                                One of the most exciting projects involved working with a fast-growing SaaS platform
+                                operating in a highly competitive digital space. The goal was to improve the platform’s
+                                organic visibility, brand authority, and search performance while adapting to the latest
+                                changes in the search ecosystem.
+                            </p>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h2
+                            class="text-3xl font-bold text-slate-900 mb-6 font-heading border-l-4 border-saas-indigo pl-6">
+                            Breaking Down the SEO Strategy</h2>
+                        <div class="prose prose-lg prose-slate max-w-none text-slate-600 leading-relaxed">
+                            <p>
+                                Growing a SaaS platform today requires a multi-layered SEO strategy that goes beyond
+                                simple keyword targeting. Our approach focused on combining traditional SEO foundations
+                                with modern AI-driven search optimization techniques.
+                            </p>
+
+                            <h3 class="text-2xl font-bold text-slate-900 mt-12 mb-4">Capturing Emerging Search Behaviors
+                                (AIO & GEO)</h3>
+                            <p>
+                                One of the biggest shifts in modern search is the rise of AI-generated search results
+                                and conversational search experiences. Google’s AI Overviews (AIO) and generative search
+                                systems are changing how users discover information.
+                            </p>
+                            <p>
+                                To capitalize on this shift, we implemented a strategy focused on <strong>Generative
+                                    Engine Optimization (GEO)</strong>, which ensures that content is optimized not only
+                                for traditional search results but also for AI-powered answers.
+                            </p>
+                            <p>
+                                This involved structuring content with clear topic coverage, structured headings, and
+                                concise answers to increase the likelihood of appearing in AI-generated summaries.
+                            </p>
+
+                            <h3 class="text-2xl font-bold text-slate-900 mt-12 mb-4">Continuous Content Resilience</h3>
+                            <p>
+                                Publishing content once and leaving it untouched is no longer effective. We implemented
+                                a <strong>continuous content resilience strategy</strong>, regularly auditing existing
+                                content to ensure accuracy and alignment with Google’s latest guidelines.
+                            </p>
+                            <p>
+                                Existing pages were refreshed with improved structure and enhanced keyword targeting to
+                                better satisfy user intent and strengthen topical authority.
+                            </p>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h2
+                            class="text-3xl font-bold text-slate-900 mb-6 font-heading border-l-4 border-saas-indigo pl-6">
+                            Data-Driven SEO Optimization</h2>
+                        <div class="prose prose-lg prose-slate max-w-none text-slate-600 leading-relaxed">
+                            <p>
+                                Using tools like Google Search Console, we monitored keyword rankings and user
+                                engagement metrics to identify high-potential keywords and discover new growth
+                                opportunities.
+                            </p>
+                            <p>
+                                Pages with high impressions but low click-through rates were optimized with improved
+                                titles and meta descriptions to attract more clicks and drive higher quality traffic.
+                            </p>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- Sidebar -->
+                <div class="lg:col-span-4 space-y-12">
+                    <div class="bg-saas-indigo p-8 rounded-[40px] text-white">
+                        <h4 class="text-xl font-black mb-6 font-heading">Campaign Results</h4>
+                        <div class="space-y-6">
+                            <div class="border-b border-white/10 pb-4">
+                                <p class="text-white/60 text-[10px] font-black uppercase tracking-widest mb-1">
+                                    Impressions</p>
+                                <p class="text-3xl font-bold">2.75M+</p>
+                            </div>
+                            <div class="border-b border-white/10 pb-4">
+                                <p class="text-white/60 text-[10px] font-black uppercase tracking-widest mb-1">Organic
+                                    Clicks</p>
+                                <p class="text-3xl font-bold">4,100+</p>
+                            </div>
+                            <div>
+                                <p class="text-white/60 text-[10px] font-black uppercase tracking-widest mb-1">Time to
+                                    Results</p>
+                                <p class="text-3xl font-bold">90 Days</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="p-8 bg-slate-50 rounded-[40px] border border-slate-100">
+                        <h4 class="text-xl font-black text-slate-900 mb-6 font-heading">Expert Insight</h4>
+                        <p class="italic text-slate-500 text-sm leading-relaxed mb-6">
+                            "SEO is evolving faster than ever before. The combination of AI-driven search experiences
+                            and changing user behavior means that businesses must constantly adapt their strategies."
+                        </p>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-10 h-10 bg-slate-200 rounded-full"></div>
+                            <div>
+                                <p class="text-sm font-bold text-slate-900">Ehsan Hussain</p>
+                                <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">SEO Specialist
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Client Reviews Section -->
+            <div class="mt-20 px-6">
+                <h3
+                    class="text-2xl font-black text-slate-900 mb-12 font-heading text-center italic tracking-tight underline decoration-primary-blue/30 decoration-4 underline-offset-8">
+                    What Our SaaS Clients Say</h3>
+                <div class="marquee-container overflow-hidden py-10">
+                    <div class="marquee gap-8">
+                        <!-- Review 1 -->
+                        <div
+                            class="w-[450px] bg-white border border-slate-100 p-8 rounded-[32px] shadow-xl shadow-slate-200/50 flex-shrink-0">
+                            <div class="flex text-amber-400 mb-4">
+                                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                            </div>
+                            <p class="text-slate-600 font-medium mb-6 leading-relaxed italic">"The search console growth
+                                was unbelievable. We are now capturing intent-based traffic like never before. BoostSERP
+                                knows their stuff."</p>
+                            <div class="flex items-center gap-4">
+                                <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=100&h=100&fit=crop"
+                                    class="w-12 h-12 rounded-full border-2 border-primary-blue/20" alt="David Thompson">
+                                <div>
+                                    <h4 class="text-sm font-black text-slate-900">David Thompson</h4>
+                                    <p class="text-xs font-bold text-slate-400 uppercase tracking-widest">Founder,
+                                        SaaSify</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Review 2 -->
+                        <div
+                            class="w-[450px] bg-white border border-slate-100 p-8 rounded-[32px] shadow-xl shadow-slate-200/50 flex-shrink-0">
+                            <div class="flex text-amber-400 mb-4">
+                                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                            </div>
+                            <p class="text-slate-600 font-medium mb-6 leading-relaxed italic">"Expert-level
+                                understanding of SEO. The GEO optimization significantly boosted our signups and lowered
+                                our CAC."</p>
+                            <div class="flex items-center gap-4">
+                                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop"
+                                    class="w-12 h-12 rounded-full border-2 border-primary-blue/20" alt="Michael Brown">
+                                <div>
+                                    <h4 class="text-sm font-black text-slate-900">Michael Brown</h4>
+                                    <p class="text-xs font-bold text-slate-400 uppercase tracking-widest">Growth Lead,
+                                        DataPulse</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Review 3 -->
+                        <div
+                            class="w-[450px] bg-white border border-slate-100 p-8 rounded-[32px] shadow-xl shadow-slate-200/50 flex-shrink-0">
+                            <div class="flex text-amber-400 mb-4">
+                                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                            </div>
+                            <p class="text-slate-600 font-medium mb-6 leading-relaxed italic">"They didn't just give us
+                                rankings, they gave us a strategy that actually converts. Best partner for SaaS scale."
+                            </p>
+                            <div class="flex items-center gap-4">
+                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop"
+                                    class="w-12 h-12 rounded-full border-2 border-primary-blue/20" alt="Thomas Clark">
+                                <div>
+                                    <h4 class="text-sm font-black text-slate-900">Thomas Clark</h4>
+                                    <p class="text-xs font-bold text-slate-400 uppercase tracking-widest">Director, AI
+                                        Insights</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Duplicate for Infinite Scroll -->
+                        <div
+                            class="w-[450px] bg-white border border-slate-100 p-8 rounded-[32px] shadow-xl shadow-slate-200/50 flex-shrink-0">
+                            <div class="flex text-amber-400 mb-4">
+                                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                            </div>
+                            <p class="text-slate-600 font-medium mb-6 leading-relaxed italic">"The search console growth
+                                was unbelievable. We are now capturing intent-based traffic like never before. BoostSERP
+                                knows their stuff."</p>
+                            <div class="flex items-center gap-4">
+                                <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=100&h=100&fit=crop"
+                                    class="w-12 h-12 rounded-full border-2 border-primary-blue/20" alt="David Thompson">
+                                <div>
+                                    <h4 class="text-sm font-black text-slate-900">David Thompson</h4>
+                                    <p class="text-xs font-bold text-slate-400 uppercase tracking-widest">Founder,
+                                        SaaSify</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Conclusion -->
+            <footer class="mt-32 pt-20 border-t border-slate-100">
+                <h2 class="text-4xl font-black text-slate-900 mb-8 font-heading text-center">Conclusion</h2>
+                <!-- Enhanced Call to Action -->
+                <div class="mt-20 relative overflow-hidden bg-slate-900 rounded-[50px] p-12 md:p-20 text-center">
+                    <div class="absolute inset-0 opacity-20"
+                        style="background-image: radial-gradient(#38bdf8 0.5px, transparent 0.5px); background-size: 24px 24px;">
+                    </div>
+                    <div class="relative z-10">
+                        <h2 class="text-4xl md:text-5xl font-black text-white mb-8 font-heading italic">Dominate Organic
+                            Search</h2>
+                        <p class="text-xl text-slate-400 mb-12 max-w-3xl mx-auto leading-relaxed font-medium">
+                            We've helped dozens of SaaS companies achieve explosive growth. Ready to be the next success
+                            story? Contact our SEO specialists for a free website analysis.
+                        </p>
+                        <div class="flex flex-col sm:flex-row items-center justify-center gap-6">
+                            <a href="contact"
+                                class="w-full sm:w-auto bg-primary-blue hover:bg-white hover:text-primary-blue text-white px-12 py-6 rounded-2xl font-black text-xl transition-all shadow-2xl shadow-primary-blue/20 transform hover:-translate-y-1 active:scale-95 flex items-center justify-center gap-3">
+                                <span>Get Your Free Strategy</span>
+                                <i data-lucide="sparkles" class="w-6 h-6"></i>
+                            </a>
+                            <div class="flex items-center gap-2">
+                                <div class="flex -space-x-2">
+                                    <div class="w-8 h-8 rounded-full border-2 border-slate-900 bg-slate-700"></div>
+                                    <div class="w-8 h-8 rounded-full border-2 border-slate-900 bg-slate-600"></div>
+                                    <div class="w-8 h-8 rounded-full border-2 border-slate-900 bg-slate-500"></div>
+                                </div>
+                                <span class="text-slate-400 text-xs font-bold uppercase tracking-widest">+50 Projects
+                                    Completed</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </article>
+    </main>
+
+    <footer class="bg-slate-50 py-12 border-t border-slate-100">
+        <div class="container mx-auto px-6 text-center">
+            <div class="flex space-x-6 justify-center mb-6 text-sm font-bold text-slate-500">
+                <a href="privacy" class="hover:text-primary-blue transition-colors">Privacy Policy</a>
+                <a href="terms" class="hover:text-primary-blue transition-colors">Terms of Service</a>
+                <a href="disclaimer" class="hover:text-primary-blue transition-colors">Disclaimer</a>
+            </div>
+            <p class="text-slate-400 font-bold text-sm tracking-widest uppercase">© 2026 BoostSERP. Results Driven SEO.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>

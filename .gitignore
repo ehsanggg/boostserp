@@ -1,0 +1,16 @@
+# Zip files
+*.zip
+
+# PowerShell scripts
+*.ps1
+
+# Temporary files
+temp_case_study_content.txt
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Project data (if not needed in repo)
+# Restore script
+restore_logos_v2.ps1

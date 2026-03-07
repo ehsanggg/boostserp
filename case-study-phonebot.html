@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BoostSERP | Case Study: Phonebot</title>
+    <meta name="description"
+        content="Deep dive into the 6-month SEO campaign for Phonebot Australia that delivered 20.4M impressions and 117K organic clicks.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { 'primary-blue': '#0ea5e9', 'phonebot-purple': '#6366f1' },
+                    fontFamily: { 'sans': ['"Times New Roman"', 'serif'], 'heading': ['"Times New Roman"', 'serif'] }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="assets/styles.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .marquee {
+            display: flex;
+            width: max-content;
+            animation: scroll 30s linear infinite;
+        }
+
+        .marquee:hover {
+            animation-play-state: paused;
+        }
+    </style>
+</head>
+
+<body class="bg-white text-slate-900 selection:bg-primary-blue/30 overflow-x-hidden">
+
+    <!-- Header -->
+    <!-- Header -->
+    <header class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-100">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="/" class="flex items-center gap-2 group">
+                <span class="text-xl font-bold font-heading tracking-tight italic text-slate-900">Boost<span
+                        class="text-primary-blue">SERP</span></span>
+            </a>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="/"
+                    class="text-slate-600 hover:text-primary-blue font-bold tracking-tight transition-colors">Home</a>
+                <a href="portfolio"
+                    class="text-slate-600 hover:text-primary-blue font-bold tracking-tight transition-colors">Portfolio</a>
+
+                <!-- Services Dropdown -->
+                <div class="relative group">
+                    <button
+                        class="text-slate-600 hover:text-primary-blue font-bold tracking-tight transition-colors flex items-center gap-1">
+                        Services
+                        <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
+                    </button>
+                    <div
+                        class="absolute left-0 mt-2 w-48 bg-white border border-slate-100 rounded-xl shadow-xl py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                        <a href="seo-services"
+                            class="block px-4 py-2 text-sm font-bold text-slate-600 hover:bg-slate-50 hover:text-primary-blue">SEO
+                            Services</a>
+                        <a href="link-building"
+                            class="block px-4 py-2 text-sm font-bold text-slate-600 hover:bg-slate-50 hover:text-primary-blue">Link
+                            Building</a>
+                        <a href="guest-posting"
+                            class="block px-4 py-2 text-sm font-bold text-slate-600 hover:bg-slate-50 hover:text-primary-blue">Guest
+                            Posting</a>
+                    </div>
+                </div>
+
+                <a href="directories"
+                    class="text-slate-600 hover:text-primary-blue font-bold tracking-tight transition-colors">Directories</a>
+                <a href="submission-service"
+                    class="text-slate-600 hover:text-primary-blue font-bold tracking-tight transition-colors">Pricing</a>
+                <a href="contact"
+                    class="text-slate-600 hover:text-primary-blue font-bold tracking-tight transition-colors">Contact</a>
+                <a href="contact"
+                    class="bg-primary-blue text-white px-6 py-2 rounded-xl font-bold hover:bg-slate-900 transition-all text-center">Submit
+                    Your Directory</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="py-20">
+        <article class="container mx-auto px-6 max-w-5xl">
+            <!-- Hero Header -->
+            <header class="mb-20 text-center animate-fade-in">
+                <span
+                    class="inline-block px-4 py-1.5 bg-phonebot-purple/10 border border-phonebot-purple/20 rounded-full text-phonebot-purple text-sm font-bold tracking-widest mb-6 uppercase">eCommerce
+                    Dominance</span>
+                <h1
+                    class="text-4xl md:text-6xl font-black font-heading mb-8 leading-tight text-slate-900 tracking-tight">
+                    Scaling Phonebot Australia: <br />
+                    <span
+                        class="bg-gradient-to-r from-phonebot-purple to-primary-blue bg-clip-text text-transparent">20.4M
+                        impressions achieved</span>
+                </h1>
+                <div class="flex flex-wrap items-center justify-center gap-6 mt-8">
+                    <div
+                        class="flex items-center space-x-2 text-slate-500 font-medium bg-slate-50 px-4 py-2 rounded-full border border-slate-100">
+                        <i data-lucide="map-pin" class="w-4 h-4 text-phonebot-purple"></i>
+                        <span>Australia</span>
+                    </div>
+                    <div
+                        class="flex items-center space-x-2 text-slate-500 font-medium bg-slate-50 px-4 py-2 rounded-full border border-slate-100">
+                        <i data-lucide="shopping-cart" class="w-4 h-4 text-phonebot-purple"></i>
+                        <span>Refurbished Tech</span>
+                    </div>
+                    <div
+                        class="flex items-center space-x-2 text-slate-500 font-medium bg-slate-50 px-4 py-2 rounded-full border border-slate-100">
+                        <i data-lucide="globe" class="w-4 h-4 text-phonebot-purple"></i>
+                        <span>phonebot.com.au</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Results Summary Card -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
+                <div
+                    class="bg-white p-8 rounded-3xl border border-slate-100 shadow-xl shadow-slate-200/50 transform hover:-translate-y-2 transition-all duration-500">
+                    <div class="w-12 h-12 bg-purple-100 rounded-2xl flex items-center justify-center mb-6">
+                        <i data-lucide="mouse-pointer-click" class="text-purple-600 w-6 h-6"></i>
+                    </div>
+                    <p class="text-slate-500 font-bold uppercase tracking-widest text-xs mb-2">Total Clicks</p>
+                    <h4 class="text-2xl font-black text-slate-900 font-heading">117,000+</h4>
+                    <p class="text-green-500 text-sm font-bold mt-2 flex items-center">
+                        <i data-lucide="trending-up" class="w-4 h-4 mr-1"></i> Significant Growth
+                    </p>
+                </div>
+                <div
+                    class="bg-slate-900 p-8 rounded-3xl border border-slate-800 shadow-2xl transform hover:-translate-y-2 transition-all duration-500">
+                    <div class="w-12 h-12 bg-primary-blue/20 rounded-2xl flex items-center justify-center mb-6">
+                        <i data-lucide="eye" class="text-primary-blue w-6 h-6"></i>
+                    </div>
+                    <p class="text-slate-400 font-bold uppercase tracking-widest text-xs mb-2">Impressions</p>
+                    <h4 class="text-2xl font-black text-white font-heading">20.4 Million</h4>
+                    <p class="text-primary-blue text-sm font-bold mt-2">6-Month Snapshot</p>
+                </div>
+                <div
+                    class="bg-white p-8 rounded-3xl border border-slate-100 shadow-xl shadow-slate-200/50 transform hover:-translate-y-2 transition-all duration-500">
+                    <div class="w-12 h-12 bg-blue-100 rounded-2xl flex items-center justify-center mb-6">
+                        <i data-lucide="users" class="text-blue-600 w-6 h-6"></i>
+                    </div>
+                    <p class="text-slate-500 font-bold uppercase tracking-widest text-xs mb-2">Active Users</p>
+                    <h4 class="text-2xl font-black text-slate-900 font-heading">103,000+</h4>
+                    <p class="text-blue-500 text-sm font-bold mt-2">Highly Qualified Traffic</p>
+                </div>
+            </div>
+
+            <!-- Content Section -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-16">
+                <!-- Left Column: Main Narrative -->
+                <div class="lg:col-span-8 space-y-16">
+
+                    <section>
+                        <h2
+                            class="text-3xl font-bold text-slate-900 mb-6 font-heading border-l-4 border-phonebot-purple pl-6">
+                            Project Overview</h2>
+                        <div class="prose prose-lg prose-slate max-w-none text-slate-600 leading-relaxed">
+                            <p>
+                                <strong>Phonebot</strong> is an Australian eCommerce powerhouse specializing in
+                                refurbished smartphones, tablets, and electronics. Operating in a hyper-competitive
+                                market dominated by global retail giants, the brand faced a significant challenge:
+                                <strong>standing out in search results for high-intent queries.</strong>
+                            </p>
+                            <p>
+                                The objective was clear: develop a sustainable, data-driven organic growth strategy that
+                                would not only increase visibility but also drive high-conversion traffic to key product
+                                and category pages.
+                            </p>
+                        </div>
+                    </section>
+
+                    <!-- Image 1: GSC 6 Month -->
+                    <section class="rounded-3xl border border-slate-100 overflow-hidden shadow-2xl bg-slate-50">
+                        <div class="p-4 flex items-center space-x-2 border-b border-slate-200">
+                            <div class="w-3 h-3 bg-red-400 rounded-full"></div>
+                            <div class="w-3 h-3 bg-amber-400 rounded-full"></div>
+                            <div class="w-3 h-3 bg-green-400 rounded-full"></div>
+                            <span class="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-2">Verified
+                                Search Console Data</span>
+                        </div>
+                        <img src="assets/images/case-studies/phonebot/gsc-6m.jpg" alt="GSC 6 Month Growth Portfolio"
+                            class="w-full h-auto">
+                    </section>
+
+                    <section>
+                        <h2
+                            class="text-3xl font-bold text-slate-900 mb-6 font-heading border-l-4 border-phonebot-purple pl-6">
+                            The SEO Challenges</h2>
+                        <div class="prose prose-lg prose-slate max-w-none text-slate-600 leading-relaxed">
+                            <p>
+                                Scaling an eCommerce site in the refurbished tech niche comes with unique hurdles:
+                            </p>
+                            <ul>
+                                <li><strong>Extreme Competition:</strong> Ranking against major Australian retailers and
+                                    global marketplaces.</li>
+                                <li><strong>Technical Debt:</strong> Resolving crawlability and indexation issues
+                                    inherent in large product catalogs.</li>
+                                <li><strong>CTR Optimization:</strong> Converting existing impressions into clicks
+                                    through psychological listing optimization.</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h2
+                            class="text-3xl font-bold text-slate-900 mb-6 font-heading border-l-4 border-phonebot-purple pl-6">
+                            Strategic Implementation</h2>
+                        <div class="prose prose-lg prose-slate max-w-none text-slate-600 leading-relaxed">
+                            <h3 class="text-2xl font-bold text-slate-900 mt-8 mb-4">1. Technical SEO Revamp</h3>
+                            <p>
+                                We initiated a deep-dive audit to identify bottlenecks in crawl budget and sitemap
+                                distribution. By optimizing internal linking and resolving XML sitemap errors, we
+                                ensured Google prioritized the most important category pages.
+                            </p>
+
+                            <h3 class="text-2xl font-bold text-slate-900 mt-12 mb-4">2. High-Intent Keyword Targeting
+                            </h3>
+                            <p>
+                                Research focused on "Buyer-Intent" keywords. We moved beyond generic terms, targeting
+                                specific Australian queries like <em>"refurbished iPhones Melbourne"</em> and <em>"used
+                                    Samsung S23 Australia,"</em> capturing users further down the sales funnel.
+                            </p>
+                        </div>
+                    </section>
+
+                    <!-- Image 2: GA4 Analytics -->
+                    <section class="rounded-3xl border border-slate-100 overflow-hidden shadow-2xl bg-slate-50">
+                        <div class="p-4 flex items-center justify-between border-b border-slate-200 bg-white">
+                            <div class="flex items-center space-x-3">
+                                <i data-lucide="bar-chart-3" class="w-5 h-5 text-phonebot-purple"></i>
+                                <span class="text-xs font-bold text-slate-900">User Engagement & Key Events (GA4)</span>
+                            </div>
+                            <span
+                                class="px-2 py-0.5 bg-green-100 text-green-700 text-[10px] font-black rounded uppercase">Quality
+                                Traffic Verified</span>
+                        </div>
+                        <img src="assets/images/case-studies/phonebot/ga4-home.jpg"
+                            alt="Google Analytics Performance Breakdown" class="w-full h-auto">
+                    </section>
+
+                    <section>
+                        <h2
+                            class="text-3xl font-bold text-slate-900 mb-6 font-heading border-l-4 border-phonebot-purple pl-6">
+                            The Outcome</h2>
+                        <div class="prose prose-lg prose-slate max-w-none text-slate-600 leading-relaxed">
+                            <p>
+                                The data speaks for itself. By focusing on <strong>user intent</strong> and
+                                <strong>technical excellence</strong>, the campaign delivered:
+                            </p>
+                            <ul>
+                                <li><strong>117K+ Organic Clicks</strong> within a 6-month period.</li>
+                                <li><strong>20.4 Million Impressions</strong>, established Phonebot as a dominant niche
+                                    authority.</li>
+                                <li><strong>1.2 Million User Events</strong> recorded, showing deep funnel engagement.
+                                </li>
+                                <li><strong>9,300+ Key Conversion Events</strong>, proving that SEO traffic equals
+                                    business ROI.</li>
+                            </ul>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- Right Column: Stats & Sidebars -->
+                <div class="lg:col-span-4 space-y-12">
+
+                    <!-- Quick Stats Sidebar -->
+                    <div class="bg-slate-50 p-8 rounded-[40px] border border-slate-100 sticky top-32">
+                        <h4 class="text-xl font-black text-slate-900 mb-8 font-heading">Performance Summary</h4>
+
+                        <div class="space-y-8">
+                            <div class="group">
+                                <p
+                                    class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-1 group-hover:text-phonebot-purple transition-colors">
+                                    Avg. Position</p>
+                                <div class="flex items-baseline space-x-2">
+                                    <p class="text-3xl font-black text-slate-900 font-heading">19</p>
+                                    <span class="text-slate-400 font-bold text-sm">Site-wide</span>
+                                </div>
+                                <div class="w-full h-1 bg-slate-200 rounded-full mt-3">
+                                    <div class="w-[81%] h-full bg-phonebot-purple rounded-full"></div>
+                                </div>
+                            </div>
+
+                            <div class="group">
+                                <p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">Conversion
+                                    Events</p>
+                                <div class="flex items-baseline space-x-2">
+                                    <p class="text-3xl font-black text-slate-900 font-heading">9,300</p>
+                                    <span class="text-green-500 font-bold text-sm">+30% MoM</span>
+                                </div>
+                            </div>
+
+                            <div class="group">
+                                <p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">24 Hour
+                                    Velocity</p>
+                                <div class="bg-white p-4 rounded-2xl border border-slate-100 mt-4 shadow-sm">
+                                    <img src="assets/images/case-studies/phonebot/gsc-24h.jpg"
+                                        alt="Search Console 24 Hour Data" class="w-full h-auto rounded-lg mb-4">
+                                    <div class="flex justify-between text-sm font-bold">
+                                        <span class="text-slate-500">Daily Clicks</span>
+                                        <span class="text-phonebot-purple">~717</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-12 pt-12 border-t border-slate-200">
+                            <p class="italic text-slate-400 text-sm leading-relaxed mb-6">
+                                "This project demonstrates how a well-structured SEO strategy can significantly improve
+                                the online visibility of an eCommerce business in a competitive industry."
+                            </p>
+                            <div class="flex items-center space-x-3">
+                                <div class="w-10 h-10 bg-slate-200 rounded-full"></div>
+                                <div>
+                                    <p class="text-sm font-bold text-slate-900">Ehsan Hussain</p>
+                                    <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Lead SEO
+                                        Strategist</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Client Reviews Section -->
+            <div class="mt-20 px-6">
+                <h3
+                    class="text-2xl font-black text-slate-900 mb-12 font-heading text-center italic tracking-tight underline decoration-primary-blue/30 decoration-4 underline-offset-8">
+                    What Our Clients Say</h3>
+                <div class="marquee-container overflow-hidden py-10">
+                    <div class="marquee gap-8">
+                        <!-- Review 1 -->
+                        <div
+                            class="w-[450px] bg-white border border-slate-100 p-8 rounded-[32px] shadow-xl shadow-slate-200/50 flex-shrink-0">
+                            <div class="flex text-amber-400 mb-4">
+                                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                            </div>
+                            <p class="text-slate-600 font-medium mb-6 leading-relaxed italic">"eCommerce SEO is tough,
+                                but BoostSERP made it look easy. Our revenue is up 40% year-over-year. They are absolute
+                                experts."</p>
+                            <div class="flex items-center gap-4">
+                                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop"
+                                    class="w-12 h-12 rounded-full border-2 border-primary-blue/20" alt="Charles Evans">
+                                <div>
+                                    <h4 class="text-sm font-black text-slate-900">Charles Evans</h4>
+                                    <p class="text-xs font-bold text-slate-400 uppercase tracking-widest">Founder,
+                                        GadgetHub</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Review 2 -->
+                        <div
+                            class="w-[450px] bg-white border border-slate-100 p-8 rounded-[32px] shadow-xl shadow-slate-200/50 flex-shrink-0">
+                            <div class="flex text-amber-400 mb-4">
+                                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                            </div>
+                            <p class="text-slate-600 font-medium mb-6 leading-relaxed italic">"Reliable partners. They
+                                kept us updated throughout the campaign and the results are lasting. Our organic engine
+                                is robust."</p>
+                            <div class="flex items-center gap-4">
+                                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop"
+                                    class="w-12 h-12 rounded-full border-2 border-primary-blue/20" alt="Richard Harris">
+                                <div>
+                                    <h4 class="text-sm font-black text-slate-900">Richard Harris</h4>
+                                    <p class="text-xs font-bold text-slate-400 uppercase tracking-widest">Owner,
+                                        PixelStore</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Review 3 -->
+                        <div
+                            class="w-[450px] bg-white border border-slate-100 p-8 rounded-[32px] shadow-xl shadow-slate-200/50 flex-shrink-0">
+                            <div class="flex text-amber-400 mb-4">
+                                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                            </div>
+                            <p class="text-slate-600 font-medium mb-6 leading-relaxed italic">"The attention to detail
+                                in their keyword mapping and technical SEO is impressive. Our visibility is at an
+                                all-time high."</p>
+                            <div class="flex items-center gap-4">
+                                <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=100&h=100&fit=crop"
+                                    class="w-12 h-12 rounded-full border-2 border-primary-blue/20" alt="George Lewis">
+                                <div>
+                                    <h4 class="text-sm font-black text-slate-900">George Lewis</h4>
+                                    <p class="text-xs font-bold text-slate-400 uppercase tracking-widest">Marketing
+                                        Head, TechWorld</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Duplicate for Infinite Scroll -->
+                        <div
+                            class="w-[450px] bg-white border border-slate-100 p-8 rounded-[32px] shadow-xl shadow-slate-200/50 flex-shrink-0">
+                            <div class="flex text-amber-400 mb-4">
+                                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                            </div>
+                            <p class="text-slate-600 font-medium mb-6 leading-relaxed italic">"eCommerce SEO is tough,
+                                but BoostSERP made it look easy. Our revenue is up 40% year-over-year. They are absolute
+                                experts."</p>
+                            <div class="flex items-center gap-4">
+                                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop"
+                                    class="w-12 h-12 rounded-full border-2 border-primary-blue/20" alt="Charles Evans">
+                                <div>
+                                    <h4 class="text-sm font-black text-slate-900">Charles Evans</h4>
+                                    <p class="text-xs font-bold text-slate-400 uppercase tracking-widest">Founder,
+                                        GadgetHub</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Enhanced Call to Action -->
+            <footer class="mt-32 pt-20 border-t border-slate-100">
+                <div class="relative overflow-hidden bg-slate-900 rounded-[50px] p-12 md:p-20 text-center">
+                    <div class="absolute inset-0 opacity-20"
+                        style="background-image: radial-gradient(#38bdf8 0.5px, transparent 0.5px); background-size: 24px 24px;">
+                    </div>
+                    <div class="relative z-10">
+                        <h2 class="text-4xl md:text-5xl font-black text-white mb-8 font-heading italic">Skyrocket Your
+                            eCommerce Sales</h2>
+                        <p class="text-xl text-slate-400 mb-12 max-w-3xl mx-auto leading-relaxed font-medium">
+                            Join the ranks of successful entrepreneurs dominating their markets. Our data-driven
+                            eCommerce SEO solutions deliver consistent revenue growth.
+                        </p>
+                        <div class="flex flex-col sm:flex-row items-center justify-center gap-6">
+                            <a href="contact"
+                                class="w-full sm:w-auto bg-primary-blue hover:bg-white hover:text-primary-blue text-white px-12 py-6 rounded-2xl font-black text-xl transition-all shadow-2xl shadow-primary-blue/20 transform hover:-translate-y-1 active:scale-95 flex items-center justify-center gap-3">
+                                <span>Scale Your Brand Now</span>
+                                <i data-lucide="trending-up" class="w-6 h-6"></i>
+                            </a>
+                            <p
+                                class="text-slate-500 font-bold text-sm uppercase tracking-widest flex items-center gap-2">
+                                <i data-lucide="shield-check" class="w-5 h-5"></i>
+                                Results Guaranteed
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+
+        </article>
+    </main>
+
+    <footer class="bg-slate-50 py-12 border-t border-slate-100">
+        <div class="container mx-auto px-6 text-center">
+            <div class="flex space-x-6 justify-center mb-12 text-sm font-bold text-slate-500">
+                <a href="privacy" class="hover:text-phonebot-purple transition-colors">Privacy Policy</a>
+                <a href="terms" class="hover:text-phonebot-purple transition-colors">Terms of Service</a>
+                <a href="disclaimer" class="hover:text-phonebot-purple transition-colors">Disclaimer</a>
+            </div>
+            <div class="flex space-x-6 justify-center mb-8 text-sm font-bold text-slate-500">
+                <a href="/" class="hover:text-phonebot-purple transition-colors">Home</a>
+                <a href="submission-service" class="hover:text-phonebot-purple transition-colors">Pricing</a>
+                <a href="contact" class="hover:text-phonebot-purple transition-colors">Contact</a>
+            </div>
+            <p class="text-slate-400 font-bold text-sm tracking-widest uppercase">© 2026 BoostSERP. Dominating the
+                SERPs.</p>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>
