@@ -7,6 +7,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initial render
     if (isHomePage) {
         renderDirectories(currentData.slice(0, 12));
+        if (window.featuredGuestPosts) {
+            renderFeaturedGuestPosts(window.featuredGuestPosts);
+        }
     } else {
         renderDirectories(currentData.slice(0, itemsPerPage));
     }
@@ -141,4 +144,76 @@ function updateLoadMoreVisibility(visible) {
     if (container) {
         container.classList.toggle('hidden', !visible);
     }
+}
+
+function renderFeaturedGuestPosts(data) {
+    const grid = document.getElementById('featured-guest-posts-grid');
+    if (!grid) return;
+
+    const cardsHtml = data.map(site => {
+        const domain = site.url.replace('https://', '').replace('http://', '').replace('www.', '').split('/')[0];
+        const logoUrl = `https://www.google.com/s2/favicons?sz=128&domain=${domain}`;
+        const fallbackLogo = `https://ui-avatars.com/api/?name=${encodeURIComponent(site.name)}&background=0ea5e9&color=fff&bold=true`;
+
+        // Circular Progress Math for DA and DR
+        const radius = 8.5;
+        const circumference = 2 * Math.PI * radius;
+        const drOffset = circumference - (site.dr / 100) * circumference;
+
+        return `
+        <div class="glass-hover glass p-6 rounded-2xl flex flex-col h-full group animate-fade-in shadow-sm hover:shadow-xl">
+            <div class="flex items-center justify-between mb-6">
+                <div class="w-12 h-12 bg-white rounded-xl border border-slate-100 p-2 flex items-center justify-center overflow-hidden shadow-sm">
+                    <img src="${logoUrl}" alt="${site.name}" 
+                         loading="lazy"
+                         class="w-full h-full object-contain" 
+                         onerror="this.src='${fallbackLogo}'; this.onerror=null;">
+                </div>
+                <div class="flex items-center space-x-3">
+                    <span class="px-2 py-1 rounded-md text-[9px] font-bold tracking-wider bg-primary-blue/10 text-primary-blue border border-primary-blue/20">
+                        ${site.category.toUpperCase()}
+                    </span>
+                    <div class="dr-pill" title="Domain Rating: ${site.dr}">
+                        <div class="relative w-5 h-5 flex items-center justify-center">
+                            <svg class="dr-circle-svg" width="20" height="20" viewBox="0 0 20 20">
+                                <circle class="dr-circle-bg" cx="10" cy="10" r="${radius}"></circle>
+                                <circle class="dr-circle-progress" cx="10" cy="10" r="${radius}" 
+                                        stroke-dasharray="${circumference}" 
+                                        stroke-dashoffset="${drOffset}"
+                                        style="stroke: #10b981"></circle>
+                            </svg>
+                        </div>
+                        <span class="text-[10px] font-bold">DR: ${site.dr}</span>
+                    </div>
+                </div>
+            </div>
+            <h3 class="text-lg font-extrabold mb-1 text-slate-900 group-hover:text-primary-blue transition-colors line-clamp-1 italic">${site.name}</h3>
+            <p class="text-black text-sm mb-6 flex-grow leading-relaxed line-clamp-2 italic font-medium">${site.description}</p>
+            
+            <div class="flex items-center gap-4 mb-6">
+                 <div class="flex flex-col">
+                    <p class="text-[10px] text-slate-400 font-bold uppercase tracking-widest leading-none mb-1">Price</p>
+                    <p class="font-black text-slate-900 italic tracking-tight">${site.price}</p>
+                </div>
+                <div class="flex flex-col">
+                    <p class="text-[10px] text-slate-400 font-bold uppercase tracking-widest leading-none mb-1">Traffic</p>
+                    <p class="font-black text-primary-blue italic tracking-tight">${site.traffic}</p>
+                </div>
+                 <div class="flex flex-col">
+                    <p class="text-[10px] text-slate-400 font-bold uppercase tracking-widest leading-none mb-1">TAT</p>
+                    <p class="font-black text-emerald-500 italic tracking-tight">${site.tat}</p>
+                </div>
+            </div>
+
+            <div class="pt-4 border-t border-slate-100 flex items-center justify-between mt-auto">
+                <a href="contact" class="visit-btn group/link w-full justify-center">
+                    <span>Get Link</span>
+                    <i data-lucide="zap" class="w-4 h-4 text-yellow-400 ml-2"></i>
+                </a>
+            </div>
+        </div>
+    `}).join('');
+
+    grid.innerHTML = cardsHtml;
+    if (typeof lucide !== 'undefined') lucide.createIcons();
 }
