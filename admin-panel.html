@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | BoostSERP</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-blue': '#0ea5e9',
+                        'slate-dark': '#1e293b'
+                    },
+                    fontFamily: {
+                        'sans': ['Arial', 'sans-serif'],
+                        'heading': ['"Times New Roman"', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+    </style>
+</head>
+
+<body class="bg-[#f8fafc] text-slate-900 font-sans min-h-screen">
+
+    <nav class="bg-white border-b border-slate-100 px-8 py-4 flex justify-between items-center sticky top-0 z-50">
+        <div class="flex items-center gap-4">
+            <span class="text-xl font-black font-heading italic tracking-tighter">Boost<span
+                    class="text-primary-blue">SERP</span> Admin</span>
+            <span
+                class="px-3 py-1 bg-primary-blue/10 text-primary-blue text-[10px] font-black uppercase rounded-lg tracking-widest">Simulator</span>
+        </div>
+        <div class="flex items-center gap-6">
+            <div id="stats" class="flex gap-4 text-xs font-bold text-slate-400">
+                <span>Pending: <span id="pending-count" class="text-primary-blue">0</span></span>
+                <span>Approved: <span id="approved-count" class="text-emerald-500">0</span></span>
+            </div>
+            <button onclick="logout()" class="text-slate-400 hover:text-red-500 transition-colors">
+                <i data-lucide="log-out" class="w-5 h-5"></i>
+            </button>
+        </div>
+    </nav>
+
+    <main class="p-8 max-w-7xl mx-auto">
+
+        <!-- Login Overlay (Simulated) -->
+        <div id="login-overlay"
+            class="fixed inset-0 bg-slate-900/90 backdrop-blur-xl z-[100] flex items-center justify-center p-6">
+            <div class="bg-white p-12 rounded-[40px] shadow-2xl max-w-md w-full text-center">
+                <div class="w-20 h-20 bg-primary-blue/10 rounded-3xl flex items-center justify-center mx-auto mb-8">
+                    <i data-lucide="shield-check" class="w-10 h-10 text-primary-blue"></i>
+                </div>
+                <h1 class="text-3xl font-black font-heading italic text-slate-900 mb-2">Admin Access</h1>
+                <p class="text-slate-500 mb-8 font-bold">Please enter your credentials to manage submissions.</p>
+                <div class="space-y-4">
+                    <input type="password" id="admin-pass" placeholder="Admin Password"
+                        class="w-full px-6 py-4 bg-slate-50 border border-slate-100 rounded-2xl outline-none focus:border-primary-blue focus:bg-white transition-all text-center font-bold">
+                    <button onclick="login()"
+                        class="w-full bg-slate-900 text-white py-5 rounded-2xl font-black tracking-widest uppercase hover:bg-primary-blue shadow-xl transition-all active:scale-95">Verify
+                        Identity</button>
+                </div>
+                <p class="mt-8 text-[10px] text-slate-300 uppercase tracking-widest font-black">Secure Access Simulation
+                </p>
+            </div>
+        </div>
+
+        <div class="mb-12">
+            <h2
+                class="text-4xl font-black font-heading italic text-slate-900 underline decoration-primary-blue/30 decoration-8 underline-offset-4">
+                Submission Dashboard</h2>
+            <p class="text-slate-500 mt-2 font-bold">Review and approve Guest Post & Directory listings.</p>
+        </div>
+
+        <!-- Filter Tabs -->
+        <div class="flex gap-4 mb-8">
+            <button onclick="filterType('All')"
+                class="tab-btn px-6 py-3 rounded-xl font-black text-xs uppercase tracking-widest transition-all bg-slate-900 text-white shadow-lg shadow-slate-900/10">All
+                Submissions</button>
+            <button onclick="filterType('Guest Post')"
+                class="tab-btn px-6 py-3 rounded-xl font-black text-xs uppercase tracking-widest transition-all bg-white text-slate-400 hover:text-primary-blue border border-slate-100">Guest
+                Posts</button>
+            <button onclick="filterType('Directory')"
+                class="tab-btn px-6 py-3 rounded-xl font-black text-xs uppercase tracking-widest transition-all bg-white text-slate-400 hover:text-primary-blue border border-slate-100">Directories</button>
+        </div>
+
+        <!-- Submission List -->
+        <div id="submission-list" class="grid gap-6">
+            <!-- Items injected here -->
+        </div>
+
+        <div id="no-submissions"
+            class="hidden py-32 text-center bg-white rounded-[40px] border border-slate-100 border-dashed">
+            <div
+                class="w-20 h-20 bg-slate-50 rounded-full flex items-center justify-center mx-auto mb-6 text-slate-200">
+                <i data-lucide="inbox" class="w-10 h-10"></i>
+            </div>
+            <h3 class="text-2xl font-black font-heading italic text-slate-900">Queue is Empty</h3>
+            <p class="text-slate-400 mt-2 font-bold">No new submissions found in the database.</p>
+        </div>
+
+    </main>
+
+    <script>
+        let submissions = [];
+        let currentFilter = 'All';
+
+        function login() {
+            const pass = document.getElementById('admin-pass').value;
+            if (pass === 'admin123') { // Simple simulation password
+                document.getElementById('login-overlay').classList.add('hidden');
+                init();
+            } else {
+                alert('Invalid Password');
+            }
+        }
+
+        function logout() {
+            window.location.reload();
+        }
+
+        function init() {
+            submissions = JSON.parse(localStorage.getItem('boostserp_submissions') || '[]');
+            renderSubmissions();
+            updateStats();
+        }
+
+        function updateStats() {
+            const pending = submissions.filter(s => s.status === 'pending').length;
+            const approved = submissions.filter(s => s.status === 'approved').length;
+            document.getElementById('pending-count').innerText = pending;
+            document.getElementById('approved-count').innerText = approved;
+        }
+
+        function filterType(type) {
+            currentFilter = type;
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('bg-slate-900', 'text-white', 'shadow-lg');
+                btn.classList.add('bg-white', 'text-slate-400');
+            });
+            event.currentTarget.classList.remove('bg-white', 'text-slate-400');
+            event.currentTarget.classList.add('bg-slate-900', 'text-white', 'shadow-lg');
+            renderSubmissions();
+        }
+
+        function approve(id) {
+            const item = submissions.find(s => s.id === id);
+            if (item) {
+                // Duplicate prevention check (simulated)
+                const alreadyExists = submissions.some(s => s.url === item.url && s.status === 'approved' && s.id !== id);
+                if (alreadyExists) {
+                    alert('CRITICAL: This URL is already live in our marketplace/directory! Duplicate prevention blocked this approval.');
+                    return;
+                }
+
+                item.status = 'approved';
+                localStorage.setItem('boostserp_submissions', JSON.stringify(submissions));
+                renderSubmissions();
+                updateStats();
+                alert(`SUCCESS: ${item.name} has been approved and moved to live data.`);
+            }
+        }
+
+        function reject(id) {
+            submissions = submissions.filter(s => s.id !== id);
+            localStorage.setItem('boostserp_submissions', JSON.stringify(submissions));
+            renderSubmissions();
+            updateStats();
+        }
+
+        function renderSubmissions() {
+            const list = document.getElementById('submission-list');
+            const empty = document.getElementById('no-submissions');
+
+            const filtered = submissions.filter(s => {
+                const matchesTab = currentFilter === 'All' || s.type === currentFilter;
+                return matchesTab && s.status === 'pending';
+            });
+
+            list.innerHTML = '';
+
+            if (filtered.length === 0) {
+                empty.classList.remove('hidden');
+                return;
+            }
+            empty.classList.add('hidden');
+
+            filtered.forEach(s => {
+                const div = document.createElement('div');
+                div.className = "bg-white p-8 rounded-[32px] border border-slate-100 flex flex-col md:flex-row justify-between items-center gap-8 shadow-sm hover:shadow-xl transition-all group";
+                div.innerHTML = `
+                    <div class="flex items-center gap-6 flex-1">
+                        <div class="w-16 h-16 bg-slate-50 rounded-2xl flex items-center justify-center text-primary-blue group-hover:bg-primary-blue group-hover:text-white transition-all">
+                            <i data-lucide="${s.type === 'Guest Post' ? 'file-text' : 'folder'}" class="w-8 h-8"></i>
+                        </div>
+                        <div>
+                            <div class="flex items-center gap-3 mb-1">
+                                <h4 class="text-xl font-black font-heading italic text-slate-900">${s.name}</h4>
+                                <span class="px-2 py-0.5 bg-slate-100 text-[8px] font-black uppercase text-slate-400 rounded tracking-tighter">${s.type}</span>
+                            </div>
+                            <a href="${s.url}" target="_blank" class="text-primary-blue text-xs font-bold hover:underline mb-2 block">${s.url}</a>
+                            <p class="text-slate-400 text-xs italic line-clamp-1 max-w-md">${s.description}</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <button onclick="approve(${s.id})" class="bg-emerald-500 text-white px-8 py-3 rounded-xl font-black text-xs uppercase tracking-widest hover:bg-emerald-600 shadow-lg shadow-emerald-500/20 transition-all active:scale-95">Approve</button>
+                        <button onclick="reject(${s.id})" class="bg-white border border-slate-100 text-slate-400 px-8 py-3 rounded-xl font-black text-xs uppercase tracking-widest hover:border-red-500 hover:text-red-500 transition-all active:scale-95">Reject</button>
+                    </div>
+                `;
+                list.appendChild(div);
+            });
+            lucide.createIcons();
+        }
+
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>

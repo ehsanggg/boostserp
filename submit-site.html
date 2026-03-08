@@ -22,7 +22,7 @@
                         'primary-blue': '#0ea5e9',
                         'slate-dark': '#1e293b'
                     },
-                    fontFamily: { 'sans': ['"Times New Roman"', 'serif'], 'heading': ['"Times New Roman"', 'serif'] }
+                    fontFamily: { 'sans': ['Arial', 'sans-serif'], 'heading': ['"Times New Roman"', 'serif'] }
                 }
             }
         }
@@ -88,72 +88,115 @@
         <div class="container mx-auto px-6">
             <div class="max-w-4xl mx-auto">
                 <div class="text-center mb-16 animate-fade-in">
-                    <h1 class="text-6xl font-extrabold font-heading mb-6 text-slate-900">Submit Your Directory</h1>
-                    <p class="text-xl text-slate-500">Put your platform in front of thousands of startup founders and
-                        marketers.</p>
-                </div>
-
-                <!-- Pricing Plans (Multi-tier) -->
-                <!-- Unified Promo -->
-                <div class="text-center bg-white p-12 rounded-[40px] border border-slate-100 shadow-xl mb-16">
-                    <h3 class="text-3xl font-black font-heading text-slate-900 mb-6">Want to be featured?</h3>
-                    <p class="text-slate-500 mb-8 font-medium">Check our unified submission packages to start growing
-                        your authority today.</p>
-                    <a href="submission-service"
-                        class="inline-block bg-primary-blue text-white px-10 py-4 rounded-2xl font-bold hover:bg-slate-900 transition-all shadow-xl shadow-primary-blue/20">Go
-                        to Service Page</a>
+                    <h1 class="text-6xl font-extrabold font-heading mb-6 text-slate-900 italic">Submit Your Authority
+                        Site</h1>
+                    <p class="text-xl text-slate-500 font-sans">Put your platform in front of thousands of startup
+                        founders, marketers, and SEO experts.</p>
                 </div>
 
                 <!-- Submission Form -->
                 <div class="bg-white p-10 md:p-16 rounded-[40px] border border-slate-100 shadow-2xl animate-fade-in">
-                    <h2 class="text-3xl font-extrabold font-heading mb-8 text-slate-900">Directory Details</h2>
+                    <h2
+                        class="text-3xl font-extrabold font-heading mb-8 text-slate-900 italic underline decoration-primary-blue/30 decoration-4 underline-offset-8">
+                        Listing Details</h2>
                     <form id="submission-form" class="space-y-6">
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div class="space-y-2">
-                                <label class="text-sm font-bold text-slate-600">Directory Name</label>
-                                <input type="text" placeholder="e.g. StartupHunt"
-                                    class="w-full bg-slate-50 border border-slate-100 rounded-xl px-6 py-4 focus:border-primary-blue focus:bg-white outline-none transition-all placeholder:text-slate-300">
+                                <label
+                                    class="text-sm font-black text-slate-600 uppercase tracking-widest font-sans">Submission
+                                    Type</label>
+                                <div class="flex gap-4">
+                                    <label class="flex-1 cursor-pointer">
+                                        <input type="radio" name="submission_type" value="Guest Post"
+                                            class="hidden peer" checked>
+                                        <div
+                                            class="p-4 border border-slate-100 rounded-xl text-center font-black font-sans text-slate-400 peer-checked:border-primary-blue peer-checked:bg-primary-blue/5 peer-checked:text-primary-blue transition-all">
+                                            Guest Post</div>
+                                    </label>
+                                    <label class="flex-1 cursor-pointer">
+                                        <input type="radio" name="submission_type" value="Directory"
+                                            class="hidden peer">
+                                        <div
+                                            class="p-4 border border-slate-100 rounded-xl text-center font-black font-sans text-slate-400 peer-checked:border-primary-blue peer-checked:bg-primary-blue/5 peer-checked:text-primary-blue transition-all">
+                                            Directory</div>
+                                    </label>
+                                </div>
                             </div>
                             <div class="space-y-2">
-                                <label class="text-sm font-bold text-slate-600">Website URL</label>
-                                <input type="url" placeholder="https://yourdirectory.com"
-                                    class="w-full bg-slate-50 border border-slate-100 rounded-xl px-6 py-4 focus:border-primary-blue focus:bg-white outline-none transition-all placeholder:text-slate-300">
+                                <label
+                                    class="text-sm font-black text-slate-600 uppercase tracking-widest font-sans">Website
+                                    Name</label>
+                                <input type="text" id="site_name" required placeholder="e.g. StartupHunt"
+                                    class="w-full bg-slate-50 border border-slate-100 rounded-xl px-6 py-4 focus:border-primary-blue focus:bg-white outline-none transition-all placeholder:text-slate-300 font-sans">
                             </div>
-                        </div>
-                        <div class="space-y-2">
-                            <label class="text-sm font-bold text-slate-600">Brief Description</label>
-                            <textarea rows="4" placeholder="Tell us what makes your directory unique..."
-                                class="w-full bg-slate-50 border border-slate-100 rounded-xl px-6 py-4 focus:border-primary-blue focus:bg-white outline-none transition-all placeholder:text-slate-300"></textarea>
                         </div>
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div class="space-y-2">
-                                <label class="text-sm font-bold text-slate-600">Link Type</label>
-                                <select
-                                    class="w-full bg-slate-50 border border-slate-100 rounded-xl px-6 py-4 focus:border-primary-blue focus:bg-white outline-none transition-all appearance-none text-slate-600">
-                                    <option>Dofollow</option>
-                                    <option>Nofollow</option>
-                                    <option>Mixed</option>
-                                </select>
+                                <label
+                                    class="text-sm font-black text-slate-600 uppercase tracking-widest font-sans">Website
+                                    URL</label>
+                                <input type="url" id="site_url" required placeholder="https://yourwebsite.com"
+                                    class="w-full bg-slate-50 border border-slate-100 rounded-xl px-6 py-4 focus:border-primary-blue focus:bg-white outline-none transition-all placeholder:text-slate-300 font-sans">
                             </div>
                             <div class="space-y-2">
-                                <label class="text-sm font-bold text-slate-600">Category</label>
-                                <select
-                                    class="w-full bg-slate-50 border border-slate-100 rounded-xl px-6 py-4 focus:border-primary-blue focus:bg-white outline-none transition-all appearance-none text-slate-600">
-                                    <option>SaaS</option>
+                                <label
+                                    class="text-sm font-black text-slate-600 uppercase tracking-widest font-sans">Category</label>
+                                <select id="site_category" required
+                                    class="w-full bg-slate-50 border border-slate-100 rounded-xl px-6 py-4 focus:border-primary-blue focus:bg-white outline-none transition-all appearance-none text-slate-600 font-sans font-bold">
+                                    <option>Tech & SaaS</option>
                                     <option>Marketing</option>
+                                    <option>Finance</option>
+                                    <option>Health</option>
                                     <option>AI Tools</option>
-                                    <option>Developer Tools</option>
+                                    <option>General News</option>
                                 </select>
                             </div>
                         </div>
+                        <div class="space-y-2">
+                            <label class="text-sm font-black text-slate-600 uppercase tracking-widest font-sans">Brief
+                                Description</label>
+                            <textarea id="site_description" rows="4" required
+                                placeholder="Tell us what makes your platform unique..."
+                                class="w-full bg-slate-50 border border-slate-100 rounded-xl px-6 py-4 focus:border-primary-blue focus:bg-white outline-none transition-all placeholder:text-slate-300 font-sans"></textarea>
+                        </div>
+
                         <div class="pt-6">
                             <button type="submit"
-                                class="w-full md:w-auto bg-slate-900 text-white px-12 py-5 rounded-2xl font-black text-lg transition-all hover:bg-slate-800 shadow-xl shadow-slate-900/10">
+                                class="w-full md:w-auto bg-slate-900 text-white px-12 py-5 rounded-2xl font-black text-lg transition-all hover:bg-slate-800 shadow-xl shadow-slate-900/10 font-sans tracking-widest uppercase">
                                 Submit for Review
                             </button>
                         </div>
                     </form>
+                    <div id="success-message"
+                        class="hidden mt-8 p-6 bg-emerald-50 text-emerald-700 rounded-2xl border border-emerald-100 text-center font-black font-sans italic animate-fade-in">
+                        Submission Received! Our team will review your site for approval.
+                    </div>
                 </div>
+
+                <script>
+                    document.getElementById('submission-form').addEventListener('submit', function (e) {
+                        e.preventDefault();
+
+                        const formData = {
+                            id: Date.now(),
+                            type: document.querySelector('input[name="submission_type"]:checked').value,
+                            name: document.getElementById('site_name').value,
+                            url: document.getElementById('site_url').value,
+                            category: document.getElementById('site_category').value,
+                            description: document.getElementById('site_description').value,
+                            status: 'pending',
+                            timestamp: new Date().toISOString()
+                        };
+
+                        // Add to localStorage for Admin Panel
+                        const submissions = JSON.parse(localStorage.getItem('boostserp_submissions') || '[]');
+                        submissions.push(formData);
+                        localStorage.setItem('boostserp_submissions', JSON.stringify(submissions));
+
+                        this.classList.add('hidden');
+                        document.getElementById('success-message').classList.remove('hidden');
+                    });
+                </script>
             </div>
         </div>
     </main>
