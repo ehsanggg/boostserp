@@ -1,70 +1,54 @@
 const websites = [
-    { url: "https://www.msn.com/", name: "MSN News", category: "General", da: 95, dr: 93, traffic: "35M", description: "Global news and entertainment portal with massive reach, delivering high-impact backlinks from one of the internet's most trusted domains." },
-    { url: "http://dailytrust.com/", name: "Daily Trust", category: "General", da: 80, dr: 75, traffic: "1M", description: "Leading West African news platform with high domain authority, covering international politics, local business, and deep cultural insights." },
-    { url: "http://inkl.com/", name: "Inkl", category: "General", da: 47, dr: 49, traffic: "350k", description: "Premium curated news service focusing on high-quality journalism, offering a unique opportunity for high-authority guest placement." },
-    { url: "https://www.re-thinkingthefuture.com/", name: "RTF Architecture", category: "Home Architect", da: 58, dr: 52, traffic: "330k", description: "International architecture and design excellence platform, showcasing award-winning urban projects and emerging trends in global design." },
-    { url: "https://www.ilounge.com/", name: "iLounge", category: "General", da: 82, dr: 76, traffic: "120k", description: "The world's leading independent guide to iPod, iPhone, and iPad digital media, serving a tech-savvy audience since 2001." },
-    { url: "https://spacecoastdaily.com/", name: "Space Coast Daily", category: "General", da: 75, dr: 74, traffic: "101k", description: "High-traffic regional news outlet from the Florida Space Coast, perfect for business, space, and technology-related guest posting." },
-    { url: "https://theenterpriseworld.com/", name: "Enterprise World", category: "General", da: 44, dr: 49, traffic: "115k", description: "Global business magazine highlighting the success stories of entrepreneurs and the latest innovations in corporate strategy and tech." },
-    { url: "https://signalscv.com/", name: "The Signal", category: "General", da: 77, dr: 76, traffic: "80k", description: "The primary source for community news in the Santa Clarita Valley, providing local authority and high-relevance geographic backlinks." },
-    { url: "http://ranktracker.com/", name: "Ranktracker", category: "Tech & Marketing", da: 39, dr: 72, traffic: "47k", description: "Internationally recognized SEO tool and digital marketing insights platform, trusted by professionals for industry-leading data and guides." },
-    { url: "http://technology.org/", name: "Technology Org", category: "Tech", da: 61, dr: 72, traffic: "113k", description: "Global science and technology news hub, featuring daily articles on the latest breakthroughs in research, engineering, and digital innovation." },
-    { url: "https://analyticsinsight.net/", name: "Analytics Insight", category: "Tech", da: 70, dr: 81, traffic: "400k", description: "The first platform in India to focus on AI, Big Data, and Robotics, reaching thought leaders and tech innovators worldwide." },
-    { url: "http://bmmagazine.co.uk/", name: "Business Matters", category: "General", da: 62, dr: 77, traffic: "32k", description: "The UK's largest monthly magazine for entrepreneurs and small-to-medium-sized businesses, delivering expert corporate advice." },
-    { url: "https://robinwaite.com/", name: "Robin Waite", category: "Tech", da: 37, dr: 54, traffic: "17k", description: "Strategic business coaching platform and digital insight center, offering high-authority placements for leadership and productivity content." },
-    { url: "https://www.thehansindia.com/", name: "The Hans India", category: "General", da: 73, dr: 78, traffic: "40k", description: "One of the fastest-growing English language newspapers in India, covering national news, business, and entertainment for a global audience." },
-    { url: "https://goodmenproject.com/", name: "Good Men Project", category: "Family", da: 81, dr: 80, traffic: "15k", description: "The only international platform starting conversations about the changing roles of men, reaching millions of visitors interested in family and society." },
-    { url: "https://holycitysinner.com/", name: "Holy City Sinner", category: "General", da: 47, dr: 58, traffic: "13k", description: "The largest independent daily news source in Charleston, perfect for local authority and niche-relevant lifestyle or business content." },
-    { url: "https://www.bbntimes.com/", name: "BBN Times", category: "General", da: 72, dr: 71, traffic: "104k", description: "Global media company featuring expert articles by CEOs and industry veterans on AI, economics, and future technology trends." },
-    { url: "https://ukjournal.co.uk/", name: "UK Journal", category: "General", da: 57, dr: 33, traffic: "15k", description: "A premier UK-based publication for breaking news, trending features, and high-impact opinion pieces on politics and culture." },
-    { url: "https://ecommercefastlane.com/", name: "eCommerce Fastlane", category: "Business & Finance", da: 40, dr: 45, traffic: "45k", description: "Top-rated resource and hub for Shopify entrepreneurs, providing actionable insights for scaling digital stores and online brands." },
-    { url: "https://www.e-architect.com/", name: "e-architect", category: "Home Improvement", da: 80, dr: 75, traffic: "9k", description: "One of the world's most comprehensive architecture websites, featuring award-winning designs and professional architectural resources." },
-    { url: "https://www.abcmoney.co.uk/", name: "ABC Money", category: "General", da: 71, dr: 61, traffic: "50k", description: "A leading UK financial news outlet and investment hub, offering deep insights into the stock market, banking, and global economics." },
-    { url: "https://www.cryptotimes.io/", name: "The Crypto Times", category: "Crypto", da: 50, dr: 51, traffic: "92k", description: "Real-time news platform for the blockchain and cryptocurrency industry, trusted by investors for technical analysis and trend reports." },
-    { url: "https://1883magazine.com/", name: "1883 Magazine", category: "Fashion", da: 55, dr: 63, traffic: "62k", description: "Cutting-edge fashion, music, and arts publication based in London, showcasing creative talent and high-end lifestyle trends." },
-    { url: "https://azbigmedia.com/", name: "AZ Big Media", category: "General", da: 68, dr: 65, traffic: "60k", description: "Arizona's largest business news and lifestyle network, providing critical authority for local business and real estate sectors." },
-    { url: "http://kahawatungu.com/", name: "KahawaTungu", category: "General", da: 52, dr: 54, traffic: "22k", description: "Renowned investigative news platform based in Kenya, covering politics and social justice issues with high editorial standards." },
-    { url: "https://insightssuccess.com/", name: "Insights Success", category: "General", da: 48, dr: 50, traffic: "50k", description: "The best business magazine for technology leaders, featuring the latest trends in cloud, enterprise, and digital transformation." },
-    { url: "https://www.mirrorreview.com/", name: "Mirror Review", category: "General", da: 67, dr: 63, traffic: "51k", description: "Global platform dedicated to highlighting technology leaders and their innovative solutions in the modern corporate landscape." },
-    { url: "http://urbanmatter.com/", name: "UrbanMatter", category: "General", da: 53, dr: 75, traffic: "16k", description: "Hyper-local city guide and lifestyle publication focusing on the heart of Chicago and other major metros, great for local SEO." },
-    { url: "http://todaynews.co.uk/", name: "Today News UK", category: "General", da: 44, dr: 47, traffic: "17k", description: "A trusted source for daily news across the United Kingdom, covering a wide range of topics from technology to business and travel." },
-    { url: "http://otsnews.co.uk/", name: "OTS News", category: "General", da: 42, dr: 46, traffic: "38k", description: "Leading local media platform for the Southport region, providing high-value local backlinks for businesses targeting the UK market." },
-    { url: "http://fashionweekonline.com/", name: "Fashion Week Online", category: "Fashion", da: 71, dr: 71, traffic: "47k", description: "The ultimate global resource for the international fashion circuit, covering major runways from New York to Paris and Milan." },
-    { url: "https://iemlabs.com/", name: "IEM Labs", category: "General", da: 60, dr: 83, traffic: "21k", description: "Expert cybersecurity training and digital security services hub, offering high-authority links in the technical and IT defense niche." },
-    { url: "https://betterthisworld.com/", name: "Better This World", category: "General", da: 45, dr: 55, traffic: "16k", description: "Sustainability and social impact journalism platform, dedicated to stories of environmental progress and ethical corporate responsibility." },
-    { url: "https://www.venisonmagazine.com/", name: "Venison Magazine", category: "General", da: 25, dr: 44, traffic: "30k", description: "Contemporary art journal and visual showcase, perfect for high-authority links in the creative, design, and fine arts sectors." },
-    { url: "http://hollywoodprogressive.com/", name: "Hollywood Progressive", category: "Food & Entertainment", da: 37, dr: 33, traffic: "20k", description: "A provocative intersection of politics and entertainment, providing social commentary on global issues and media culture." },
-    { url: "http://laprogressive.com/", name: "LA Progressive", category: "Law", da: 48, dr: 45, traffic: "10k", description: "Social justice and law-focused commentary based in Los Angeles, covering civil rights and constitutional issues with high authority." },
-    { url: "https://www.readability.com/", name: "Readability", category: "General", da: 66, dr: 62, traffic: "8k", description: "The premier tool for content consumption and better online reading habits, with a long-standing reputation for high domain authority." },
-    { url: "https://wheon.com/", name: "Wheon", category: "General", da: 63, dr: 55, traffic: "27k", description: "A versatile insights platform covering health, lifestyle, and modern technology trends for a curious and engaged global audience." },
-    // New Technology Websites
-    { url: "https://plainenglish.io/", name: "Plain English", category: "Technology", da: 54, dr: 76, traffic: "60k", description: "Premier platform for software development, coding tutorials, and JavaScript deep dives for a global developer audience." },
-    { url: "http://portotheme.com/", name: "Porto Theme", category: "Technology", da: 70, dr: 90, traffic: "9k", description: "Elite WordPress and eCommerce theme development hub with massive authority in digital design and web aesthetics." },
-    { url: "https://hackread.com/", name: "HackRead", category: "Technology", da: 77, dr: 77, traffic: "13k", description: "Globally recognized cybersecurity news platform covering data breaches, infosec, and digital privacy trends." },
-    { url: "https://aijourn.com/", name: "AI Journ", category: "Technology", da: 42, dr: 69, traffic: "3.5k", description: "Leading source for Artificial Intelligence daily news, research, and emerging machine learning tech trends." },
-    { url: "http://idevicecentral.com/", name: "iDeviceCentral", category: "Technology", da: 57, dr: 37, traffic: "4.2k", description: "Dedicated hub for iOS, iPhone, and Apple-centric technical guides, providing authoritative mobile ecosystem news." },
-    { url: "https://bestforandroid.com/", name: "BestForAndroid", category: "Technology", da: 48, dr: 62, traffic: "750k", description: "Massive Android resource for app reviews, technical tutorials, and mobile hardware news for power users." },
-    { url: "http://androidheadlines.com/", name: "Android Headlines", category: "Technology", da: 85, dr: 78, traffic: "65k", description: "Top-tier Android news outlet covering global mobile technology, gadgets, and smart home innovations." },
-    { url: "http://Autogpt.net/", name: "AutoGPT", category: "Technology", da: 60, dr: 66, traffic: "80k", description: "Cutting-edge portal for AI automation, LLM developments, and the future of autonomous digital agents." },
-    { url: "https://addicted2success.com/", name: "Addicted2Success", category: "Technology", da: 61, dr: 73, traffic: "9k", description: "High-authority platform for digital entrepreneurship, tech-driven success, and modern leadership insights." },
-    { url: "http://iprovpn.com/", name: "iProVPN", category: "Technology", da: 37, dr: 63, traffic: "370k", description: "Cybersecurity and VPN technical hub providing privacy solutions and authoritative digital security insights." },
-    { url: "https://www.talkandroid.com/", name: "TalkAndroid", category: "Technology", da: 75, dr: 69, traffic: "33k", description: "One of the longest-standing Android communities covering mobile tech, tablet news, and ecosystem updates." },
-    { url: "https://computingforgeeks.com/", name: "ComputingForGeeks", category: "Technology", da: 50, dr: 73, traffic: "3.5k", description: "Comprehensive technical resource for Linux, cloud computing, and advanced DevOps infrastructure tutorials." },
-    { url: "https://phandroid.com/", name: "Phandroid", category: "Technology", da: 82, dr: 74, traffic: "7k", description: "The world's first Android news site, delivering authoritative mobile tech reviews and industry-breaking news." },
-    { url: "https://www.redmondpie.com/", name: "Redmond Pie", category: "Technology", da: 77, dr: 73, traffic: "40k", description: "A major tech news portal focusing on Microsoft, Apple, and bleeding-edge digital gadgets and software." },
-    { url: "https://www.spacedaily.com/", name: "Space Daily", category: "Technology", da: 68, dr: 73, traffic: "60k", description: "Premier source for space exploration, aerospace technology, and satellite industry news and technical reports." },
-    { url: "http://tabletmonkeys.com/", name: "TabletMonkeys", category: "Technology", da: 55, dr: 49, traffic: "8.5k", description: "Leading specialist portal for tablet hardware reviews, mobile computing gadgets, and portable tech news." },
-    { url: "http://www.criticalhit.net/", name: "Critical Hit", category: "Technology", da: 79, dr: 65, traffic: "30k", description: "Entertainment and technology hub covering gaming hardware, digital media, and pop culture tech trends." },
-    { url: "https://hacker9.com/", name: "Hacker9", category: "Technology", da: 67, dr: 74, traffic: "350k", description: "Technical resource for ethical hacking, digital security, and internet software tutorials for a global audience." },
-    { url: "http://applemagazine.com/", name: "Apple Magazine", category: "Technology", da: 49, dr: 62, traffic: "30k", description: "Premium digital publication covering the Apple ecosystem, design, and high-end global tech lifestyle." },
-    { url: "http://feedbuzzard.com/", name: "Feed Buzzard", category: "Technology", da: 56, dr: 66, traffic: "14k", description: "Viral tech and lifestyle platform delivering trending news and digital culture insights for the modern web." },
-    { url: "http://viraltimesmagazine.com/", name: "Viral Times Magazine", category: "Technology", da: 66, dr: 54, traffic: "7k", description: "Digital magazine focusing on emerging tech trends, social media, and digital internet culture shifts." },
-    { url: "http://tribuneonlineng.com/", name: "Tribune Online", category: "Technology", da: 75, dr: 75, traffic: "585k", description: "High-traffic authoritative news platform with a dedicated focus on global digital business and tech shifts." },
-    { url: "http://disquantified.org/", name: "Disquantified", category: "Technology", da: 50, dr: 64, traffic: "13.5k", description: "Independent platform exploring the intersection of data science, tech, and digital society's future." },
-    { url: "https://turdwords.com/", name: "Turd Words", category: "Technology", da: 19, dr: 18, traffic: "5.5k", description: "Niche technical blog focusing on software development, coding culture, and internet subculture insights." },
-    { url: "https://www.geniusfirms.com/", name: "Genius Firms", category: "Technology", da: 36, dr: 60, traffic: "11k", description: "Directory and review platform for top-tier digital agencies and tech service providers worldwide." },
-    { url: "https://www.speakrj.com/", name: "SpeakRJ", category: "Technology", da: 39, dr: 42, traffic: "30k", description: "Innovative social media analytics and digital marketing strategy platform for tech-driven brands." },
-    { url: "http://qrius.com/", name: "Qrius", category: "Technology", da: 54, dr: 68, traffic: "61k", description: "Authoritative platform for global news, explaining tech and economy for a curious and elite audience." }
+    { url: "https://www.msn.com/", name: "MSN News", category: "General", price: "$240", tat: "5 Days", da: "95", dr: "93", traffic: "35M", type: "Guest post", links: "Dofollow", description: "Global news and entertainment portal with massive reach, delivering high-impact backlinks from one of the internet's most trusted domains." },
+    { url: "http://dailytrust.com/", name: "Daily Trust", category: "General", price: "$320", tat: "6 Days", da: "80", dr: "75", traffic: "1M", type: "Guest post", links: "DOFOLLOW", description: "Leading West African news platform with high domain authority, covering international politics, local business, and deep cultural insights." },
+    { url: "http://inkl.com/", name: "Inkl", category: "General", price: "$240", tat: "7 Days", da: "47", dr: "49", traffic: "350k", type: "Guest post", links: "DOFOLLOW", description: "Premium curated news service focusing on high-quality journalism, offering a unique opportunity for high-authority guest placement." },
+    { url: "https://www.re-thinkingthefuture.com/", name: "RTF Architecture", category: "Home Architect", price: "$320", tat: "8 Days", da: "58", dr: "52", traffic: "330k", type: "Guest post", links: "Dofollow", description: "International architecture and design excellence platform, showcasing award-winning urban projects and emerging trends in global design." },
+    { url: "https://www.ilounge.com/", name: "iLounge", category: "General", price: "$400", tat: "9 Days", da: "82", dr: "76", traffic: "120k", type: "Guest post", links: "DOFOLLOW", description: "The world's leading independent guide to iPod, iPhone, and iPad digital media, serving a tech-savvy audience since 2001." },
+    { url: "https://spacecoastdaily.com/", name: "Space Coast Daily", category: "General", price: "$120", tat: "10 Days", da: "75", dr: "74", traffic: "101k", type: "Guest post", links: "Dofollow", description: "High-traffic regional news outlet from the Florida Space Coast, perfect for business, space, and technology-related guest posting." },
+    { url: "https://theenterpriseworld.com/", name: "Enterprise World", category: "General", price: "$260", tat: "4 Days", da: "44", dr: "49", traffic: "115k", type: "Guest post", links: "DOFOLLOW", description: "Global business magazine highlighting the success stories of entrepreneurs and the latest innovations in corporate strategy and tech." },
+    { url: "https://signalscv.com/", name: "The Signal", category: "General", price: "$380", tat: "5 Days", da: "77", dr: "76", traffic: "80k", type: "Guest post", links: "Dofollow", description: "The primary source for community news in the Santa Clarita Valley, providing local authority and high-relevance geographic backlinks." },
+    { url: "http://ranktracker.com/", name: "Ranktracker", category: "Tech & Marketing", price: "$300", tat: "6 Days", da: "39", dr: "72", traffic: "47k", type: "Guest post", links: "DOFOLLOW", description: "Internationally recognized SEO tool and digital marketing insights platform, trusted by professionals for industry-leading data and guides." },
+    { url: "http://technology.org/", name: "Technology", price: "$400", tat: "7 Days", da: "61", dr: "72", traffic: "113k", type: "Guest post", links: "Dofollow", description: "Global science and technology news hub, featuring daily articles on the latest breakthroughs in research, engineering, and digital innovation." },
+    { url: "https://analyticsinsight.net/", name: "Analytics Insight", category: "Tech", price: "$300", tat: "8 Days", da: "70", dr: "81", traffic: "400k", type: "Guest post", links: "DOFOLLOW", description: "The first platform in India to focus on AI, Big Data, and Robotics, reaching thought leaders and tech innovators worldwide." },
+    { url: "http://bmmagazine.co.uk/", name: "Business Matters", category: "General", price: "$240", tat: "9 Days", da: "62", dr: "77", traffic: "32k", type: "Guest post", links: "Dofollow", description: "The UK's largest monthly magazine for entrepreneurs and small-to-medium-sized businesses, delivering expert corporate advice." },
+    { url: "https://robinwaite.com/", name: "Robin Waite", category: "Tech", price: "$240", tat: "10 Days", da: "37", dr: "54", traffic: "17k", type: "Link insertion", links: "DOFOLLOW", description: "Strategic business coaching platform and digital insight center, offering high-authority placements for leadership and productivity content." },
+    { url: "https://www.thehansindia.com/", name: "The Hans India", category: "General", price: "$400", tat: "11 Days", da: "73", dr: "78", traffic: "40k", type: "Guest post", links: "Dofollow", description: "One of the fastest-growing English language newspapers in India, covering national news, business, and entertainment for a global audience." },
+    { url: "https://goodmenproject.com/", name: "Good Men Project", category: "Family", price: "$300", tat: "12 Days", da: "81", dr: "80", traffic: "15k", type: "Guest post", links: "Dofollow", description: "The only international platform starting conversations about the changing roles of men, reaching millions of visitors interested in family and society." },
+    { url: "https://holycitysinner.com/", name: "Holy City Sinner", category: "General", price: "$240", tat: "13 Days", da: "47", dr: "58", traffic: "13k", type: "Guest post", links: "DOFOLLOW", description: "The largest independent daily news source in Charleston, perfect for local authority and niche-relevant lifestyle or business content." },
+    { url: "https://www.bbntimes.com/", name: "BBN Times", category: "General", price: "$600", tat: "14 Days", da: "72", dr: "71", traffic: "104k", type: "Guest post", links: "Dofollow", description: "Global media company featuring expert articles by CEOs and industry veterans on AI, economics, and future technology trends." },
+    { url: "https://ukjournal.co.uk/", name: "UK Journal", category: "General", price: "$240", tat: "15 Days", da: "57", dr: "33", traffic: "15k", type: "Guest post", links: "DOFOLLOW", description: "A premier UK-based publication for breaking news, trending features, and high-impact opinion pieces on politics and culture." },
+    { url: "https://ecommercefastlane.com/", name: "Ecommerce", category: "Business and Finance", price: "$400", tat: "16 Days", da: "40", dr: "45", traffic: "45k", type: "Guest post", links: "Dofollow", description: "Leading source for Shopify entrepreneurs, scalers, and digital marketers seeking to optimize their online presence." },
+    { url: "https://www.e-architect.com/", name: "e-architect", category: "Home Improvement", price: "$400", tat: "17 Days", da: "80", dr: "75", traffic: "9k", type: "Guest post", links: "Dofollow", description: "One of the leading architecture resources globally, featuring world-class designs and architectural projects." },
+    { url: "https://www.abcmoney.co.uk/", name: "ABC Money", category: "General", price: "$300", tat: "18 Days", da: "71", dr: "61", traffic: "50k", type: "Guest Post", links: "DOFOLLOW", description: "Reliable UK financial news portal providing critical business and investing news to professional audiences." },
+    { url: "https://www.cryptotimes.io/", name: "Crypto Times", category: "Crypto", price: "$500", tat: "19 Days", da: "50", dr: "51", traffic: "92k", type: "Guest Post", links: "Dofollow", description: "Leading cryptocurrency and blockchain news source, delivering real-time updates and expert market analysis." },
+    { url: "https://1883magazine.com/", name: "1883 Magazine", category: "Fashion", price: "$200", tat: "20 Days", da: "55", dr: "63", traffic: "62k", type: "Guest post", links: "DOFOLLOW", description: "High-end fashion, music, and art magazine based in London, known for its creative excellence." },
+    { url: "https://azbigmedia.com/", name: "AZ Big Media", category: "General", price: "$300", tat: "5 Days", da: "68", dr: "65", traffic: "60k", type: "Guest Post", links: "Dofollow", description: "Arizona's largest and most trusted news network for business, real estate, and lifestyle trends." },
+    { url: "http://kahawatungu.com/", name: "KahawaTungu", category: "General", price: "$240", tat: "6 Days", da: "52", dr: "54", traffic: "22k", type: "Guest post", links: "DOFOLLOW", description: "Popular investigative news and social commentary platform delivering high engagement for East African audiences." },
+    { url: "https://insightssuccess.com/", name: "Insights Success", category: "General", price: "$160", tat: "7 Days", da: "48", dr: "50", traffic: "50k", type: "Guest Post", links: "Dofollow", description: "Global business magazine highlighting the success of companies and tech innovators across various industries." },
+    { url: "https://www.mirrorreview.com/", name: "Mirror Review", category: "General", price: "$180", tat: "8 Days", da: "67", dr: "63", traffic: "51K", type: "Guest Post", links: "DOFOLLOW", description: "Technology magazine focused on showcasing modern business leaders and their digital transformation stories." },
+    { url: "http://urbanmatter.com/", name: "UrbanMatter", category: "General", price: "$300", tat: "9 Days", da: "53", dr: "75", traffic: "16k", type: "Guest Post", links: "Dofollow", description: "Leading city guide and urban lifestyle publication focused on culture, entertainment, and local community news." },
+    { url: "http://todaynews.co.uk/", name: "Today News UK", category: "General", price: "$180", tat: "11 Days", da: "44", dr: "47", traffic: "17k", type: "Guest Post", links: "Dofollow", description: "Reliable news source for the latest updates in technology, business, and current affairs in the United Kingdom." },
+    { url: "http://otsnews.co.uk/", name: "OTS News", category: "General", price: "$160", tat: "12 Days", da: "42", dr: "46", traffic: "38k", type: "Guest Post", links: "Dofollow", description: "Key local news outlet for the Southport area, providing high-authority local backlinks for UK-focused businesses." },
+    { url: "http://fashionweekonline.com/", name: "Fashion Week", category: "Fashion", price: "$300", tat: "13 Days", da: "71", dr: "71", traffic: "47k", type: "Guest post", links: "Dofollow", description: "The premier resource for fashion week news and model portfolios, capturing the global high-fashion industry." },
+    { url: "https://betterthisworld.com/", name: "Better This World", category: "General", price: "$380", tat: "3-7Days", da: "45", dr: "55", traffic: "16k", type: "Guest Post", links: "Dofollow", description: "Platform dedicated to positive societal change, sustainability, and ethical business practices globally." },
+    { url: "http://hollywoodprogressive.com/", name: "Hollywood Progressive", category: "Food and Entertainment", price: "$160", tat: "3-7Days", da: "37", dr: "33", traffic: "20k", type: "Guest Post", links: "Dofollow", description: "Connecting the entertainment industry with social commentary and political updates for a wide demographic." },
+    { url: "http://laprogressive.com/", name: "LA Progressive", category: "Law", price: "$300", tat: "3-7Days", da: "48", dr: "45", traffic: "10k", type: "Guest Post", links: "DOFOLLOW", description: "Political and social justice magazine based in Los Angeles, focusing on law, human rights, and civil issues." },
+    { url: "https://www.readability.com/", name: "Readability", category: "General", price: "$120", tat: "3-7Days", da: "66", dr: "62", traffic: "8k", type: "Guest Post", links: "Dofollow", description: "Global tool for improving content consumption, known for its high authority and consistent audience engagement." },
+    { url: "https://wheon.com/", name: "Wheon", category: "General", price: "$180", tat: "3-7Days", da: "63", dr: "55", traffic: "27k", type: "Guest Post", links: "Dofollow", description: "A high-authority general interest news portal covering science, lifestyle, and global digital trends." },
+    { url: "https://plainenglish.io/", name: "Plain English", category: "Tech", price: "$400", tat: "3-7Days", da: "54", dr: "76", traffic: "60K", type: "Guest post", links: "Do-Follow", description: "Top-tier publication for JavaScript developers and tech enthusiasts seeking coding excellence and tutorials." },
+    { url: "http://portotheme.com/", name: "Porto Theme", category: "Tech", price: "$200", tat: "3-7Days", da: "70", dr: "90", traffic: "9K", type: "Guest post", links: "Do-Follow", description: "Elite WordPress and eCommerce theme development authority with huge domain ranking." },
+    { url: "https://hackread.com/", name: "Hackread", category: "Tech", price: "$460", tat: "3-7Days", da: "77", dr: "77", traffic: "13K", type: "Guest post", links: "Do-Follow", description: "Globally recognized cybersecurity and privacy news platform for industry leadership." },
+    { url: "http://androidheadlines.com/", name: "Android Headlines", category: "Tech", price: "$900", tat: "3-7Days", da: "85", dr: "78", traffic: "65K", type: "Guest post", links: "Do-Follow", description: "Premier mobile technology publication delivering the latest Android news and hardware reviews." },
+    { url: "http://Autogpt.net/", name: "Autogpt", category: "Tech", price: "$600", tat: "3-7Days", da: "60", dr: "66", traffic: "80K", type: "Guest post", links: "Do-Follow", description: "Leading source for AI automation and autonomous agent research and implementation guides." },
+    { url: "https://addicted2success.com/", name: "Addicted2Success", category: "Tech", price: "$440", tat: "3-7Days", da: "61", dr: "73", traffic: "9K", type: "Guest post", links: "Do-Follow", description: "Entrepreneurial hub for tech success stories, motivation, and leadership innovation." },
+    { url: "http://iprovpn.com/", name: "Iprovpn", category: "Tech", price: "$1,300", tat: "3-7Days", da: "37", dr: "63", traffic: "370K", type: "Guest post", links: "Do-Follow", description: "Technical cybersecurity portal focusing on digital privacy, VPN technology, and data security." },
+    { url: "https://www.talkandroid.com/", name: "Talkandroid", category: "Tech", price: "$300", tat: "3-7Days", da: "75", dr: "69", traffic: "33K", type: "Guest post", links: "Do-Follow", description: "Massive community-driven news source for Android tablets, phones, and mobile ecosystems." },
+    { url: "https://www.spacedaily.com/", name: "Spacedaily", category: "Tech", price: "$400", tat: "3-7Days", da: "68", dr: "73", traffic: "60K", type: "Guest post", links: "Do-Follow", description: "Global aerospace and technology news hub covering space exploration and satellite developments." },
+    { url: "http://tabletmonkeys.com/", name: "Tabletmonkeys", category: "Tech", price: "$300", tat: "3-7Days", da: "55", dr: "49", traffic: "8.5K", type: "Guest post", links: "Do-Follow", description: "Major hardware review portal for tablet computing and mobile productivity tools." },
+    { url: "http://www.criticalhit.net/", name: "Criticalhit", category: "Tech", price: "$460", tat: "3-7Days", da: "79", dr: "65", traffic: "30K", type: "Guest post", links: "Do-Follow", description: "Diverse tech and gaming news source with huge authority in the digital entertainment space." },
+    { url: "https://hacker9.com/", name: "Hacker9", category: "Tech", price: "$400", tat: "3-7Days", da: "67", dr: "74", traffic: "350K", type: "Guest post", links: "Do-Follow", description: "Leading technical platform for ethical hacking, software, and cybersecurity education." },
+    { url: "http://tribuneonlineng.com/", name: "Tribuneonline", category: "Tech", price: "$340", tat: "3-7Days", da: "75", dr: "75", traffic: "585K", type: "Guest post", links: "Do-Follow", description: "High-traffic media outlet covering national news with a powerful tech and digital industry focus." },
+    { url: "http://qrius.com/", name: "Qrius", category: "Tech", price: "$240", tat: "3-7Days", da: "54", dr: "68", traffic: "61K", type: "Guest post", links: "Do-Follow", description: "Elitist news and explanations platform focused on tech-economy intersections for leaders." }
 ];
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -76,26 +60,13 @@ document.addEventListener('DOMContentLoaded', () => {
     function renderTable(data) {
         tableBody.innerHTML = '';
         if (data.length === 0) {
-            tableBody.innerHTML = `
-                <tr>
-                    <td colspan="6" class="px-12 py-32 text-center bg-slate-50/30">
-                        <div class="flex flex-col items-center">
-                            <div class="w-20 h-20 bg-white shadow-xl rounded-full flex items-center justify-center mb-6">
-                                <i data-lucide="search-x" class="w-10 h-10 text-slate-300"></i>
-                            </div>
-                            <h3 class="text-2xl font-black text-slate-900 mb-2 italic">No Authority Matches</h3>
-                            <p class="text-slate-500 font-medium">Try adjusting your search or category filters.</p>
-                            <button onclick="window.location.reload()" class="mt-8 bg-primary-blue text-white px-8 py-3 rounded-xl font-black text-xs uppercase tracking-widest hover:bg-slate-900 transition-all shadow-xl shadow-primary-blue/20">Clear All Filters</button>
-                        </div>
-                    </td>
-                </tr>
-            `;
+            tableBody.innerHTML = `<tr><td colspan="7" class="px-12 py-32 text-center bg-slate-50/30"><div class="flex flex-col items-center"><div class="w-20 h-20 bg-white shadow-xl rounded-full flex items-center justify-center mb-6"><i data-lucide="search-x" class="w-10 h-10 text-slate-300"></i></div><h3 class="text-2xl font-black text-slate-900 mb-2 italic">No Authority Matches</h3><p class="text-slate-500 font-medium">Try adjusting your filters.</p></div></td></tr>`;
             lucide.createIcons();
             return;
         }
 
         data.forEach((site, index) => {
-            const domain = site.url.replace('https://', '').replace('http://', '').split('/')[0];
+            const domain = site.url.replace('https://', '').replace('http://', '').replace('www.', '').split('/')[0];
             const logoUrl = `https://www.google.com/s2/favicons?sz=128&domain=${domain}`;
 
             const tr = document.createElement('tr');
@@ -110,8 +81,8 @@ document.addEventListener('DOMContentLoaded', () => {
                         </div>
                         <div>
                             <div class="flex items-center gap-3 mb-1.5">
-                                <p class="font-black text-slate-900 text-xl font-heading italic tracking-tight">${site.name}</p>
-                                <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-500"></i>
+                                <a href="${site.url}" target="_blank" class="font-black text-slate-900 text-xl font-heading italic tracking-tight hover:text-primary-blue transition-colors underline decoration-primary-blue/0 hover:decoration-primary-blue/30 decoration-2 underline-offset-4">${site.name}</a>
+                                <i data-lucide="external-link" class="w-3 h-3 text-slate-300"></i>
                             </div>
                             <p class="text-[13px] font-medium text-slate-500 max-w-[400px] leading-relaxed group-hover:text-slate-700 transition-colors italic">${site.description}</p>
                         </div>
@@ -135,33 +106,27 @@ document.addEventListener('DOMContentLoaded', () => {
                         </div>
                     </div>
                 </td>
-                <td class="px-8 py-10">
-                    <div class="flex flex-col gap-1">
-                        <div class="flex items-center gap-2">
-                             <div class="w-8 h-8 rounded-lg bg-emerald-50 flex items-center justify-center">
-                                <i data-lucide="trending-up" class="w-4 h-4 text-emerald-500"></i>
-                             </div>
-                            <p class="font-black text-slate-900 text-xl font-heading tracking-tight italic">${site.traffic}</p>
-                        </div>
-                        <p class="text-[10px] font-black text-slate-400 uppercase tracking-widest pl-10">Monthly Reach</p>
+                <td class="px-8 py-10 text-center">
+                    <div class="flex flex-col gap-1 items-center">
+                        <p class="font-black text-slate-900 text-xl font-heading italic tracking-tight">${site.traffic}</p>
+                        <p class="text-[9px] font-black text-slate-400 uppercase tracking-widest leading-none">Traffic</p>
+                    </div>
+                </td>
+                <td class="px-8 py-10 text-center">
+                    <div class="flex flex-col gap-1 items-center">
+                         <span class="px-4 py-1.5 bg-slate-50 border border-slate-100 rounded-full text-[10px] font-black uppercase tracking-widest text-slate-600">${site.links}</span>
+                        <p class="text-[9px] font-black text-slate-400 uppercase tracking-widest leading-none">${site.type}</p>
                     </div>
                 </td>
                 <td class="px-8 py-10">
-                    <div class="flex flex-wrap gap-2 max-w-[150px]">
-                        <span class="whitespace-nowrap px-4 py-1.5 bg-white border border-slate-200 rounded-full text-[10px] font-black uppercase tracking-widest text-slate-600 shadow-sm group-hover:border-primary-blue group-hover:text-primary-blue transition-colors">
-                            ${site.category}
-                        </span>
-                    </div>
-                </td>
-                <td class="px-8 py-10">
-                    <div class="group/price flex flex-col">
-                        <p class="font-black text-slate-900 text-2xl font-heading tracking-tighter italic decoration-primary-blue decoration-2 group-hover:underline underline-offset-4 transition-all">VIP Access</p>
-                        <p class="text-[10px] font-black text-primary-blue uppercase tracking-widest">Premium Placement</p>
+                    <div class="flex flex-col">
+                        <p class="font-black text-slate-900 text-lg font-heading tracking-tighter italic">${site.price}</p>
+                        <p class="text-[9px] font-black text-emerald-500 uppercase tracking-widest">${site.tat} TAT</p>
                     </div>
                 </td>
                 <td class="px-12 py-10 text-right">
                     <a href="contact" class="inline-flex items-center justify-center gap-3 bg-slate-900 text-white px-10 py-5 rounded-2xl font-black text-xs uppercase tracking-widest hover:bg-primary-blue transition-all shadow-2xl hover:shadow-primary-blue/30 transform hover:-translate-y-1 active:scale-95">
-                        Reserve Now <i data-lucide="zap" class="w-4 h-4 text-yellow-400"></i>
+                        Reserve <i data-lucide="zap" class="w-4 h-4 text-yellow-400"></i>
                     </a>
                 </td>
             `;
@@ -173,9 +138,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function filterData() {
         const searchTerm = searchInput.value.toLowerCase();
         const filtered = websites.filter(site => {
-            const matchesSearch = site.name.toLowerCase().includes(searchTerm) ||
-                site.description.toLowerCase().includes(searchTerm) ||
-                site.url.toLowerCase().includes(searchTerm);
+            const matchesSearch = site.name.toLowerCase().includes(searchTerm) || site.url.toLowerCase().includes(searchTerm);
             const matchesCategory = activeCategory === 'All Categories' || site.category === activeCategory;
             return matchesSearch && matchesCategory;
         });
@@ -183,13 +146,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     searchInput.addEventListener('input', filterData);
-
     filterChips.forEach(chip => {
         chip.addEventListener('click', () => {
-            filterChips.forEach(c => {
-                c.classList.remove('filter-active');
-                c.classList.add('text-slate-400');
-            });
+            filterChips.forEach(c => c.classList.remove('filter-active', 'text-slate-400'));
+            filterChips.forEach(c => c.classList.add('text-slate-400'));
             chip.classList.add('filter-active');
             chip.classList.remove('text-slate-400');
             activeCategory = chip.getAttribute('data-category');
@@ -197,6 +157,5 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Initial Render
     renderTable(websites);
 });
