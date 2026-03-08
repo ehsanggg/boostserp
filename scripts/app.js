@@ -43,7 +43,7 @@ function renderDirectories(data, append = false) {
     if (!grid) return;
 
     if (!append && data.length === 0) {
-        grid.innerHTML = '<div class="col-span-full py-20 text-center text-slate-500">No directories found.</div>';
+        grid.innerHTML = '<div class="col-span-full py-20 text-center text-black">No directories found.</div>';
         return;
     }
 
@@ -83,7 +83,7 @@ function renderDirectories(data, append = false) {
                 </div>
             </div>
             <h3 class="text-lg font-extrabold mb-1 text-slate-900 group-hover:text-primary-blue transition-colors line-clamp-1">${dir.name}</h3>
-            <p class="text-slate-500 text-sm mb-6 flex-grow leading-relaxed line-clamp-2">${dir.description}</p>
+            <p class="text-black text-sm mb-6 flex-grow leading-relaxed line-clamp-2">${dir.description}</p>
             <div class="pt-4 border-t border-slate-100 flex items-center justify-between mt-auto">
                 <div class="flex items-center space-x-2">
                     <span class="px-2 py-0.5 rounded-full text-[8px] font-bold uppercase tracking-tight ${getTypeClass(dir.type)}">
@@ -120,7 +120,7 @@ function getTypeClass(type) {
     if (type.toLowerCase() === 'dofollow') {
         return 'bg-emerald-50 text-emerald-600 border border-emerald-100';
     }
-    return 'bg-slate-100 text-slate-500 border border-slate-200';
+    return 'bg-slate-100 text-black border border-slate-200';
 }
 
 function updateActiveFilter(status) {
@@ -128,10 +128,10 @@ function updateActiveFilter(status) {
     btns.forEach(btn => {
         if (btn.getAttribute('onclick')?.includes(`'${status}'`)) {
             btn.classList.add('bg-primary-blue', 'text-white', 'shadow-md');
-            btn.classList.remove('text-slate-500', 'bg-transparent');
+            btn.classList.remove('text-black', 'bg-transparent');
         } else {
             btn.classList.remove('bg-primary-blue', 'text-white', 'shadow-md');
-            btn.classList.add('text-slate-500', 'bg-transparent');
+            btn.classList.add('text-black', 'bg-transparent');
         }
     });
 }

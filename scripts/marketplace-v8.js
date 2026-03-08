@@ -55,94 +55,137 @@ document.addEventListener('DOMContentLoaded', () => {
     const searchInput = document.getElementById('websiteSearch');
     const tableBody = document.getElementById('marketplaceBody');
     const filterChips = document.querySelectorAll('.filter-chip');
-    let activeCategory = 'All Categories';
+    const paginationContainer = document.getElementById('paginationContainer');
 
-    function renderTable(data) {
+    let activeCategory = 'All Categories';
+    let currentPage = 1;
+    const itemsPerPage = 15;
+    let filteredData = [...websites];
+
+    function renderTable() {
         tableBody.innerHTML = '';
-        if (data.length === 0) {
-            tableBody.innerHTML = `<tr><td colspan="7" class="px-12 py-32 text-center bg-slate-50/30"><div class="flex flex-col items-center"><div class="w-16 h-16 bg-white shadow-xl rounded-full flex items-center justify-center mb-6"><i data-lucide="search-x" class="w-8 h-8 text-slate-300"></i></div><h3 class="text-xl font-black text-slate-900 mb-2 italic">No Authority Matches</h3><p class="text-black font-medium text-sm">Try adjusting your filters.</p></div></td></tr>`;
+        const startIndex = (currentPage - 1) * itemsPerPage;
+        const endIndex = startIndex + itemsPerPage;
+        const pageData = filteredData.slice(startIndex, endIndex);
+
+        if (pageData.length === 0) {
+            tableBody.innerHTML = `<tr><td colspan="6" class="px-12 py-32 text-center bg-slate-50/30"><div class="flex flex-col items-center"><div class="w-16 h-16 bg-white shadow-xl rounded-full flex items-center justify-center mb-6"><i data-lucide="search-x" class="w-8 h-8 text-slate-300"></i></div><h3 class="text-xl font-black text-slate-900 mb-2 italic">No Authority Matches</h3><p class="text-black font-medium text-sm">Try adjusting your filters.</p></div></td></tr>`;
             lucide.createIcons();
             return;
         }
 
-        data.forEach((site, index) => {
+        pageData.forEach((site, index) => {
             const domain = site.url.replace('https://', '').replace('http://', '').replace('www.', '').split('/')[0];
             const logoUrl = `https://www.google.com/s2/favicons?sz=128&domain=${domain}`;
 
             const tr = document.createElement('tr');
             tr.className = `group border-b border-slate-50 hover:bg-primary-blue/[0.015] transition-all duration-300 animate-fade-in`;
-            tr.style.animationDelay = `${index * 30}ms`;
+            tr.style.animationDelay = `${index * 20}ms`;
             tr.innerHTML = `
-                <td class="px-8 py-8">
+                <td class="px-8 py-10">
                     <div class="flex items-center gap-6">
                         <div class="w-20 h-20 bg-white border border-slate-100 rounded-2xl flex items-center justify-center p-2 shadow-sm group-hover:shadow-2xl group-hover:-translate-y-1 transition-all duration-500 relative overflow-hidden">
                              <div class="absolute inset-0 bg-primary-blue/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
                             <img src="${logoUrl}" alt="${site.name}" class="w-full h-full object-contain relative z-10" onerror="this.src='https://ui-avatars.com/api/?name=${site.name}&background=0ea5e9&color=fff&bold=true'">
                         </div>
-                        <div class="max-w-[320px]">
+                        <div class="max-w-[400px]">
                             <div class="flex items-center gap-2 mb-1">
-                                <a href="${site.url}" target="_blank" class="font-black text-slate-900 text-lg font-heading italic tracking-tight hover:text-primary-blue transition-colors underline decoration-primary-blue/0 hover:decoration-primary-blue/30 decoration-2 underline-offset-4">${site.name}</a>
-                                <i data-lucide="external-link" class="w-3 h-3 text-slate-300"></i>
+                                <a href="${site.url}" target="_blank" class="font-black text-black text-xl font-sans italic tracking-tight hover:text-primary-blue transition-colors underline decoration-primary-blue/0 hover:decoration-primary-blue/30 decoration-2 underline-offset-4">${site.name}</a>
+                                <i data-lucide="external-link" class="w-3.5 h-3.5 text-slate-300"></i>
                             </div>
-                            <p class="text-[12px] font-medium text-black leading-snug group-hover:text-slate-700 transition-colors italic">${site.description}</p>
+                            <p class="text-[14px] font-medium text-black leading-snug group-hover:text-black transition-colors italic font-sans">${site.description}</p>
                         </div>
                     </div>
                 </td>
-                <td class="px-6 py-8">
-                    <div class="flex flex-col gap-1.5 justify-center">
+                <td class="px-6 py-10 font-sans">
+                    <div class="flex flex-col gap-2 justify-center">
                         <div class="flex items-center gap-2">
-                            <span class="inline-block w-6 text-[9px] font-black text-slate-400 uppercase">DA</span>
-                            <div class="flex-1 h-1.5 bg-slate-100 rounded-full w-20 overflow-hidden">
+                            <span class="inline-block w-8 text-[10px] font-black text-slate-400 uppercase">DA</span>
+                            <div class="flex-1 h-2 bg-slate-100 rounded-full w-24 overflow-hidden">
                                 <div class="h-full bg-primary-blue" style="width: ${site.da}%"></div>
                             </div>
-                            <span class="text-[13px] font-black text-slate-900">${site.da}</span>
+                            <span class="text-[14px] font-black text-black">${site.da}</span>
                         </div>
                         <div class="flex items-center gap-2">
-                            <span class="inline-block w-6 text-[9px] font-black text-slate-400 uppercase">DR</span>
-                            <div class="flex-1 h-1.5 bg-slate-100 rounded-full w-20 overflow-hidden">
+                            <span class="inline-block w-8 text-[10px] font-black text-slate-400 uppercase">DR</span>
+                            <div class="flex-1 h-2 bg-slate-100 rounded-full w-24 overflow-hidden">
                                 <div class="h-full bg-emerald-500" style="width: ${site.dr}%"></div>
                             </div>
-                            <span class="text-[13px] font-black text-slate-900">${site.dr}</span>
+                            <span class="text-[14px] font-black text-black">${site.dr}</span>
                         </div>
                     </div>
                 </td>
-                <td class="px-6 py-8 text-center">
+                <td class="px-6 py-10 text-center font-sans">
                     <div class="flex flex-col gap-1 items-center">
-                        <p class="font-black text-slate-900 text-lg font-heading italic tracking-tight">${site.traffic}</p>
-                        <p class="text-[8px] font-black text-slate-400 uppercase tracking-widest leading-none">Traffic</p>
+                        <p class="font-black text-black text-2xl font-sans italic tracking-tight">${site.traffic}</p>
+                        <p class="text-[9px] font-black text-slate-400 uppercase tracking-widest leading-none">Traffic</p>
                     </div>
                 </td>
-                <td class="px-6 py-8 text-center">
-                    <div class="flex flex-col gap-2 items-center">
-                         <span class="px-3 py-1 bg-slate-50 border border-slate-100 rounded-full text-[9px] font-black uppercase tracking-widest text-slate-600">${site.links}</span>
-                        <p class="text-[8px] font-black text-slate-400 uppercase tracking-widest leading-none">${site.type}</p>
+                <td class="px-6 py-10 text-center font-sans">
+                    <div class="flex flex-col gap-3 items-center">
+                         <span class="px-4 py-1.5 bg-slate-50 border border-slate-100 rounded-full text-[10px] font-black uppercase tracking-widest text-black shadow-sm">${site.links}</span>
+                        <p class="text-[10px] font-black text-slate-400 uppercase tracking-widest leading-none">${site.type}</p>
                     </div>
                 </td>
-                <td class="px-6 py-8">
-                    <div class="flex flex-col min-w-[80px]">
-                        <p class="font-black text-slate-900 text-lg font-heading tracking-tighter italic">${site.price}</p>
-                        <p class="text-[8px] font-black text-emerald-500 uppercase tracking-widest">${site.tat} TAT</p>
+                <td class="px-6 py-10 font-sans">
+                    <div class="flex flex-col min-w-[100px] items-start">
+                        <p class="font-black text-black text-2xl font-sans tracking-tighter italic leading-none mb-1">${site.price}</p>
+                        <p class="text-[10px] font-black text-emerald-500 uppercase tracking-widest">${site.tat} TAT</p>
                     </div>
                 </td>
-                <td class="px-8 py-8 text-right">
-                    <a href="contact" class="inline-flex items-center justify-center gap-2.5 bg-slate-900 text-white px-8 py-4 rounded-xl font-black text-[10px] uppercase tracking-widest hover:bg-primary-blue transition-all shadow-xl hover:shadow-primary-blue/30 transform hover:-translate-y-1 active:scale-95">
-                        Get Link <i data-lucide="zap" class="w-3.5 h-3.5 text-yellow-400"></i>
+                <td class="px-8 py-10 text-right font-sans">
+                    <a href="contact" class="inline-flex items-center justify-center gap-3 bg-slate-900 text-white px-10 py-5 rounded-2xl font-black text-[11px] uppercase tracking-widest hover:bg-primary-blue transition-all shadow-xl hover:shadow-primary-blue/30 transform hover:-translate-y-1 active:scale-95">
+                        Get Link <i data-lucide="zap" class="w-4 h-4 text-yellow-400"></i>
                     </a>
                 </td>
             `;
             tableBody.appendChild(tr);
         });
         lucide.createIcons();
+        renderPaginationUI();
+    }
+
+    function renderPaginationUI() {
+        const totalPages = Math.ceil(filteredData.length / itemsPerPage);
+        paginationContainer.innerHTML = '';
+
+        if (totalPages <= 1) return;
+
+        // Previous
+        const prevBtn = document.createElement('button');
+        prevBtn.className = `w-12 h-12 flex items-center justify-center rounded-xl border border-slate-100 transition-all ${currentPage === 1 ? 'opacity-30 cursor-not-allowed' : 'hover:bg-primary-blue hover:text-white hover:border-primary-blue'}`;
+        prevBtn.innerHTML = `<i data-lucide="chevron-left" class="w-5 h-5"></i>`;
+        prevBtn.onclick = () => { if (currentPage > 1) { currentPage--; renderTable(); window.scrollTo({ top: 500, behavior: 'smooth' }); } };
+        paginationContainer.appendChild(prevBtn);
+
+        // Page Numbers
+        for (let i = 1; i <= totalPages; i++) {
+            const pageBtn = document.createElement('button');
+            pageBtn.className = `w-12 h-12 flex items-center justify-center rounded-xl font-black text-sm transition-all ${currentPage === i ? 'bg-primary-blue text-white shadow-lg shadow-primary-blue/30' : 'bg-white border border-slate-100 text-slate-400 hover:border-primary-blue hover:text-primary-blue'}`;
+            pageBtn.innerText = i;
+            pageBtn.onclick = () => { currentPage = i; renderTable(); window.scrollTo({ top: 500, behavior: 'smooth' }); };
+            paginationContainer.appendChild(pageBtn);
+        }
+
+        // Next
+        const nextBtn = document.createElement('button');
+        nextBtn.className = `w-12 h-12 flex items-center justify-center rounded-xl border border-slate-100 transition-all ${currentPage === totalPages ? 'opacity-30 cursor-not-allowed' : 'hover:bg-primary-blue hover:text-white hover:border-primary-blue'}`;
+        nextBtn.innerHTML = `<i data-lucide="chevron-right" class="w-5 h-5"></i>`;
+        nextBtn.onclick = () => { if (currentPage < totalPages) { currentPage++; renderTable(); window.scrollTo({ top: 500, behavior: 'smooth' }); } };
+        paginationContainer.appendChild(nextBtn);
+
+        lucide.createIcons();
     }
 
     function filterData() {
         const searchTerm = searchInput.value.toLowerCase();
-        const filtered = websites.filter(site => {
+        filteredData = websites.filter(site => {
             const matchesSearch = site.name.toLowerCase().includes(searchTerm) || site.url.toLowerCase().includes(searchTerm);
             const matchesCategory = activeCategory === 'All Categories' || site.category === activeCategory;
             return matchesSearch && matchesCategory;
         });
-        renderTable(filtered);
+        currentPage = 1;
+        renderTable();
     }
 
     searchInput.addEventListener('input', filterData);
@@ -157,5 +200,5 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    renderTable(websites);
+    renderTable();
 });

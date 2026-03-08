@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function renderTable(data) {
         tableBody.innerHTML = '';
         if (data.length === 0) {
-            tableBody.innerHTML = `<tr><td colspan="6" class="px-12 py-32 text-center bg-slate-50/30"><div class="flex flex-col items-center"><div class="w-16 h-16 bg-white shadow-xl rounded-full flex items-center justify-center mb-6"><i data-lucide="search-x" class="w-8 h-8 text-slate-300"></i></div><h3 class="text-xl font-black text-slate-900 mb-2 italic">No Authority Matches</h3><p class="text-slate-500 font-medium text-sm">Try adjusting your filters.</p></div></td></tr>`;
+            tableBody.innerHTML = `<tr><td colspan="6" class="px-12 py-32 text-center bg-slate-50/30"><div class="flex flex-col items-center"><div class="w-16 h-16 bg-white shadow-xl rounded-full flex items-center justify-center mb-6"><i data-lucide="search-x" class="w-8 h-8 text-slate-300"></i></div><h3 class="text-xl font-black text-slate-900 mb-2 italic">No Authority Matches</h3><p class="text-black font-medium text-sm">Try adjusting your filters.</p></div></td></tr>`;
             lucide.createIcons();
             return;
         }
@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                 <a href="${site.url}" target="_blank" class="font-black text-slate-900 text-xl font-heading italic tracking-tight hover:text-primary-blue transition-colors underline decoration-primary-blue/0 hover:decoration-primary-blue/30 decoration-2 underline-offset-4">${site.name}</a>
                                 <i data-lucide="external-link" class="w-3.5 h-3.5 text-slate-300"></i>
                             </div>
-                            <p class="text-[14px] font-medium text-slate-500 leading-snug group-hover:text-slate-700 transition-colors italic">${site.description}</p>
+                            <p class="text-[14px] font-medium text-black leading-snug group-hover:text-slate-700 transition-colors italic">${site.description}</p>
                         </div>
                     </div>
                 </td>
