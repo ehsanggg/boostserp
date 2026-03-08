@@ -90,8 +90,10 @@ document.addEventListener('DOMContentLoaded', () => {
                         </div>
                         <div class="max-w-[400px]">
                             <div class="flex items-center gap-2 mb-1">
-                                <a href="${site.url}" target="_blank" class="font-black text-black text-xl font-sans italic tracking-tight hover:text-primary-blue transition-colors underline decoration-primary-blue/0 hover:decoration-primary-blue/30 decoration-2 underline-offset-4">${site.name}</a>
-                                <i data-lucide="external-link" class="w-3.5 h-3.5 text-primary-blue"></i>
+                                <a href="${site.url}" target="_blank" class="font-black text-primary-blue text-xl font-sans italic tracking-tight hover:text-slate-900 transition-colors underline decoration-primary-blue/0 hover:decoration-primary-blue/30 decoration-2 underline-offset-4 flex items-center gap-2">
+                                    ${site.name}
+                                    <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                                </a>
                             </div>
                             <p class="text-[14px] font-medium text-black leading-snug group-hover:text-black transition-colors italic font-sans">${site.description}</p>
                         </div>
