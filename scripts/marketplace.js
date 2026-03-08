@@ -8,7 +8,7 @@ const websites = [
     { url: "https://theenterpriseworld.com/", name: "Enterprise World", category: "General", price: "$260", tat: "4 Days", da: "44", dr: "49", traffic: "115k", type: "Guest post", links: "DOFOLLOW", description: "Global business magazine highlighting the success stories of entrepreneurs and the latest innovations in corporate strategy and tech." },
     { url: "https://signalscv.com/", name: "The Signal", category: "General", price: "$380", tat: "5 Days", da: "77", dr: "76", traffic: "80k", type: "Guest post", links: "Dofollow", description: "The primary source for community news in the Santa Clarita Valley, providing local authority and high-relevance geographic backlinks." },
     { url: "http://ranktracker.com/", name: "Ranktracker", category: "Tech & Marketing", price: "$300", tat: "6 Days", da: "39", dr: "72", traffic: "47k", type: "Guest post", links: "DOFOLLOW", description: "Internationally recognized SEO tool and digital marketing insights platform, trusted by professionals for industry-leading data and guides." },
-    { url: "http://technology.org/", name: "Technology", price: "$400", tat: "7 Days", da: "61", dr: "72", traffic: "113k", type: "Guest post", links: "Dofollow", description: "Global science and technology news hub, featuring daily articles on the latest breakthroughs in research, engineering, and digital innovation." },
+    { url: "http://technology.org/", name: "Technology", category: "Tech", price: "$400", tat: "7 Days", da: "61", dr: "72", traffic: "113k", type: "Guest post", links: "Dofollow", description: "Global science and technology news hub, featuring daily articles on the latest breakthroughs in research, engineering, and digital innovation." },
     { url: "https://analyticsinsight.net/", name: "Analytics Insight", category: "Tech", price: "$300", tat: "8 Days", da: "70", dr: "81", traffic: "400k", type: "Guest post", links: "DOFOLLOW", description: "The first platform in India to focus on AI, Big Data, and Robotics, reaching thought leaders and tech innovators worldwide." },
     { url: "http://bmmagazine.co.uk/", name: "Business Matters", category: "General", price: "$240", tat: "9 Days", da: "62", dr: "77", traffic: "32k", type: "Guest post", links: "Dofollow", description: "The UK's largest monthly magazine for entrepreneurs and small-to-medium-sized businesses, delivering expert corporate advice." },
     { url: "https://robinwaite.com/", name: "Robin Waite", category: "Tech", price: "$240", tat: "10 Days", da: "37", dr: "54", traffic: "17k", type: "Link insertion", links: "DOFOLLOW", description: "Strategic business coaching platform and digital insight center, offering high-authority placements for leadership and productivity content." },
@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function renderTable(data) {
         tableBody.innerHTML = '';
         if (data.length === 0) {
-            tableBody.innerHTML = `<tr><td colspan="7" class="px-12 py-32 text-center bg-slate-50/30"><div class="flex flex-col items-center"><div class="w-20 h-20 bg-white shadow-xl rounded-full flex items-center justify-center mb-6"><i data-lucide="search-x" class="w-10 h-10 text-slate-300"></i></div><h3 class="text-2xl font-black text-slate-900 mb-2 italic">No Authority Matches</h3><p class="text-slate-500 font-medium">Try adjusting your filters.</p></div></td></tr>`;
+            tableBody.innerHTML = `<tr><td colspan="7" class="px-12 py-32 text-center bg-slate-50/30"><div class="flex flex-col items-center"><div class="w-16 h-16 bg-white shadow-xl rounded-full flex items-center justify-center mb-6"><i data-lucide="search-x" class="w-8 h-8 text-slate-300"></i></div><h3 class="text-xl font-black text-slate-900 mb-2 italic">No Authority Matches</h3><p class="text-slate-500 font-medium text-sm">Try adjusting your filters.</p></div></td></tr>`;
             lucide.createIcons();
             return;
         }
@@ -70,63 +70,63 @@ document.addEventListener('DOMContentLoaded', () => {
             const logoUrl = `https://www.google.com/s2/favicons?sz=128&domain=${domain}`;
 
             const tr = document.createElement('tr');
-            tr.className = `group border-b border-slate-50 hover:bg-primary-blue/[0.02] transition-all duration-300 animate-fade-in`;
-            tr.style.animationDelay = `${index * 50}ms`;
+            tr.className = `group border-b border-slate-50 hover:bg-primary-blue/[0.015] transition-all duration-300 animate-fade-in`;
+            tr.style.animationDelay = `${index * 30}ms`;
             tr.innerHTML = `
-                <td class="px-12 py-10">
+                <td class="px-8 py-8">
                     <div class="flex items-center gap-6">
-                        <div class="w-16 h-16 bg-white border border-slate-100 rounded-2xl flex items-center justify-center p-3 shadow-sm group-hover:shadow-xl group-hover:-translate-y-1 transition-all duration-300 relative overflow-hidden">
+                        <div class="w-20 h-20 bg-white border border-slate-100 rounded-2xl flex items-center justify-center p-2 shadow-sm group-hover:shadow-2xl group-hover:-translate-y-1 transition-all duration-500 relative overflow-hidden">
                              <div class="absolute inset-0 bg-primary-blue/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
                             <img src="${logoUrl}" alt="${site.name}" class="w-full h-full object-contain relative z-10" onerror="this.src='https://ui-avatars.com/api/?name=${site.name}&background=0ea5e9&color=fff&bold=true'">
                         </div>
-                        <div>
-                            <div class="flex items-center gap-3 mb-1.5">
-                                <a href="${site.url}" target="_blank" class="font-black text-slate-900 text-xl font-heading italic tracking-tight hover:text-primary-blue transition-colors underline decoration-primary-blue/0 hover:decoration-primary-blue/30 decoration-2 underline-offset-4">${site.name}</a>
+                        <div class="max-w-[320px]">
+                            <div class="flex items-center gap-2 mb-1">
+                                <a href="${site.url}" target="_blank" class="font-black text-slate-900 text-lg font-heading italic tracking-tight hover:text-primary-blue transition-colors underline decoration-primary-blue/0 hover:decoration-primary-blue/30 decoration-2 underline-offset-4">${site.name}</a>
                                 <i data-lucide="external-link" class="w-3 h-3 text-slate-300"></i>
                             </div>
-                            <p class="text-[13px] font-medium text-slate-500 max-w-[400px] leading-relaxed group-hover:text-slate-700 transition-colors italic">${site.description}</p>
+                            <p class="text-[12px] font-medium text-slate-500 leading-snug group-hover:text-slate-700 transition-colors italic">${site.description}</p>
                         </div>
                     </div>
                 </td>
-                <td class="px-8 py-10">
-                    <div class="flex flex-col gap-2">
+                <td class="px-6 py-8">
+                    <div class="flex flex-col gap-1.5 justify-center">
                         <div class="flex items-center gap-2">
-                            <span class="inline-block w-8 text-[10px] font-black text-slate-400 uppercase">DA</span>
-                            <div class="flex-1 h-1.5 bg-slate-100 rounded-full w-24 overflow-hidden">
+                            <span class="inline-block w-6 text-[9px] font-black text-slate-400 uppercase">DA</span>
+                            <div class="flex-1 h-1.5 bg-slate-100 rounded-full w-20 overflow-hidden">
                                 <div class="h-full bg-primary-blue" style="width: ${site.da}%"></div>
                             </div>
-                            <span class="text-sm font-black text-slate-900">${site.da}</span>
+                            <span class="text-[13px] font-black text-slate-900">${site.da}</span>
                         </div>
                         <div class="flex items-center gap-2">
-                            <span class="inline-block w-8 text-[10px] font-black text-slate-400 uppercase">DR</span>
-                            <div class="flex-1 h-1.5 bg-slate-100 rounded-full w-24 overflow-hidden">
+                            <span class="inline-block w-6 text-[9px] font-black text-slate-400 uppercase">DR</span>
+                            <div class="flex-1 h-1.5 bg-slate-100 rounded-full w-20 overflow-hidden">
                                 <div class="h-full bg-emerald-500" style="width: ${site.dr}%"></div>
                             </div>
-                            <span class="text-sm font-black text-slate-900">${site.dr}</span>
+                            <span class="text-[13px] font-black text-slate-900">${site.dr}</span>
                         </div>
                     </div>
                 </td>
-                <td class="px-8 py-10 text-center">
+                <td class="px-6 py-8 text-center">
                     <div class="flex flex-col gap-1 items-center">
-                        <p class="font-black text-slate-900 text-xl font-heading italic tracking-tight">${site.traffic}</p>
-                        <p class="text-[9px] font-black text-slate-400 uppercase tracking-widest leading-none">Traffic</p>
+                        <p class="font-black text-slate-900 text-lg font-heading italic tracking-tight">${site.traffic}</p>
+                        <p class="text-[8px] font-black text-slate-400 uppercase tracking-widest leading-none">Traffic</p>
                     </div>
                 </td>
-                <td class="px-8 py-10 text-center">
-                    <div class="flex flex-col gap-1 items-center">
-                         <span class="px-4 py-1.5 bg-slate-50 border border-slate-100 rounded-full text-[10px] font-black uppercase tracking-widest text-slate-600">${site.links}</span>
-                        <p class="text-[9px] font-black text-slate-400 uppercase tracking-widest leading-none">${site.type}</p>
+                <td class="px-6 py-8 text-center">
+                    <div class="flex flex-col gap-2 items-center">
+                         <span class="px-3 py-1 bg-slate-50 border border-slate-100 rounded-full text-[9px] font-black uppercase tracking-widest text-slate-600">${site.links}</span>
+                        <p class="text-[8px] font-black text-slate-400 uppercase tracking-widest leading-none">${site.type}</p>
                     </div>
                 </td>
-                <td class="px-8 py-10">
-                    <div class="flex flex-col">
+                <td class="px-6 py-8">
+                    <div class="flex flex-col min-w-[80px]">
                         <p class="font-black text-slate-900 text-lg font-heading tracking-tighter italic">${site.price}</p>
-                        <p class="text-[9px] font-black text-emerald-500 uppercase tracking-widest">${site.tat} TAT</p>
+                        <p class="text-[8px] font-black text-emerald-500 uppercase tracking-widest">${site.tat} TAT</p>
                     </div>
                 </td>
-                <td class="px-12 py-10 text-right">
-                    <a href="contact" class="inline-flex items-center justify-center gap-3 bg-slate-900 text-white px-10 py-5 rounded-2xl font-black text-xs uppercase tracking-widest hover:bg-primary-blue transition-all shadow-2xl hover:shadow-primary-blue/30 transform hover:-translate-y-1 active:scale-95">
-                        Reserve <i data-lucide="zap" class="w-4 h-4 text-yellow-400"></i>
+                <td class="px-8 py-8 text-right">
+                    <a href="contact" class="inline-flex items-center justify-center gap-2.5 bg-slate-900 text-white px-8 py-4 rounded-xl font-black text-[10px] uppercase tracking-widest hover:bg-primary-blue transition-all shadow-xl hover:shadow-primary-blue/30 transform hover:-translate-y-1 active:scale-95">
+                        Get Link <i data-lucide="zap" class="w-3.5 h-3.5 text-yellow-400"></i>
                     </a>
                 </td>
             `;
