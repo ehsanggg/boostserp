@@ -4,14 +4,20 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentPage = 1;
     let currentData = window.directories || [];
 
-    // Initial render
-    if (isHomePage) {
-        renderDirectories(currentData.slice(0, 12));
-        if (window.featuredGuestPosts) {
-            renderFeaturedGuestPosts(window.featuredGuestPosts);
+    // Initial render - Robust check for grids
+    const directoryGrid = document.getElementById('directory-grid');
+    const guestPostGrid = document.getElementById('featured-guest-posts-grid');
+
+    if (directoryGrid) {
+        if (isHomePage) {
+            renderDirectories(currentData.slice(0, 12));
+        } else {
+            renderDirectories(currentData.slice(0, itemsPerPage));
         }
-    } else {
-        renderDirectories(currentData.slice(0, itemsPerPage));
+    }
+
+    if (guestPostGrid && window.featuredGuestPosts) {
+        renderFeaturedGuestPosts(window.featuredGuestPosts);
     }
 
     // Initialize Global Filters
