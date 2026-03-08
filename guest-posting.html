@@ -31,12 +31,25 @@
         }
 
         .marketplace-table tr {
-            transition: all 0.3s ease;
+            transition: all 0.2s ease;
         }
 
-        .marketplace-table tr:hover {
-            background: rgba(14, 165, 233, 0.03);
-            transform: scale(1.005);
+        .category-icon-btn {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .category-icon-btn:hover {
+            transform: translateY(-5px);
+            background: #0ea5e9;
+            color: white !important;
+            border-color: #0ea5e9;
+        }
+
+        .filter-active {
+            background: #0ea5e9 !important;
+            color: white !important;
+            border-color: #0ea5e9 !important;
+            box-shadow: 0 10px 20px -5px rgba(14, 165, 233, 0.3);
         }
 
         .badge-metric {
@@ -46,23 +59,6 @@
             font-size: 0.75rem;
             text-transform: uppercase;
             letter-spacing: 0.05em;
-        }
-
-        .filter-chip {
-            transition: all 0.2s ease;
-            cursor: pointer;
-        }
-
-        .filter-chip:hover {
-            background: #0ea5e9;
-            color: white;
-            border-color: #0ea5e9;
-        }
-
-        .filter-active {
-            background: #0ea5e9;
-            color: white;
-            border-color: #0ea5e9;
         }
     </style>
 </head>
@@ -122,276 +118,126 @@
     <main class="pt-32 pb-24">
         <div class="container mx-auto px-6">
             <!-- Hero Section -->
-            <div class="text-center max-w-4xl mx-auto mb-20 animate-fade-in">
+            <div class="text-center max-w-4xl mx-auto mb-16 animate-fade-in">
                 <span
                     class="inline-block px-4 py-1.5 bg-primary-blue/10 border border-primary-blue/20 rounded-full text-primary-blue text-[10px] font-black tracking-widest mb-6 uppercase">Guest
                     Posting Marketplace</span>
                 <h1 class="text-5xl md:text-6xl font-black font-heading mb-8 leading-tight text-slate-900 italic">
                     Authority Access <br />
-                    <span class="text-primary-blue">Guaranteed Results</span>
+                    <span
+                        class="text-primary-blue tracking-tighter decoration-slate-900 decoration-8 underline-offset-8">Vetted
+                        Website Index</span>
                 </h1>
                 <p class="text-lg text-slate-500 font-medium leading-relaxed max-w-2xl mx-auto">
-                    Browse our vetted list of high-authority websites. Get permanent, niche-relevant backlinks that
-                    drive
-                    real traffic and boost your ranking instantly.
+                    Search through our premium index of high-DA/DR websites. Filter by niche, analyze organic traffic,
+                    and
+                    secure your authority links instantly.
                 </p>
             </div>
 
             <!-- Marketplace Interface -->
             <div class="bg-white rounded-[40px] border border-slate-100 shadow-2xl overflow-hidden mb-32">
-                <!-- Filter Section -->
+                <!-- Advanced Search Bar -->
                 <div class="p-8 md:p-12 bg-slate-50 border-b border-slate-100">
-                    <div class="flex flex-col lg:flex-row gap-8 items-end justify-between">
-                        <!-- Search Bar -->
-                        <div class="w-full lg:w-1/3">
-                            <label
-                                class="block text-[10px] font-black uppercase tracking-widest text-slate-400 mb-3">Search
-                                Website</label>
-                            <div class="relative group">
-                                <i data-lucide="search"
-                                    class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400"></i>
-                                <input type="text" placeholder="e.g. Forbes, TechCrunch..."
-                                    class="w-full pl-12 pr-6 py-4 bg-white border border-slate-200 rounded-2xl focus:border-primary-blue focus:ring-4 focus:ring-primary-blue/10 transition-all outline-none font-medium">
-                            </div>
+                    <div class="max-w-3xl mx-auto">
+                        <label
+                            class="block text-[10px] font-black uppercase tracking-widest text-primary-blue mb-4 text-center">Live
+                            Inventory Search</label>
+                        <div class="relative group">
+                            <i data-lucide="search"
+                                class="absolute left-6 top-1/2 -translate-y-1/2 w-6 h-6 text-slate-300 group-focus-within:text-primary-blue transition-colors"></i>
+                            <input type="text" id="websiteSearch"
+                                placeholder="Search by website name, niche or metric..."
+                                class="w-full pl-16 pr-8 py-6 bg-white border border-slate-200 rounded-[32px] text-xl font-bold shadow-xl shadow-slate-200/50 focus:border-primary-blue focus:ring-8 focus:ring-primary-blue/5 transition-all outline-none font-heading italic">
                         </div>
+                    </div>
 
-                        <!-- Categories -->
-                        <div class="w-full lg:w-2/3">
-                            <label
-                                class="block text-[10px] font-black uppercase tracking-widest text-slate-400 mb-3">Filter
-                                by Niche</label>
-                            <div class="flex flex-wrap gap-3">
-                                <span
-                                    class="filter-chip filter-active px-6 py-2 border border-slate-200 rounded-xl text-sm font-bold">All
-                                    Categories</span>
-                                <span
-                                    class="filter-chip px-6 py-2 border border-slate-200 rounded-xl text-sm font-bold bg-white text-slate-500">Technology</span>
-                                <span
-                                    class="filter-chip px-6 py-2 border border-slate-200 rounded-xl text-sm font-bold bg-white text-slate-500">Business</span>
-                                <span
-                                    class="filter-chip px-6 py-2 border border-slate-200 rounded-xl text-sm font-bold bg-white text-slate-500">Health</span>
-                                <span
-                                    class="filter-chip px-6 py-2 border border-slate-200 rounded-xl text-sm font-bold bg-white text-slate-500">Finance</span>
-                                <span
-                                    class="filter-chip px-6 py-2 border border-slate-200 rounded-xl text-sm font-bold bg-white text-slate-500">Lifestyle</span>
-                            </div>
-                        </div>
+                    <!-- Category Icon Bar -->
+                    <div class="mt-12 flex flex-wrap justify-center gap-4">
+                        <button
+                            class="filter-chip filter-active category-icon-btn px-8 py-5 border border-slate-200 rounded-3xl bg-white flex flex-col items-center gap-3 min-w-[120px]"
+                            data-category="All Categories">
+                            <i data-lucide="layout-grid" class="w-6 h-6"></i>
+                            <span class="text-[10px] font-black uppercase tracking-widest leading-none">All Sites</span>
+                        </button>
+                        <button
+                            class="filter-chip category-icon-btn px-8 py-5 border border-slate-200 rounded-3xl bg-white flex flex-col items-center gap-3 min-w-[120px] text-slate-400"
+                            data-category="Technology">
+                            <i data-lucide="cpu" class="w-6 h-6"></i>
+                            <span class="text-[10px] font-black uppercase tracking-widest">Tech</span>
+                        </button>
+                        <button
+                            class="filter-chip category-icon-btn px-8 py-5 border border-slate-200 rounded-3xl bg-white flex flex-col items-center gap-3 min-w-[120px] text-slate-400"
+                            data-category="Business & Finance">
+                            <i data-lucide="bar-chart-3" class="w-6 h-6"></i>
+                            <span class="text-[10px] font-black uppercase tracking-widest text-center">Business</span>
+                        </button>
+                        <button
+                            class="filter-chip category-icon-btn px-8 py-5 border border-slate-200 rounded-3xl bg-white flex flex-col items-center gap-3 min-w-[120px] text-slate-400"
+                            data-category="Home Architect">
+                            <i data-lucide="home" class="w-6 h-6"></i>
+                            <span class="text-[10px] font-black uppercase tracking-widest text-center">Home</span>
+                        </button>
+                        <button
+                            class="filter-chip category-icon-btn px-8 py-5 border border-slate-200 rounded-3xl bg-white flex flex-col items-center gap-3 min-w-[120px] text-slate-400"
+                            data-category="Health">
+                            <i data-lucide="heart" class="w-6 h-6"></i>
+                            <span class="text-[10px] font-black uppercase tracking-widest">Health</span>
+                        </button>
+                        <button
+                            class="filter-chip category-icon-btn px-8 py-5 border border-slate-200 rounded-3xl bg-white flex flex-col items-center gap-3 min-w-[120px] text-slate-400"
+                            data-category="Fashion">
+                            <i data-lucide="shirt" class="w-6 h-6"></i>
+                            <span class="text-[10px] font-black uppercase tracking-widest font-heading">Fashion</span>
+                        </button>
                     </div>
                 </div>
 
-                <!-- Table Header (Legend) -->
-                <div class="p-4 bg-slate-900 text-white flex items-center justify-between px-12">
-                    <div class="flex space-x-12">
-                        <p class="text-[10px] font-black uppercase tracking-widest text-white/40">Marketplace Inventory
+                <!-- Live Inventory Counter -->
+                <div class="px-12 py-4 bg-slate-900 border-b border-slate-800 flex justify-between items-center">
+                    <p class="text-[10px] font-black uppercase tracking-widest text-white/50">Real-Time Marketplace
+                        Index</p>
+                    <div class="flex items-center gap-3">
+                        <span class="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></span>
+                        <p class="text-[10px] font-black uppercase tracking-widest text-white">40+ Premium Sites Online
                         </p>
                     </div>
-                    <div class="flex items-center space-x-3">
-                        <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
-                        <p class="text-[10px] font-black uppercase tracking-widest text-white/60">Live Availability</p>
-                    </div>
                 </div>
 
-                <!-- Listings Table -->
+                <!-- Dynamic Results Table -->
                 <div class="overflow-x-auto">
-                    <table class="w-full marketplace-table">
-                        <thead class="border-b border-slate-100 bg-slate-50/50">
+                    <table class="w-full">
+                        <thead class="bg-slate-50/50 border-b border-slate-100">
                             <tr>
                                 <th
-                                    class="px-12 py-6 text-left text-xs font-black uppercase tracking-widest text-slate-400">
-                                    Website</th>
+                                    class="px-12 py-6 text-left text-[10px] font-black uppercase tracking-widest text-slate-400">
+                                    Authority Resource</th>
                                 <th
-                                    class="px-8 py-6 text-left text-xs font-black uppercase tracking-widest text-slate-400">
-                                    Authority (DR)</th>
+                                    class="px-8 py-6 text-left text-[10px] font-black uppercase tracking-widest text-slate-400">
+                                    SEO Metrics</th>
                                 <th
-                                    class="px-8 py-6 text-left text-xs font-black uppercase tracking-widest text-slate-400">
-                                    Organic Traffic</th>
+                                    class="px-8 py-6 text-left text-[10px] font-black uppercase tracking-widest text-slate-400">
+                                    Monthly Traffic</th>
                                 <th
-                                    class="px-8 py-6 text-left text-xs font-black uppercase tracking-widest text-slate-400">
+                                    class="px-8 py-6 text-left text-[10px] font-black uppercase tracking-widest text-slate-400">
                                     Niche</th>
                                 <th
-                                    class="px-8 py-6 text-left text-xs font-black uppercase tracking-widest text-slate-400">
-                                    Price</th>
+                                    class="px-8 py-6 text-left text-[10px] font-black uppercase tracking-widest text-slate-400">
+                                    Investment</th>
                                 <th
-                                    class="px-12 py-6 text-right text-xs font-black uppercase tracking-widest text-slate-400">
-                                    Action</th>
+                                    class="px-12 py-6 text-right text-[10px] font-black uppercase tracking-widest text-slate-400">
+                                    Reservation</th>
                             </tr>
                         </thead>
-                        <tbody class="divide-y divide-slate-50">
-                            <!-- Site 1 -->
-                            <tr>
-                                <td class="px-12 py-8">
-                                    <div class="flex items-center gap-4">
-                                        <div
-                                            class="w-10 h-10 bg-slate-100 rounded-xl flex items-center justify-center font-black text-slate-400">
-                                            FC</div>
-                                        <div>
-                                            <p class="font-black text-slate-900 text-lg">Forbes.com</p>
-                                            <p class="text-xs font-bold text-slate-400 tracking-tight">Financial & News
-                                                Powerhouse</p>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td class="px-8 py-8">
-                                    <span class="badge-metric bg-emerald-100 text-emerald-700">DR 95</span>
-                                </td>
-                                <td class="px-8 py-8">
-                                    <p class="font-bold text-slate-900">45M+</p>
-                                    <p class="text-[10px] font-black text-emerald-500 uppercase tracking-widest">Growth
-                                        Boost</p>
-                                </td>
-                                <td class="px-8 py-8">
-                                    <span
-                                        class="px-3 py-1 bg-slate-100 border border-slate-200 rounded-lg text-[10px] font-black uppercase tracking-widest text-slate-500">Business</span>
-                                </td>
-                                <td class="px-8 py-8">
-                                    <p class="font-black text-slate-900 text-xl font-heading">$1,499</p>
-                                </td>
-                                <td class="px-12 py-8 text-right">
-                                    <a href="contact"
-                                        class="inline-flex items-center gap-2 bg-primary-blue text-white px-6 py-3 rounded-xl font-bold hover:bg-slate-900 transition-all shadow-lg shadow-primary-blue/20">
-                                        Order Link <i data-lucide="arrow-right" class="w-4 h-4"></i>
-                                    </a>
-                                </td>
-                            </tr>
-                            <!-- Site 2 -->
-                            <tr>
-                                <td class="px-12 py-8">
-                                    <div class="flex items-center gap-4">
-                                        <div
-                                            class="w-10 h-10 bg-slate-100 rounded-xl flex items-center justify-center font-black text-slate-400">
-                                            TC</div>
-                                        <div>
-                                            <p class="font-black text-slate-900 text-lg">TechCrunch.com</p>
-                                            <p class="text-xs font-bold text-slate-400 tracking-tight">Silicon Valley
-                                                Authority</p>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td class="px-8 py-8">
-                                    <span class="badge-metric bg-blue-100 text-blue-700">DR 92</span>
-                                </td>
-                                <td class="px-8 py-8">
-                                    <p class="font-bold text-slate-900">12M+</p>
-                                    <p class="text-[10px] font-black text-blue-500 uppercase tracking-widest">Highly
-                                        Targeted</p>
-                                </td>
-                                <td class="px-8 py-8">
-                                    <span
-                                        class="px-3 py-1 bg-slate-100 border border-slate-200 rounded-lg text-[10px] font-black uppercase tracking-widest text-slate-500">Technology</span>
-                                </td>
-                                <td class="px-8 py-8">
-                                    <p class="font-black text-slate-900 text-xl font-heading">$1,250</p>
-                                </td>
-                                <td class="px-12 py-8 text-right">
-                                    <a href="contact"
-                                        class="inline-flex items-center gap-2 bg-primary-blue text-white px-6 py-3 rounded-xl font-bold hover:bg-slate-900 transition-all shadow-lg shadow-primary-blue/20">
-                                        Order Link <i data-lucide="arrow-right" class="w-4 h-4"></i>
-                                    </a>
-                                </td>
-                            </tr>
-                            <!-- Site 3 -->
-                            <tr>
-                                <td class="px-12 py-8">
-                                    <div class="flex items-center gap-4">
-                                        <div
-                                            class="w-10 h-10 bg-slate-100 rounded-xl flex items-center justify-center font-black text-slate-400">
-                                            EI</div>
-                                        <div>
-                                            <p class="font-black text-slate-900 text-lg">Entrepreneur.com</p>
-                                            <p class="text-xs font-bold text-slate-400 tracking-tight">Global Startup
-                                                Culture</p>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td class="px-8 py-8">
-                                    <span class="badge-metric bg-emerald-100 text-emerald-700">DR 91</span>
-                                </td>
-                                <td class="px-8 py-8">
-                                    <p class="font-bold text-slate-900">18M+</p>
-                                    <p class="text-[10px] font-black text-emerald-500 uppercase tracking-widest">High
-                                        Conversion</p>
-                                </td>
-                                <td class="px-8 py-8">
-                                    <span
-                                        class="px-3 py-1 bg-slate-100 border border-slate-200 rounded-lg text-[10px] font-black uppercase tracking-widest text-slate-500">Business</span>
-                                </td>
-                                <td class="px-8 py-8">
-                                    <p class="font-black text-slate-900 text-xl font-heading">$950</p>
-                                </td>
-                                <td class="px-12 py-8 text-right">
-                                    <a href="contact"
-                                        class="inline-flex items-center gap-2 bg-primary-blue text-white px-6 py-3 rounded-xl font-bold hover:bg-slate-900 transition-all shadow-lg shadow-primary-blue/20">
-                                        Order Link <i data-lucide="arrow-right" class="w-4 h-4"></i>
-                                    </a>
-                                </td>
-                            </tr>
-                            <!-- Site 4 -->
-                            <tr>
-                                <td class="px-12 py-8">
-                                    <div class="flex items-center gap-4">
-                                        <div
-                                            class="w-10 h-10 bg-slate-100 rounded-xl flex items-center justify-center font-black text-slate-400">
-                                            VS</div>
-                                        <div>
-                                            <p class="font-black text-slate-900 text-lg">TheVerge.com</p>
-                                            <p class="text-xs font-bold text-slate-400 tracking-tight">Cutting Edge Tech
-                                                & Design</p>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td class="px-8 py-8">
-                                    <span class="badge-metric bg-blue-100 text-blue-700">DR 90</span>
-                                </td>
-                                <td class="px-8 py-8">
-                                    <p class="font-bold text-slate-900">30M+</p>
-                                    <p class="text-[10px] font-black text-blue-500 uppercase tracking-widest">Tier 1
-                                        Link</p>
-                                </td>
-                                <td class="px-8 py-8">
-                                    <span
-                                        class="px-3 py-1 bg-slate-100 border border-slate-200 rounded-lg text-[10px] font-black uppercase tracking-widest text-slate-500">Technology</span>
-                                </td>
-                                <td class="px-8 py-8">
-                                    <p class="font-black text-slate-900 text-xl font-heading">$1,100</p>
-                                </td>
-                                <td class="px-12 py-8 text-right">
-                                    <a href="contact"
-                                        class="inline-flex items-center gap-2 bg-primary-blue text-white px-6 py-3 rounded-xl font-bold hover:bg-slate-900 transition-all shadow-lg shadow-primary-blue/20">
-                                        Order Link <i data-lucide="arrow-right" class="w-4 h-4"></i>
-                                    </a>
-                                </td>
-                            </tr>
+                        <tbody id="marketplaceBody" class="divide-y divide-slate-50">
+                            <!-- JS Renders Content Here -->
                         </tbody>
                     </table>
                 </div>
-
-                <!-- Pagination/Load More Footer -->
-                <div class="p-8 border-t border-slate-100 bg-slate-50/50 flex items-center justify-center">
-                    <button
-                        class="flex items-center gap-2 text-primary-blue font-black uppercase tracking-widest text-xs hover:text-slate-900 transition-colors">
-                        Load More Inventory <i data-lucide="chevron-down" class="w-4 h-4"></i>
-                    </button>
-                </div>
             </div>
 
-            <!-- Pricing Banner -->
-            <div
-                class="text-center bg-slate-900 p-12 md:p-20 rounded-[50px] border border-slate-800 shadow-2xl relative overflow-hidden mb-32">
-                <div class="absolute inset-0 opacity-20"
-                    style="background-image: radial-gradient(#0ea5e9 0.5px, transparent 0.5px); background-size: 24px 24px;">
-                </div>
-                <div class="relative z-10">
-                    <h2 class="text-4xl font-black font-heading text-white mb-6 italic">Bulk Authority Bundles</h2>
-                    <p class="text-slate-400 mb-10 font-medium max-w-2xl mx-auto italic">Looking for a comprehensive
-                        scaling strategy? Save up to 25% with our curated guest post bundles.</p>
-                    <a href="submission-service"
-                        class="inline-block bg-primary-blue text-white px-12 py-5 rounded-2xl font-black text-xl hover:bg-white hover:text-primary-blue transition-all shadow-2xl shadow-primary-blue/20 transform hover:-translate-y-1">View
-                        Bundle Pricing</a>
-                </div>
-            </div>
-
-            <!-- Recent Success Section (Preserved) -->
-            <section class="max-w-6xl mx-auto">
+            <!-- Recent Success (Preserved) -->
+            <section class="max-w-6xl mx-auto mb-32">
                 <div class="flex items-center justify-between mb-12">
                     <h2
                         class="text-3xl font-black font-heading text-slate-900 border-l-4 border-primary-blue pl-6 italic underline decoration-primary-blue/30 decoration-4 underline-offset-8">
@@ -406,14 +252,14 @@
                             class="inline-block px-4 py-1 bg-primary-blue/20 border border-primary-blue/30 rounded-full text-primary-blue text-[10px] font-black uppercase tracking-widest mb-6">Digital
                             PR Case Study</span>
                         <h3
-                            class="text-3xl md:text-4xl font-black text-white mb-6 font-heading leading-tight italic tracking-tight">
+                            class="text-3xl md:text-4xl font-black text-white mb-6 font-heading leading-tight italic tracking-tight italic">
                             Build Unshakable Brand Authority and SEO Dominance</h3>
                         <p class="text-slate-400 mb-8 font-medium leading-relaxed">
                             Leverage the established reputation of the world's most trusted platforms like Forbes and
                             The New York Times to build massive brand trust and drive organic growth.
                         </p>
                         <a href="case-study-digital-pr"
-                            class="inline-flex items-center bg-white text-slate-900 px-8 py-4 rounded-xl font-bold hover:bg-primary-blue hover:text-white transition-all transform hover:-translate-y-1">
+                            class="inline-flex items-center bg-white text-slate-900 px-8 py-4 rounded-xl font-bold hover:bg-primary-blue hover:text-white transition-all transform hover:-translate-y-1 active:scale-95 shadow-2xl shadow-white/5">
                             Read Full Case Study
                             <i data-lucide="arrow-right" class="w-5 h-5 ml-3"></i>
                         </a>
@@ -428,7 +274,6 @@
         </div>
     </main>
 
-    <!-- Footer -->
     <footer class="bg-white border-t border-slate-100 pt-20 pb-10">
         <div class="container mx-auto px-6 text-center">
             <div
@@ -437,11 +282,13 @@
                 <a href="terms" class="hover:text-primary-blue transition-colors">Terms of Service</a>
                 <a href="disclaimer" class="hover:text-primary-blue transition-colors">Disclaimer</a>
             </div>
-            <p class="text-slate-400 font-bold text-xs tracking-widest uppercase italic">&copy; 2026 BoostSERP. The Link
+            <p class="text-slate-500 font-bold text-xs tracking-widest uppercase italic">&copy; 2026 BoostSERP. The Link
                 Dominance Agency.</p>
         </div>
     </footer>
 
+    <!-- Scripts -->
+    <script src="scripts/marketplace.js"></script>
     <script>
         lucide.createIcons();
     </script>
