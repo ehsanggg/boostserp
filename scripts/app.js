@@ -116,28 +116,28 @@ function renderDirectories(data, append = false) {
         const isHomePage = window.location.pathname.endsWith('index.html') || window.location.pathname === '/' || window.location.pathname.endsWith('/');
         if (!isHomePage && data.length >= 20) {
             const ctaHtml = `
-            <div class="col-span-full mt-12 mb-12 animate-fade-in">
-                <div class="bg-white border-2 border-primary-blue/20 rounded-3xl p-8 md:p-12 shadow-xl shadow-primary-blue/5 relative overflow-hidden group">
+            <div class="col-span-full mt-8 mb-8 animate-fade-in">
+                <div class="bg-white border-2 border-primary-blue/20 rounded-3xl p-6 md:p-8 shadow-xl shadow-primary-blue/5 relative overflow-hidden group">
                     <!-- Decorative background element -->
-                    <div class="absolute top-0 right-0 w-64 h-64 bg-primary-blue/5 rounded-full -mr-32 -mt-32 blur-3xl transition-transform group-hover:scale-110"></div>
-                    <div class="absolute bottom-0 left-0 w-48 h-48 bg-emerald-500/5 rounded-full -ml-24 -mb-24 blur-3xl transition-transform group-hover:scale-110"></div>
+                    <div class="absolute top-0 right-0 w-48 h-48 bg-primary-blue/5 rounded-full -mr-24 -mt-24 blur-3xl transition-transform group-hover:scale-110"></div>
+                    <div class="absolute bottom-0 left-0 w-32 h-32 bg-emerald-500/5 rounded-full -ml-16 -mb-16 blur-3xl transition-transform group-hover:scale-110"></div>
 
-                    <div class="relative flex flex-col items-center text-center max-w-3xl mx-auto">
-                        <div class="w-20 h-20 bg-primary-blue/10 rounded-2xl flex items-center justify-center mb-8 shadow-inner">
-                            <i data-lucide="bot" class="w-10 h-10 text-primary-blue"></i>
+                    <div class="relative flex flex-col items-center text-center max-w-2xl mx-auto">
+                        <div class="w-12 h-12 bg-primary-blue/10 rounded-xl flex items-center justify-center mb-4 shadow-inner">
+                            <i data-lucide="bot" class="w-6 h-6 text-primary-blue"></i>
                         </div>
                         
-                        <h2 class="text-4xl md:text-5xl font-black font-heading mb-6 text-slate-900 tracking-tight italic">
+                        <h2 class="text-3xl md:text-4xl font-black font-heading mb-3 text-slate-900 tracking-tight italic">
                             Tired of manual submissions?
                         </h2>
                         
-                        <p class="text-slate-600 text-xl font-medium mb-10 leading-relaxed italic">
-                            Let us submit your website to <span class="text-primary-blue font-bold">100+ directories</span> while you focus on what you do best - <span class="text-slate-900 font-bold uppercase tracking-wider">building amazing products.</span>
+                        <p class="text-slate-600 text-lg font-medium mb-6 leading-relaxed italic">
+                            Let us submit your website to <span class="text-primary-blue font-bold">100+ directories</span> while you focus on what you do best - <span class="text-slate-900 font-bold uppercase tracking-wider text-sm">building amazing products.</span>
                         </p>
                         
-                        <a href="submission-service" class="group/btn relative inline-flex items-center gap-3 bg-primary-blue hover:bg-slate-900 text-white px-12 py-5 rounded-2xl font-black transition-all text-xl shadow-2xl shadow-primary-blue/20 transform hover:-translate-y-1 active:scale-95 overflow-hidden">
+                        <a href="submission-service" class="group/btn relative inline-flex items-center gap-2 bg-primary-blue hover:bg-slate-900 text-white px-8 py-4 rounded-xl font-black transition-all text-lg shadow-2xl shadow-primary-blue/20 transform hover:-translate-y-1 active:scale-95 overflow-hidden">
                             <span class="relative z-10 font-black italic">Get Started Now</span>
-                            <i data-lucide="arrow-right" class="w-6 h-6 transition-transform group-hover/btn:translate-x-1 relative z-10"></i>
+                            <i data-lucide="arrow-right" class="w-5 h-5 transition-transform group-hover/btn:translate-x-1 relative z-10"></i>
                             <div class="absolute inset-0 bg-gradient-to-r from-primary-blue to-blue-600 opacity-0 group-hover/btn:opacity-100 transition-opacity"></div>
                         </a>
                     </div>
