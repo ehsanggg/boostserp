@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const isHomePage = window.location.pathname.endsWith('index.html') || window.location.pathname === '/' || window.location.pathname.endsWith('/');
-    const itemsPerPage = isHomePage ? 12 : 30; // Increased to 30 to match CTA interval
+    const itemsPerPage = isHomePage ? 12 : 32; // Updated to 32 per user request
     let currentPage = 1;
     let currentData = window.directories || [];
 
@@ -116,7 +116,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!isHomePage && data.length > 0) {
             const bannerIndex = append ? currentPage : 1;
 
-            if (bannerIndex <= 4 && (append || data.length >= 30)) {
+            if (bannerIndex <= 4 && (append || data.length >= 32)) {
                 const ctaHtml = `
                 <div class="col-span-full mt-8 mb-8 animate-fade-in banner-injection" data-banner-id="${bannerIndex}">
                     <div class="bg-white border-2 border-primary-blue/20 rounded-3xl p-6 md:p-8 shadow-xl shadow-primary-blue/5 relative overflow-hidden group">
