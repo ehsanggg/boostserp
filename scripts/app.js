@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const isHomePage = window.location.pathname.endsWith('index.html') || window.location.pathname === '/' || window.location.pathname.endsWith('/');
-    const itemsPerPage = isHomePage ? 12 : 20;
+    const itemsPerPage = isHomePage ? 12 : 30; // Increased to 30 to match CTA interval
     let currentPage = 1;
     let currentData = window.directories || [];
 
@@ -111,12 +111,20 @@ function renderDirectories(data, append = false) {
         grid.insertAdjacentHTML('beforeend', cardsHtml);
     } else {
         grid.innerHTML = cardsHtml;
+    }
 
-        // Inject CTA Banner after 20 items on the directories page
-        const isHomePage = window.location.pathname.endsWith('index.html') || window.location.pathname === '/' || window.location.pathname.endsWith('/');
-        if (!isHomePage && data.length >= 20) {
+    // Inject CTA Banner logic for Directories page
+    const isHomePage = window.location.pathname.endsWith('index.html') || window.location.pathname === '/' || window.location.pathname.endsWith('/');
+    if (!isHomePage && data.length > 0) {
+        // Calculate which banner index we are at (1-based)
+        // For !append (Initial/Filter), it's always the 1st banner if we have enough data
+        // For append (Load More), it's the current page
+        const bannerIndex = append ? currentPage : 1;
+
+        // Only show if we have reached the threshold (30 items) and haven't exceeded 4 banners
+        if (bannerIndex <= 4 && (append || data.length >= 30)) {
             const ctaHtml = `
-            <div class="col-span-full mt-8 mb-8 animate-fade-in">
+            <div class="col-span-full mt-8 mb-8 animate-fade-in banner-injection" data-banner-id="${bannerIndex}">
                 <div class="bg-white border-2 border-primary-blue/20 rounded-3xl p-6 md:p-8 shadow-xl shadow-primary-blue/5 relative overflow-hidden group">
                     <!-- Decorative background element -->
                     <div class="absolute top-0 right-0 w-48 h-48 bg-primary-blue/5 rounded-full -mr-24 -mt-24 blur-3xl transition-transform group-hover:scale-110"></div>
@@ -145,7 +153,6 @@ function renderDirectories(data, append = false) {
             </div>
             `;
             grid.insertAdjacentHTML('beforeend', ctaHtml);
-            if (typeof lucide !== 'undefined') lucide.createIcons();
         }
     }
 
