@@ -178,7 +178,8 @@
                         </div>
 
                         <a href="checkout.html?plan=Starter" id="btn-starter"
-                            class="w-full py-4 bg-slate-300 text-white rounded-2xl font-bold flex items-center justify-center gap-2 transition-all shadow-lg text-center pointer-events-none cursor-not-allowed">
+                            class="w-full py-4 bg-primary-blue text-white rounded-2xl font-bold flex items-center justify-center gap-2 hover:bg-slate-900 transition-all shadow-lg shadow-primary-blue/20 text-center plan-btn"
+                            data-checkbox-id="consent-starter">
                             <i data-lucide="shopping-cart" class="w-5 h-5"></i>
                             Choose Plan
                         </a>
@@ -226,8 +227,7 @@
                         </ul>
 
                         <div class="mb-6 bg-slate-50 p-4 rounded-2xl border border-slate-100 flex items-start gap-3">
-                            <input type="checkbox" id="consent-pro" class="mt-1 accent-primary-blue plan-consent"
-                                data-btn-id="btn-pro">
+                            <input type="checkbox" id="consent-pro" class="mt-1 accent-primary-blue plan-consent">
                             <label for="consent-pro"
                                 class="text-[10px] text-black font-medium leading-tight cursor-pointer">
                                 I consent to immediate service execution and understand that once the process begins,
@@ -237,7 +237,8 @@
                         </div>
 
                         <a href="checkout.html?plan=Pro" id="btn-pro"
-                            class="w-full py-4 bg-slate-300 text-white rounded-2xl font-bold flex items-center justify-center gap-2 transition-all shadow-lg text-center pointer-events-none cursor-not-allowed">
+                            class="w-full py-4 bg-primary-blue text-white rounded-2xl font-bold flex items-center justify-center gap-2 hover:bg-slate-900 transition-all shadow-lg shadow-primary-blue/20 text-center plan-btn"
+                            data-checkbox-id="consent-pro">
                             <i data-lucide="shopping-cart" class="w-5 h-5"></i>
                             Choose Plan
                         </a>
@@ -276,8 +277,7 @@
                         </ul>
 
                         <div class="mb-6 bg-slate-50 p-4 rounded-2xl border border-slate-100 flex items-start gap-3">
-                            <input type="checkbox" id="consent-premium" class="mt-1 accent-primary-blue plan-consent"
-                                data-btn-id="btn-premium">
+                            <input type="checkbox" id="consent-premium" class="mt-1 accent-primary-blue plan-consent">
                             <label for="consent-premium"
                                 class="text-[10px] text-black font-medium leading-tight cursor-pointer">
                                 I consent to immediate service execution and understand that once the process begins,
@@ -287,7 +287,8 @@
                         </div>
 
                         <a href="checkout.html?plan=Premium" id="btn-premium"
-                            class="w-full py-4 bg-slate-300 text-white rounded-2xl font-bold flex items-center justify-center gap-2 transition-all shadow-lg text-center pointer-events-none cursor-not-allowed">
+                            class="w-full py-4 bg-slate-900 text-white rounded-2xl font-bold flex items-center justify-center gap-2 hover:bg-primary-blue transition-colors shadow-lg text-center plan-btn"
+                            data-checkbox-id="consent-premium">
                             <i data-lucide="shopping-cart" class="w-5 h-5"></i>
                             Choose Plan
                         </a>
@@ -297,22 +298,15 @@
         </section>
 
         <script>
-            // Consent Checkbox Logic
-            document.querySelectorAll('.plan-consent').forEach(checkbox => {
-                checkbox.addEventListener('change', function () {
-                    const btnId = this.getAttribute('data-btn-id');
-                    const btn = document.getElementById(btnId);
+            // Plan Button Logic (Show Alert if Consent not checked)
+            document.querySelectorAll('.plan-btn').forEach(button => {
+                button.addEventListener('click', function (e) {
+                    const checkboxId = this.getAttribute('data-checkbox-id');
+                    const checkbox = document.getElementById(checkboxId);
 
-                    if (this.checked) {
-                        btn.classList.remove('bg-slate-300', 'pointer-events-none', 'cursor-not-allowed');
-                        btn.classList.add('bg-primary-blue', 'hover:bg-slate-900', 'shadow-primary-blue/20');
-                        if (btnId === 'btn-premium') {
-                            btn.classList.remove('bg-primary-blue');
-                            btn.classList.add('bg-slate-900', 'hover:bg-primary-blue');
-                        }
-                    } else {
-                        btn.classList.add('bg-slate-300', 'pointer-events-none', 'cursor-not-allowed');
-                        btn.classList.remove('bg-primary-blue', 'bg-slate-900', 'hover:bg-slate-900', 'hover:bg-primary-blue', 'shadow-primary-blue/20');
+                    if (!checkbox.checked) {
+                        e.preventDefault(); // Stop redirection
+                        alert('Please accept the Terms of Service by checking the box before proceeding.');
                     }
                 });
             });
