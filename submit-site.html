@@ -4,8 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Submit Your Site | BoostSERP</title>
-    <meta name="description" content="Submit your directory or guest post site to BoostSERP marketplace.">
+    <title>Submit Your Site & App | BoostSERP</title>
+    <meta name="description"
+        content="Professional manual directory submission service and marketplace listing. Get featured on 100+ platforms or list your own asset.">
 
     <!-- Speed Optimizations -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,11 +20,13 @@
             theme: {
                 extend: {
                     colors: {
-                        'deep-blue': '#0f172a',
                         'primary-blue': '#0ea5e9',
                         'slate-dark': '#1e293b'
                     },
-                    fontFamily: { 'sans': ['Arial', 'sans-serif'], 'heading': ['"Times New Roman"', 'serif'] }
+                    fontFamily: {
+                        'sans': ['"Times New Roman"', 'serif'],
+                        'heading': ['"Times New Roman"', 'serif']
+                    }
                 }
             }
         }
@@ -32,13 +35,13 @@
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 
-<body class="bg-[#fafbfc] text-slate-900 selection:bg-primary-blue/30 overflow-x-hidden">
+<body class="bg-white text-slate-900 selection:bg-primary-blue/30">
 
     <!-- Header -->
-    <header class="fixed top-0 w-full z-50 glass-header">
-        <nav class="container mx-auto px-6 py-2 flex justify-between items-center">
+    <header class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-100">
+        <nav class="container mx-auto px-6 py-1 flex justify-between items-center">
             <a href="/" class="flex items-center gap-2 group">
-                <img src="assets/images/logo.png" alt="BoostSERP Logo" class="h-12 md:h-14 w-auto">
+                <img src="assets/images/logo.png" alt="BoostSERP Logo" class="h-14 md:h-16 w-auto">
             </a>
             <div class="hidden md:flex items-center space-x-8">
                 <a href="/"
@@ -49,65 +52,214 @@
                     class="text-slate-600 hover:text-primary-blue font-bold tracking-tight transition-colors">Marketplace</a>
                 <a href="directories"
                     class="text-slate-600 hover:text-primary-blue font-bold tracking-tight transition-colors">Directories</a>
-                <a href="submission-service"
-                    class="text-slate-600 hover:text-primary-blue font-bold tracking-tight transition-colors">Pricing</a>
+                <a href="submit-site" class="text-primary-blue font-bold tracking-tight transition-colors">Submit
+                    App</a>
                 <a href="contact"
                     class="text-slate-600 hover:text-primary-blue font-bold tracking-tight transition-colors">Contact</a>
-                <a href="submit-site"
-                    class="bg-primary-blue text-white px-6 py-2 rounded-xl font-bold hover:bg-slate-900 transition-all text-center">Submit
-                    Site</a>
+                <a href="#pricing"
+                    class="bg-primary-blue text-white px-6 py-2 rounded-xl font-bold hover:bg-slate-900 transition-all text-center">Get
+                    Started</a>
             </div>
         </nav>
     </header>
 
-    <main class="pt-40 pb-20 min-h-screen">
-        <div class="max-w-7xl mx-auto px-6">
-            <!-- Hero Section -->
-            <div class="text-center max-w-5xl mx-auto mb-20 animate-fade-in">
-                <div
-                    class="inline-flex items-center gap-2 px-5 py-2 bg-white shadow-xl shadow-slate-200/50 border border-slate-100 rounded-full mb-10">
-                    <span class="w-2 h-2 bg-primary-blue rounded-full animate-pulse"></span>
-                    <span class="text-[10px] font-black tracking-widest text-black uppercase">Grow Your Organic
-                        Authority</span>
-                </div>
-                <h1
-                    class="text-6xl md:text-7xl font-black font-heading mb-8 leading-[1.1] text-slate-900 italic tracking-[2px]">
-                    Submit Your <br />
-                    <span class="text-primary-blue relative">
-                        Digital Asset
-                        <svg class="absolute -bottom-4 left-0 w-full" viewBox="0 0 358 20" fill="none">
-                            <path d="M3 17C118.333 5.66667 353.5 3.5 355 17" stroke="#0ea5e9" stroke-width="6"
-                                stroke-linecap="round" />
-                        </svg>
-                    </span>
-                </h1>
-                <p class="text-xl text-black font-medium max-w-2xl mx-auto mb-16 italic">
-                    Feature your platform in front of thousands of startup founders and SEO experts.
-                    We help you bridge the gap between authority and high-intent traffic.
-                </p>
+    <main class="pt-32">
+        <!-- Hero Section -->
+        <section class="relative pt-20 pb-4 overflow-hidden bg-white">
+            <div class="absolute inset-0 -z-10 opacity-[0.4]" style="background-image: 
+                    linear-gradient(#f1f5f9 1px, transparent 1px), 
+                    linear-gradient(90deg, #f1f5f9 1px, transparent 1px),
+                    radial-gradient(#e2e8f0 1.5px, transparent 1.5px);
+                    background-size: 64px 64px, 64px 64px, 32px 32px;"></div>
 
-                <!-- Submission Form Area -->
+            <div class="container mx-auto px-6 text-center">
+                <div class="flex justify-center -space-x-3 mb-8">
+                    <img src="https://i.pravatar.cc/150?u=1"
+                        class="w-12 h-12 rounded-full border-4 border-white shadow-lg" alt="User">
+                    <img src="https://i.pravatar.cc/150?u=2"
+                        class="w-12 h-12 rounded-full border-4 border-white shadow-lg" alt="User">
+                    <img src="https://i.pravatar.cc/150?u=3"
+                        class="w-12 h-12 rounded-full border-4 border-white shadow-lg" alt="User">
+                    <img src="https://i.pravatar.cc/150?u=4"
+                        class="w-12 h-12 rounded-full border-4 border-white shadow-lg" alt="User">
+                    <div
+                        class="w-12 h-12 rounded-full border-4 border-white bg-slate-100 flex items-center justify-center text-xs font-bold text-black shadow-lg">
+                        +57</div>
+                </div>
+
+                <h1
+                    class="text-4xl md:text-6xl font-black font-heading mb-6 leading-tight tracking-tight text-slate-900">
+                    Submit Your Product & <br />
+                    <span class="text-primary-blue">Get Featured Everywhere</span>
+                </h1>
+                <p class="text-xl text-black max-w-2xl mx-auto mb-10 leading-relaxed font-medium">
+                    Boost your SEO with manual submissions or list your authority site directly in our exclusive
+                    marketplace.
+                </p>
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <a href="#pricing"
+                        class="bg-primary-blue hover:bg-slate-900 text-white px-10 py-4 rounded-2xl font-bold text-lg shadow-xl shadow-primary-blue/20 transition-all transform hover:-translate-y-1">
+                        🚀 View Submission Plans
+                    </a>
+                    <a href="#list-asset"
+                        class="bg-white border-2 border-slate-100 hover:border-primary-blue text-slate-600 px-10 py-4 rounded-2xl font-bold text-lg transition-all">
+                        📝 List Your Own Site
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section id="pricing" class="pt-24 pb-20 bg-slate-50">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-black font-heading text-slate-900 mb-4">Manual Submission Plans</h2>
+                    <p class="text-black font-medium font-heading italic">We'll manually submit your app to 100+ high-DA
+                        directories.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+                    <!-- Starter Plan -->
+                    <div
+                        class="bg-white p-10 rounded-[40px] border border-slate-100 shadow-xl flex flex-col hover:shadow-2xl transition-all group">
+                        <div class="text-center mb-8">
+                            <h3 class="text-2xl font-bold text-slate-900 mb-2 font-heading">Starter</h3>
+                            <div class="flex items-center justify-center gap-3 mb-2">
+                                <span class="text-4xl font-black font-heading text-slate-900">$129</span>
+                                <span class="text-slate-400 line-through font-bold text-xl">$169</span>
+                            </div>
+                            <p class="text-black font-bold font-heading italic">30 Directories</p>
+                        </div>
+                        <ul class="space-y-4 mb-10 flex-grow text-sm font-bold text-slate-600">
+                            <li class="flex items-start gap-3"><i data-lucide="check-circle-2"
+                                    class="text-green-500 w-5 h-5 shrink-0"></i> Manual submission to 30 curated
+                                platforms</li>
+                            <li class="flex items-start gap-3"><i data-lucide="check-circle-2"
+                                    class="text-green-500 w-5 h-5 shrink-0"></i> Improve SEO visibility</li>
+                            <li class="flex items-start gap-3"><i data-lucide="check-circle-2"
+                                    class="text-green-500 w-5 h-5 shrink-0"></i> High-quality backlinks</li>
+                        </ul>
+                        <div class="mb-6 bg-slate-50 p-4 rounded-2xl border border-slate-100 flex items-start gap-3">
+                            <input type="checkbox" id="consent-starter" class="mt-1 accent-primary-blue plan-consent">
+                            <label for="consent-starter"
+                                class="text-[10px] text-black font-medium leading-tight cursor-pointer">
+                                I consent to immediate execution and understand the withdrawal policy as per <a
+                                    href="terms" class="text-primary-blue font-bold">TOS</a>.
+                            </label>
+                        </div>
+                        <a href="checkout.html?plan=Starter"
+                            class="w-full py-4 bg-primary-blue text-white rounded-2xl font-bold flex items-center justify-center gap-2 hover:bg-slate-900 transition-all plan-btn"
+                            data-checkbox-id="consent-starter">
+                            <i data-lucide="shopping-cart" class="w-5 h-5"></i> Choose Plan
+                        </a>
+                    </div>
+
+                    <!-- Pro Plan -->
+                    <div
+                        class="bg-white p-10 rounded-[40px] border-2 border-primary-blue shadow-2xl flex flex-col relative transform lg:scale-105 z-10">
+                        <div
+                            class="absolute -top-5 left-1/2 -track-x-1/2 -translate-x-1/2 bg-primary-blue text-white px-6 py-1.5 rounded-full text-xs font-black uppercase tracking-widest flex items-center gap-2">
+                            <i data-lucide="star" class="w-3 h-3 fill-white"></i> Most Popular
+                        </div>
+                        <div class="text-center mb-8">
+                            <h3 class="text-2xl font-bold text-slate-900 mb-2 font-heading">Business Pro</h3>
+                            <div class="flex items-center justify-center gap-3 mb-2">
+                                <span class="text-4xl font-black font-heading text-slate-900">$199</span>
+                                <span class="text-slate-400 line-through font-bold text-xl">$249</span>
+                            </div>
+                            <p class="text-black font-bold font-heading italic">80 Directories</p>
+                        </div>
+                        <ul class="space-y-4 mb-10 flex-grow text-sm font-bold text-slate-600">
+                            <li class="flex items-start gap-3"><i data-lucide="check-circle-2"
+                                    class="text-green-500 w-5 h-5 shrink-0"></i> Manual submission to 80 platforms</li>
+                            <li class="flex items-start gap-3"><i data-lucide="check-circle-2"
+                                    class="text-green-500 w-5 h-5 shrink-0"></i> Save 40+ hours of manual work</li>
+                            <li class="flex items-start gap-3"><i data-lucide="check-circle-2"
+                                    class="text-green-500 w-5 h-5 shrink-0"></i> High Authority Platforms included</li>
+                        </ul>
+                        <div class="mb-6 bg-slate-50 p-4 rounded-2xl border border-slate-100 flex items-start gap-3">
+                            <input type="checkbox" id="consent-pro" class="mt-1 accent-primary-blue plan-consent">
+                            <label for="consent-pro"
+                                class="text-[10px] text-black font-medium leading-tight cursor-pointer">
+                                I consent to immediate execution and understand the withdrawal policy as per <a
+                                    href="terms" class="text-primary-blue font-bold">TOS</a>.
+                            </label>
+                        </div>
+                        <a href="checkout.html?plan=Pro"
+                            class="w-full py-4 bg-primary-blue text-white rounded-2xl font-bold flex items-center justify-center gap-2 hover:bg-slate-900 transition-all plan-btn"
+                            data-checkbox-id="consent-pro">
+                            <i data-lucide="shopping-cart" class="w-5 h-5"></i> Choose Plan
+                        </a>
+                    </div>
+
+                    <!-- Premium Plan -->
+                    <div
+                        class="bg-white p-10 rounded-[40px] border border-slate-100 shadow-xl flex flex-col hover:shadow-2xl transition-all group">
+                        <div class="text-center mb-8">
+                            <h3 class="text-2xl font-bold text-slate-900 mb-2 font-heading">Elite Authority</h3>
+                            <div class="flex items-center justify-center gap-3 mb-2">
+                                <span class="text-4xl font-black font-heading text-slate-900">$299</span>
+                                <span class="text-slate-400 line-through font-bold text-xl">$350</span>
+                            </div>
+                            <p class="text-black font-bold font-heading italic">150+ Directories</p>
+                        </div>
+                        <ul class="space-y-4 mb-10 flex-grow text-sm font-bold text-slate-600">
+                            <li class="flex items-start gap-3"><i data-lucide="check-circle-2"
+                                    class="text-green-500 w-5 h-5 shrink-0"></i> 150+ High-Quality Submissions</li>
+                            <li class="flex items-start gap-3"><i data-lucide="check-circle-2"
+                                    class="text-green-500 w-5 h-5 shrink-0"></i> Full indexing support</li>
+                            <li class="flex items-start gap-3"><i data-lucide="check-circle-2"
+                                    class="text-green-500 w-5 h-5 shrink-0"></i> Deep AI Tool visibility</li>
+                        </ul>
+                        <div class="mb-6 bg-slate-50 p-4 rounded-2xl border border-slate-100 flex items-start gap-3">
+                            <input type="checkbox" id="consent-premium" class="mt-1 accent-primary-blue plan-consent">
+                            <label for="consent-premium"
+                                class="text-[10px] text-black font-medium leading-tight cursor-pointer">
+                                I consent to immediate execution and understand the withdrawal policy as per <a
+                                    href="terms" class="text-primary-blue font-bold">TOS</a>.
+                            </label>
+                        </div>
+                        <a href="checkout.html?plan=Premium"
+                            class="w-full py-4 bg-slate-900 text-white rounded-2xl font-bold flex items-center justify-center gap-2 hover:bg-primary-blue transition-all plan-btn"
+                            data-checkbox-id="consent-premium">
+                            <i data-lucide="shopping-cart" class="w-5 h-5"></i> Choose Plan
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- The Listing Form Section -->
+        <section id="list-asset" class="py-32 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center max-w-4xl mx-auto mb-16">
+                    <h2 class="text-5xl font-black font-heading text-slate-900 mb-6 italic tracking-tight">List Your
+                        Asset on Our Index</h2>
+                    <p class="text-xl text-slate-500 font-medium italic">Own a high-authority directory or guest post
+                        site? Get featured in our curated database for thousands of active buyers.</p>
+                </div>
+
                 <div
-                    class="advanced-card max-w-4xl mx-auto rounded-[40px] md:rounded-[60px] overflow-hidden text-left shadow-2xl">
+                    class="advanced-card max-w-4xl mx-auto rounded-[40px] md:rounded-[60px] overflow-hidden text-left shadow-[0_32px_64px_-16px_rgba(0,0,0,0.1)] border border-slate-100">
                     <div class="p-10 md:p-16 border-b border-slate-100 bg-slate-50/50">
-                        <h2 class="text-3xl font-black font-heading text-slate-900 italic mb-2 tracking-tight">Listing
-                            Requirements</h2>
-                        <p class="text-slate-500 font-bold uppercase tracking-widest text-[10px]">Please provide
-                            accurate details for review</p>
+                        <h2 class="text-3xl font-black font-heading text-slate-900 italic mb-2 tracking-tight">Community
+                            Listing Form</h2>
+                        <p class="text-slate-500 font-bold uppercase tracking-widest text-[10px]">Provide details for
+                            review by our quality team</p>
                     </div>
 
                     <div class="p-10 md:p-16">
                         <form id="submission-form" class="space-y-10">
                             <!-- Type Selection -->
                             <div class="space-y-4">
-                                <label class="text-[10px] font-black text-slate-400 uppercase tracking-widest">1. Select
+                                <label class="text-[10px] font-black text-slate-400 uppercase tracking-widest">1.
                                     Listing Type</label>
                                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                                     <label class="relative cursor-pointer group">
                                         <input type="radio" name="submission_type" value="Directory" class="peer hidden"
                                             checked>
                                         <div
-                                            class="p-6 border-2 border-slate-100 rounded-3xl transition-all peer-checked:border-primary-blue peer-checked:bg-primary-blue/5 hover:border-primary-blue/30">
+                                            class="p-6 border-2 border-slate-100 rounded-3xl transition-all peer-checked:border-primary-blue peer-checked:bg-primary-blue/5">
                                             <div class="flex items-center gap-4 mb-2">
                                                 <div
                                                     class="w-10 h-10 bg-primary-blue/10 rounded-xl flex items-center justify-center text-primary-blue">
@@ -119,17 +271,12 @@
                                             <p class="text-xs text-slate-400 font-bold italic">List your startup
                                                 directory or platform index.</p>
                                         </div>
-                                        <div
-                                            class="absolute top-4 right-4 opacity-0 peer-checked:opacity-100 transition-opacity">
-                                            <i data-lucide="check-circle-2" class="w-6 h-6 text-primary-blue"></i>
-                                        </div>
                                     </label>
-
                                     <label class="relative cursor-pointer group">
                                         <input type="radio" name="submission_type" value="Guest Post"
                                             class="peer hidden">
                                         <div
-                                            class="p-6 border-2 border-slate-100 rounded-3xl transition-all peer-checked:border-primary-blue peer-checked:bg-primary-blue/5 hover:border-primary-blue/30">
+                                            class="p-6 border-2 border-slate-100 rounded-3xl transition-all peer-checked:border-emerald-500 peer-checked:bg-emerald-500/5">
                                             <div class="flex items-center gap-4 mb-2">
                                                 <div
                                                     class="w-10 h-10 bg-emerald-500/10 rounded-xl flex items-center justify-center text-emerald-500">
@@ -142,36 +289,30 @@
                                             <p class="text-xs text-slate-400 font-bold italic">Accept content and
                                                 provide authority backlinks.</p>
                                         </div>
-                                        <div
-                                            class="absolute top-4 right-4 opacity-0 peer-checked:opacity-100 transition-opacity">
-                                            <i data-lucide="check-circle-2" class="w-6 h-6 text-primary-blue"></i>
-                                        </div>
                                     </label>
                                 </div>
                             </div>
 
-                            <!-- Basic Info -->
                             <div class="space-y-6">
                                 <label class="text-[10px] font-black text-slate-400 uppercase tracking-widest">2. Site
-                                    Information</label>
+                                    Details</label>
                                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                                     <div class="space-y-2">
                                         <label class="text-sm font-black text-slate-900 italic">Website URL</label>
                                         <input type="url" id="site_url" required placeholder="https://yoursite.com"
-                                            class="w-full bg-slate-50 border border-slate-100 rounded-2xl px-6 py-4 focus:border-primary-blue focus:bg-white outline-none transition-all font-bold text-slate-900 italic">
+                                            class="w-full bg-slate-50 border border-slate-100 rounded-2xl px-6 py-4 focus:border-primary-blue focus:bg-white outline-none font-bold text-slate-900 italic">
                                     </div>
                                     <div class="space-y-2">
                                         <label class="text-sm font-black text-slate-900 italic">Site Name</label>
                                         <input type="text" id="site_name" required placeholder="e.g. AuthorityHub"
-                                            class="w-full bg-slate-50 border border-slate-100 rounded-2xl px-6 py-4 focus:border-primary-blue focus:bg-white outline-none transition-all font-bold text-slate-900 italic">
+                                            class="w-full bg-slate-50 border border-slate-100 rounded-2xl px-6 py-4 focus:border-primary-blue focus:bg-white outline-none font-bold text-slate-900 italic">
                                     </div>
                                 </div>
-
                                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                                     <div class="space-y-2">
                                         <label class="text-sm font-black text-slate-900 italic">Category</label>
                                         <select id="site_category" required
-                                            class="w-full bg-slate-50 border border-slate-100 rounded-2xl px-6 py-4 focus:border-primary-blue focus:bg-white outline-none transition-all font-bold text-slate-900 italic appearance-none">
+                                            class="w-full bg-slate-50 border border-slate-100 rounded-2xl px-6 py-4 focus:border-primary-blue focus:bg-white outline-none font-bold text-slate-900 italic appearance-none">
                                             <option>Tech & SaaS</option>
                                             <option>AI & Machine Learning</option>
                                             <option>Marketing & SEO</option>
@@ -183,24 +324,23 @@
                                         </select>
                                     </div>
                                     <div class="space-y-2">
-                                        <label class="text-sm font-black text-slate-900 italic">Primary Metric (DR or
-                                            DA)</label>
+                                        <label class="text-sm font-black text-slate-900 italic">DR (Domain
+                                            Rating)</label>
                                         <input type="number" id="site_metric" required placeholder="e.g. 75"
-                                            class="w-full bg-slate-50 border border-slate-100 rounded-2xl px-6 py-4 focus:border-primary-blue focus:bg-white outline-none transition-all font-bold text-slate-900 italic">
+                                            class="w-full bg-slate-50 border border-slate-100 rounded-2xl px-6 py-4 focus:border-primary-blue focus:bg-white outline-none font-bold text-slate-900 italic">
                                     </div>
                                 </div>
-
                                 <div class="space-y-2">
                                     <label class="text-sm font-black text-slate-900 italic">Description</label>
                                     <textarea id="site_description" rows="4" required
-                                        placeholder="Describe your site's audience and content focus..."
-                                        class="w-full bg-slate-50 border border-slate-100 rounded-2xl px-6 py-4 focus:border-primary-blue focus:bg-white outline-none transition-all font-bold text-slate-900 italic"></textarea>
+                                        placeholder="Tell us about your audience..."
+                                        class="w-full bg-slate-50 border border-slate-100 rounded-2xl px-6 py-4 focus:border-primary-blue focus:bg-white outline-none font-bold text-slate-900 italic"></textarea>
                                 </div>
                             </div>
 
                             <button type="submit"
-                                class="w-full bg-slate-900 text-white py-6 rounded-3xl font-black text-xl italic tracking-wider hover:bg-primary-blue transition-all transform active:scale-[0.98] shadow-2xl shadow-slate-900/10 flex items-center justify-center gap-3">
-                                <span>Submit for Review</span>
+                                class="w-full bg-slate-900 text-white py-6 rounded-3xl font-black text-xl italic tracking-wider hover:bg-primary-blue transition-all shadow-2xl flex items-center justify-center gap-3">
+                                <span>Submit for Approval</span>
                                 <i data-lucide="send" class="w-6 h-6"></i>
                             </button>
                         </form>
@@ -210,18 +350,70 @@
                                 class="w-24 h-24 bg-emerald-50 rounded-[40px] flex items-center justify-center mx-auto mb-8 text-emerald-500 shadow-inner">
                                 <i data-lucide="check-check" class="w-12 h-12"></i>
                             </div>
-                            <h2 class="text-4xl font-black font-heading text-slate-900 italic mb-4">Submission Received!
-                            </h2>
-                            <p class="text-slate-500 font-bold italic mb-8">Our quality control team will vetting your
-                                site within 24-48 hours. <br /> Check back the admin simulator for updates.</p>
+                            <h2 class="text-4xl font-black font-heading text-slate-900 italic mb-4">Success!</h2>
+                            <p class="text-slate-500 font-bold italic mb-8">Your request has been sent for review. Check
+                                back soon.</p>
                             <a href="/"
                                 class="text-primary-blue font-black tracking-widest uppercase text-xs hover:underline">Return
-                                to Dashboard</a>
+                                Home</a>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
+
+        <!-- Stats -->
+        <section class="py-24 bg-slate-50">
+            <div class="container mx-auto px-6">
+                <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 max-w-5xl mx-auto">
+                    <div class="text-center">
+                        <p class="text-4xl font-black font-heading text-slate-900 mb-2">100+</p>
+                        <p class="text-xs font-black text-slate-400 uppercase tracking-widest">Happy Customers</p>
+                    </div>
+                    <div class="text-center">
+                        <p class="text-4xl font-black font-heading text-primary-blue mb-2">15,000+</p>
+                        <p class="text-xs font-black text-slate-400 uppercase tracking-widest">Backlinks Built</p>
+                    </div>
+                    <div class="text-center">
+                        <p class="text-4xl font-black font-heading text-slate-900 mb-2">+25</p>
+                        <p class="text-xs font-black text-slate-400 uppercase tracking-widest">Avg. DR Increase</p>
+                    </div>
+                    <div class="text-center">
+                        <p class="text-4xl font-black font-heading text-primary-blue mb-2">3-5 Days</p>
+                        <p class="text-xs font-black text-slate-400 uppercase tracking-widest">Average Delivery</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="py-32 bg-white">
+            <div class="container mx-auto px-6 max-w-4xl">
+                <h2 class="text-4xl font-black font-heading text-slate-900 mb-12 text-center">Common Questions</h2>
+                <div class="space-y-6">
+                    <details class="bg-slate-50 p-8 rounded-3xl border border-slate-100 group">
+                        <summary
+                            class="text-xl font-bold text-slate-900 cursor-pointer list-none flex justify-between items-center font-heading">
+                            How do I track my submissions?
+                            <i data-lucide="plus"
+                                class="w-6 h-6 text-primary-blue group-open:rotate-45 transition-transform"></i>
+                        </summary>
+                        <p class="text-slate-600 mt-4 leading-relaxed font-medium">We provide a full report with live
+                            links once our manual process is complete.</p>
+                    </details>
+                    <details class="bg-slate-50 p-8 rounded-3xl border border-slate-100 group">
+                        <summary
+                            class="text-xl font-bold text-slate-900 cursor-pointer list-none flex justify-between items-center font-heading">
+                            Can I list my own blog?
+                            <i data-lucide="plus"
+                                class="w-6 h-6 text-primary-blue group-open:rotate-45 transition-transform"></i>
+                        </summary>
+                        <p class="text-slate-600 mt-4 leading-relaxed font-medium">Yes, use the "Community Listing Form"
+                            to submit your own sites for review by our team.</p>
+                    </details>
+                </div>
+            </div>
+        </section>
     </main>
 
     <!-- Footer -->
@@ -234,10 +426,10 @@
                         class="text-slate-500 hover:text-primary-blue font-bold transition-colors text-sm">Directories</a>
                     <a href="guest-posting"
                         class="text-slate-500 hover:text-primary-blue font-bold transition-colors text-sm">Marketplace</a>
-                    <a href="submission-service"
-                        class="text-slate-500 hover:text-primary-blue font-bold transition-colors text-sm">Pricing</a>
                     <a href="portfolio"
                         class="text-slate-500 hover:text-primary-blue font-bold transition-colors text-sm">Portfolio</a>
+                    <a href="contact"
+                        class="text-slate-500 hover:text-primary-blue font-bold transition-colors text-sm">Contact</a>
                 </div>
                 <div class="flex flex-col items-center text-center">
                     <img src="assets/images/logo.png" alt="BoostSERP Logo" class="h-12 w-auto mb-6">
@@ -253,17 +445,11 @@
                     <a href="terms"
                         class="text-slate-500 hover:text-primary-blue font-bold transition-colors text-sm">Terms of
                         Service</a>
-                    <a href="disclaimer"
-                        class="text-slate-500 hover:text-primary-blue font-bold transition-colors text-sm">Disclaimer</a>
                 </div>
             </div>
             <div
                 class="border-t border-slate-100 pt-8 flex flex-col md:flex-row justify-between items-center text-[10px] font-black uppercase tracking-widest text-slate-400">
                 <p>&copy; 2026 BoostSERP. Built for Founders.</p>
-                <div class="flex gap-6 mt-4 md:mt-0">
-                    <a href="#" class="hover:text-primary-blue transition-colors">Twitter</a>
-                    <a href="#" class="hover:text-primary-blue transition-colors">LinkedIn</a>
-                </div>
             </div>
         </div>
     </footer>
@@ -271,9 +457,20 @@
     <script>
         lucide.createIcons();
 
+        // Plan Button Selection Logic
+        document.querySelectorAll('.plan-btn').forEach(btn => {
+            btn.addEventListener('click', function (e) {
+                const checkboxId = this.getAttribute('data-checkbox-id');
+                if (!document.getElementById(checkboxId).checked) {
+                    e.preventDefault();
+                    alert('Please accept the Terms of Service before choosing a plan.');
+                }
+            });
+        });
+
+        // Form Submission Logic
         document.getElementById('submission-form').addEventListener('submit', function (e) {
             e.preventDefault();
-
             const formData = {
                 id: Date.now(),
                 type: document.querySelector('input[name="submission_type"]:checked').value,
@@ -286,14 +483,12 @@
                 timestamp: new Date().toISOString(),
                 logo: `https://logo.clearbit.com/${new URL(document.getElementById('site_url').value).hostname}`
             };
-
-            const submissions = JSON.parse(localStorage.getItem('boostserp_submissions') || '[]');
-            submissions.push(formData);
-            localStorage.setItem('boostserp_submissions', JSON.stringify(submissions));
-
+            const subs = JSON.parse(localStorage.getItem('boostserp_submissions') || '[]');
+            subs.push(formData);
+            localStorage.setItem('boostserp_submissions', JSON.stringify(subs));
             this.classList.add('hidden');
             document.getElementById('success-message').classList.remove('hidden');
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+            window.scrollTo({ top: document.getElementById('list-asset').offsetTop - 100, behavior: 'smooth' });
         });
     </script>
 </body>
