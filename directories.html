@@ -33,104 +33,190 @@
             }
         }
     </script>
-    <link rel="stylesheet" href="assets/styles.css">
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .glass-header {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .advanced-card {
+            background: white;
+            border: 1px solid rgba(14, 165, 233, 0.1);
+            box-shadow: 0 25px 50px -12px rgba(14, 165, 233, 0.08);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .animate-fade-in {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
 </head>
 
-<body class="bg-white text-slate-900 selection:bg-primary-blue/30">
+<body class="bg-[#fafbfc] text-slate-900 selection:bg-primary-blue/30 overflow-x-hidden">
 
-    <!-- Sticky Header -->
     <!-- Header -->
-    <header class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-100">
+    <header class="fixed top-0 w-full z-50 glass-header">
         <nav class="container mx-auto px-6 py-1 flex justify-between items-center">
             <a href="/" class="flex items-center gap-2 group">
                 <img src="assets/images/logo.png" alt="BoostSERP Logo" class="h-14 md:h-16 w-auto">
             </a>
-            <div class="hidden md:flex items-center space-x-8">
+            <div class="hidden md:flex items-center space-x-10">
                 <a href="/"
-                    class="text-slate-600 hover:text-primary-blue font-bold tracking-tight transition-colors">Home</a>
+                    class="text-black hover:text-primary-blue font-black tracking-widest text-[10px] uppercase transition-colors">Home</a>
                 <a href="portfolio.html"
-                    class="text-slate-600 hover:text-primary-blue font-bold tracking-tight transition-colors">Portfolio</a>
+                    class="text-black hover:text-primary-blue font-black tracking-widest text-[10px] uppercase transition-colors">Portfolio</a>
 
-                <!-- Services Dropdown -->
                 <div class="relative group">
                     <button
-                        class="text-slate-600 hover:text-primary-blue font-bold tracking-tight transition-colors flex items-center gap-1">
-                        Services
-                        <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none"
-                            stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
-                            </path>
-                        </svg>
+                        class="text-black hover:text-primary-blue font-black tracking-widest text-[10px] uppercase transition-colors flex items-center gap-1">
+                        Services <i data-lucide="chevron-down"
+                            class="w-3 h-3 group-hover:rotate-180 transition-transform"></i>
                     </button>
                     <div
-                        class="absolute left-0 mt-2 w-48 bg-white border border-slate-100 rounded-xl shadow-xl py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                        class="absolute left-0 mt-4 w-56 bg-white border border-slate-100 rounded-2xl shadow-2xl py-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:translate-y-0 translate-y-2">
                         <a href="link-building.html"
-                            class="block px-4 py-2 text-sm font-bold text-slate-600 hover:bg-slate-50 hover:text-primary-blue">Link
-                            Building</a>
+                            class="block px-6 py-3 text-[10px] font-black uppercase tracking-widest text-black hover:bg-slate-50 hover:text-primary-blue">Authority
+                            Links</a>
                     </div>
                 </div>
 
-
                 <a href="guest-posting.html"
-                    class="text-slate-600 hover:text-primary-blue font-bold tracking-tight transition-colors">Marketplace</a>
+                    class="text-black hover:text-primary-blue font-black tracking-widest text-[10px] uppercase transition-colors">Marketplace</a>
 
                 <a href="directories.html"
-                    class="text-slate-600 hover:text-primary-blue font-bold tracking-tight transition-colors border-b-2 border-primary-blue">Directories</a>
+                    class="text-black hover:text-primary-blue font-black tracking-widest text-[10px] uppercase transition-colors border-b-2 border-primary-blue">Global
+                    Directories</a>
                 <a href="submission-service.html"
-                    class="text-slate-600 hover:text-primary-blue font-bold tracking-tight transition-colors">Pricing</a>
-                <a href="contact.html"
-                    class="text-slate-600 hover:text-primary-blue font-bold tracking-tight transition-colors">Contact</a>
+                    class="text-black hover:text-primary-blue font-black tracking-widest text-[10px] uppercase transition-colors">Pricing
+                    Hub</a>
                 <a href="submission-service.html#pricing"
-                    class="inline-flex items-center gap-3 bg-primary-blue hover:bg-slate-900 text-white px-10 py-4 rounded-2xl font-black transition-all text-lg shadow-xl shadow-primary-blue/20 transform hover:-translate-y-1 active:scale-95">
-                    <span>Submit Your App</span>
-                    <i data-lucide="arrow-right" class="w-5 h-5"></i>
-                </a>
+                    class="bg-primary-blue text-white px-8 py-3 rounded-xl font-black text-[10px] uppercase tracking-widest hover:bg-slate-900 transition-all shadow-xl shadow-primary-blue/20">Get
+                    Listed</a>
             </div>
         </nav>
     </header>
 
-    <main class="pt-32 pb-12 bg-slate-50 min-h-screen">
+    <main class="pt-40 pb-12">
+        <div class="max-w-7xl mx-auto px-6">
+            <!-- Hero Section -->
+            <div class="text-center max-w-5xl mx-auto mb-20 animate-fade-in">
+                <div
+                    class="inline-flex items-center gap-2 px-5 py-2 bg-white shadow-xl shadow-slate-200/50 border border-slate-100 rounded-full mb-10">
+                    <span class="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></span>
+                    <span class="text-[10px] font-black tracking-widest text-black uppercase">Verified Inventory: 135+
+                        High-DR Directories</span>
+                </div>
+                <h1
+                    class="text-6xl md:text-7xl font-black font-heading mb-8 leading-[1.1] text-slate-900 italic tracking-[2px]">
+                    Elite Global <br />
+                    <span class="text-primary-blue relative">
+                        Directory Explorer
+                        <svg class="absolute -bottom-4 left-0 w-full" viewBox="0 0 358 20" fill="none">
+                            <path d="M3 17C118.333 5.66667 353.5 3.5 355 17" stroke="#0ea5e9" stroke-width="6"
+                                stroke-linecap="round" />
+                        </svg>
+                    </span>
+                </h1>
 
-        <div class="container mx-auto px-6">
-            <!-- Breadcrumbs -->
-            <div class="flex items-center space-x-2 text-sm text-slate-400 mb-8">
-                <a href="/" class="hover:text-primary-blue transition-colors">Home</a>
-                <i data-lucide="chevron-right" class="w-4 h-4"></i>
-                <span class="text-slate-600">All Directories</span>
+                <div class="max-w-4xl mx-auto">
+                    <p
+                        class="text-2xl font-black text-slate-900 mb-6 italic tracking-tight underline decoration-primary-blue/30 decoration-4 underline-offset-8">
+                        The ultimate launchpad for SaaS & Startup Growth
+                    </p>
+                    <p class="text-lg text-black font-medium leading-relaxed mb-10 italic">
+                        Browse our verified list of 135+ high-authority directories to find your perfect launchpad.
+                        Boost your rankings, build powerful backlinks, and dominate your niche with hand-picked listing
+                        sites.
+                    </p>
+
+                    <!-- User Value Propositions -->
+                    <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
+                        <div
+                            class="p-4 bg-white border border-slate-100 rounded-2xl shadow-sm flex items-center gap-3 group hover:border-primary-blue transition-colors">
+                            <div
+                                class="w-8 h-8 rounded-lg bg-emerald-50 flex items-center justify-center text-emerald-500">
+                                <i data-lucide="check-circle-2" class="w-5 h-5"></i>
+                            </div>
+                            <span class="text-[10px] font-black uppercase tracking-widest text-slate-600">Verified
+                                DR</span>
+                        </div>
+                        <div
+                            class="p-4 bg-white border border-slate-100 rounded-2xl shadow-sm flex items-center gap-3 group hover:border-primary-blue transition-colors">
+                            <div class="w-8 h-8 rounded-lg bg-blue-50 flex items-center justify-center text-blue-500">
+                                <i data-lucide="bar-chart-3" class="w-5 h-5"></i>
+                            </div>
+                            <span class="text-[10px] font-black uppercase tracking-widest text-slate-600">Index
+                                Ready</span>
+                        </div>
+                        <div
+                            class="p-4 bg-white border border-slate-100 rounded-2xl shadow-sm flex items-center gap-3 group hover:border-primary-blue transition-colors">
+                            <div
+                                class="w-8 h-8 rounded-lg bg-orange-50 flex items-center justify-center text-orange-500">
+                                <i data-lucide="zap" class="w-5 h-5"></i>
+                            </div>
+                            <span class="text-[10px] font-black uppercase tracking-widest text-slate-600">Manual
+                                Check</span>
+                        </div>
+                        <div
+                            class="p-4 bg-white border border-slate-100 rounded-2xl shadow-sm flex items-center gap-3 group hover:border-primary-blue transition-colors">
+                            <div
+                                class="w-8 h-8 rounded-lg bg-purple-50 flex items-center justify-center text-purple-500">
+                                <i data-lucide="shield-check" class="w-5 h-5"></i>
+                            </div>
+                            <span class="text-[10px] font-black uppercase tracking-widest text-slate-600">Safe
+                                White-Hat</span>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-8">
-                <div>
-                    <h1 class="text-5xl font-extrabold font-heading mb-4 text-slate-900">Directory Explorer</h1>
-                    <p class="text-black text-lg">Browse our verified list of 135+ directories to find your
-                        perfect
-                        launchpad.</p>
+            <div class="advanced-card rounded-[40px] md:rounded-[60px] overflow-hidden mb-32 shadow-2xl">
+                <div class="p-10 md:p-16 bg-slate-50/50 border-b border-slate-100">
+                    <div class="flex flex-col lg:flex-row gap-10 items-stretch justify-between">
+                        <div>
+                            <h2 class="text-4xl font-extrabold font-heading mb-4 text-slate-900 italic">Directory
+                                Explorer</h2>
+                            <p class="text-black text-lg">Filter through our manually curated list of high-DR listing
+                                sites.</p>
+                        </div>
+
+                        <!-- Filters -->
+                        <div
+                            class="flex items-center space-x-2 bg-white border border-slate-200 p-1.5 rounded-2xl shadow-sm h-fit self-center">
+                            <button onclick="filterDirectories('all')"
+                                class="filter-btn active px-6 py-2 rounded-xl font-bold transition-all bg-primary-blue text-white shadow-md">All</button>
+                            <button onclick="filterDirectories('Free')"
+                                class="filter-btn px-6 py-2 rounded-xl font-bold transition-all text-black hover:text-primary-blue">Free</button>
+                            <button onclick="filterDirectories('Paid')"
+                                class="filter-btn px-6 py-2 rounded-xl font-bold transition-all text-black hover:text-primary-blue">Paid</button>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- Filters -->
-                <div class="flex items-center space-x-2 bg-white border border-slate-200 p-1.5 rounded-2xl shadow-sm">
-                    <button onclick="filterDirectories('all')"
-                        class="filter-btn active px-6 py-2 rounded-xl font-bold transition-all bg-primary-blue text-white shadow-md">All</button>
-                    <button onclick="filterDirectories('Free')"
-                        class="filter-btn px-6 py-2 rounded-xl font-bold transition-all text-black hover:text-primary-blue">Free</button>
-                    <button onclick="filterDirectories('Paid')"
-                        class="filter-btn px-6 py-2 rounded-xl font-bold transition-all text-black hover:text-primary-blue">Paid</button>
+                <div id="directory-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                    <!-- Cards will be injected by JavaScript -->
+                </div>
+
+                <div id="load-more-container" class="mt-16 text-center">
+                    <button onclick="loadMore()"
+                        class="bg-white border border-slate-200 text-slate-900 px-12 py-5 rounded-2xl font-bold hover:bg-slate-50 transition-all transform active:scale-95 text-xl shadow-sm">
+                        Load More Directories
+                    </button>
                 </div>
             </div>
-
-            <div id="directory-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-                <!-- Cards will be injected by JavaScript -->
-            </div>
-
-            <div id="load-more-container" class="mt-16 text-center">
-                <button onclick="loadMore()"
-                    class="bg-white border border-slate-200 text-slate-900 px-12 py-5 rounded-2xl font-bold hover:bg-slate-50 transition-all transform active:scale-95 text-xl shadow-sm">
-                    Load More Directories
-                </button>
-            </div>
-        </div>
     </main>
 
     <!-- Footer -->
