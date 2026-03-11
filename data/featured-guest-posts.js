@@ -1,4 +1,4 @@
-// Featured Guest Posting Marketplace Data for Homepage
+// Featured Guest Post Marketplace Data for Homepage
 window.featuredGuestPosts = [
     {
         url: "https://www.msn.com/",
