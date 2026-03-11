@@ -79,9 +79,10 @@ document.addEventListener('DOMContentLoaded', () => {
                         </span>
                         <div class="dr-pill" title="Domain Rating: ${dir.dr}">
                             <div class="relative w-5 h-5 flex items-center justify-center">
-                                <svg class="dr-circle-svg" width="20" height="20" viewBox="0 0 20 20">
-                                    <circle class="dr-circle-bg" cx="10" cy="10" r="${radius}"></circle>
+                                <svg class="dr-circle-svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                    <circle class="dr-circle-bg" cx="10" cy="10" r="${radius}" fill="none"></circle>
                                     <circle class="dr-circle-progress" cx="10" cy="10" r="${radius}" 
+                                            fill="none"
                                             stroke-dasharray="${circumference}" 
                                             stroke-dashoffset="${offset}"></circle>
                                 </svg>
