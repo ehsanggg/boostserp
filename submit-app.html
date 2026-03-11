@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Your Site & App | BoostSERP</title>
+    <meta name="description"
+        content="Submit your digital asset to our curated index. Professional listing for directories and guest post sites.">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-blue': '#0ea5e9',
+                        'slate-dark': '#1e293b'
+                    },
+                    fontFamily: {
+                        'sans': ['"Times New Roman"', 'serif'],
+                        'heading': ['"Times New Roman"', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="assets/styles.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body class="bg-white text-slate-900 selection:bg-primary-blue/30">
+
+    <!-- Header -->
+    <header class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-100">
+        <nav class="container mx-auto px-6 py-1 flex justify-between items-center">
+            <a href="/" class="flex items-center gap-2 group">
+                <img src="assets/images/logo.png" alt="BoostSERP Logo" class="h-14 md:h-16 w-auto">
+            </a>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="/"
+                    class="text-slate-600 hover:text-primary-blue font-bold tracking-tight transition-colors">Home</a>
+                <a href="portfolio"
+                    class="text-slate-600 hover:text-primary-blue font-bold tracking-tight transition-colors">Portfolio</a>
+                <a href="guest-posting"
+                    class="text-slate-600 hover:text-primary-blue font-bold tracking-tight transition-colors">Marketplace</a>
+                <a href="directories"
+                    class="text-slate-600 hover:text-primary-blue font-bold tracking-tight transition-colors">Directories</a>
+                <a href="submit-site"
+                    class="text-slate-600 hover:text-primary-blue font-bold tracking-tight transition-colors">Pricing</a>
+                <a href="contact"
+                    class="text-slate-600 hover:text-primary-blue font-bold tracking-tight transition-colors">Contact</a>
+                <a href="submit-app"
+                    class="bg-primary-blue text-white px-6 py-2 rounded-xl font-bold hover:bg-slate-900 transition-all text-center">Submit
+                    App</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="pt-40 pb-20">
+        <!-- Hero Section -->
+        <section class="container mx-auto px-6 text-center mb-20">
+            <h1 class="text-5xl font-black font-heading text-slate-900 mb-6 italic tracking-tight">Submit Your Digital
+                Asset</h1>
+            <p class="text-xl text-slate-500 font-medium italic max-w-2xl mx-auto">Get your directory or guest post site
+                reviewed and listed in our exclusive marketplace.</p>
+        </section>
+
+        <!-- Form Section -->
+        <section class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto bg-white rounded-[40px] shadow-2xl border border-slate-100 overflow-hidden">
+                <div class="p-10 md:p-16 border-b border-slate-100 bg-slate-50/50">
+                    <h2 class="text-3xl font-black font-heading text-slate-900 italic tracking-tight">Community Listing
+                        Form</h2>
+                    <p class="text-slate-400 font-black uppercase tracking-widest text-[10px] mt-2">Verified quality
+                        review process</p>
+                </div>
+
+                <div class="p-10 md:p-16">
+                    <form id="submission-form" class="space-y-10">
+                        <!-- Type Selection -->
+                        <div class="space-y-4">
+                            <label class="text-[10px] font-black text-slate-400 uppercase tracking-widest">1. Listing
+                                Type</label>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <label class="relative cursor-pointer group">
+                                    <input type="radio" name="submission_type" value="Directory" class="peer hidden"
+                                        checked>
+                                    <div
+                                        class="p-6 border-2 border-slate-100 rounded-3xl transition-all peer-checked:border-primary-blue peer-checked:bg-primary-blue/5">
+                                        <div class="flex items-center gap-4 mb-2">
+                                            <div
+                                                class="w-10 h-10 bg-primary-blue/10 rounded-xl flex items-center justify-center text-primary-blue">
+                                                <i data-lucide="folder-search" class="w-5 h-5"></i>
+                                            </div>
+                                            <span
+                                                class="text-lg font-black font-heading italic text-slate-900">Directory</span>
+                                        </div>
+                                        <p class="text-xs text-slate-400 font-bold italic">Searchable startup directory.
+                                        </p>
+                                    </div>
+                                </label>
+                                <label class="relative cursor-pointer group">
+                                    <input type="radio" name="submission_type" value="Guest Post" class="peer hidden">
+                                    <div
+                                        class="p-6 border-2 border-slate-100 rounded-3xl transition-all peer-checked:border-emerald-500 peer-checked:bg-emerald-500/5">
+                                        <div class="flex items-center gap-4 mb-2">
+                                            <div
+                                                class="w-10 h-10 bg-emerald-500/10 rounded-xl flex items-center justify-center text-emerald-500">
+                                                <i data-lucide="file-text" class="w-5 h-5"></i>
+                                            </div>
+                                            <span class="text-lg font-black font-heading italic text-slate-900">Guest
+                                                Post Site</span>
+                                        </div>
+                                        <p class="text-xs text-slate-400 font-bold italic">Authority backlink source.
+                                        </p>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Site Details -->
+                        <div class="space-y-6">
+                            <label class="text-[10px] font-black text-slate-400 uppercase tracking-widest">2. Site
+                                Details</label>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                <div class="space-y-2">
+                                    <label class="text-sm font-black text-slate-900 italic">Website URL</label>
+                                    <input type="url" id="site_url" required placeholder="https://yoursite.com"
+                                        class="w-full bg-slate-50 border border-slate-100 rounded-2xl px-6 py-4 focus:border-primary-blue focus:bg-white transition-all font-bold text-slate-900 italic outline-none">
+                                </div>
+                                <div class="space-y-2">
+                                    <label class="text-sm font-black text-slate-900 italic">Site Name</label>
+                                    <input type="text" id="site_name" required placeholder="e.g. LaunchIndex"
+                                        class="w-full bg-slate-50 border border-slate-100 rounded-2xl px-6 py-4 focus:border-primary-blue focus:bg-white transition-all font-bold text-slate-900 italic outline-none">
+                                </div>
+                            </div>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                <div class="space-y-2">
+                                    <label class="text-sm font-black text-slate-900 italic">Category</label>
+                                    <select id="site_category" required
+                                        class="w-full bg-slate-50 border border-slate-100 rounded-2xl px-6 py-4 focus:border-primary-blue focus:bg-white transition-all font-bold text-slate-900 italic outline-none appearance-none">
+                                        <option>Tech & SaaS</option>
+                                        <option>AI & Tools</option>
+                                        <option>Marketing</option>
+                                        <option>Crypto & Web3</option>
+                                        <option>Lifestyle</option>
+                                        <option>General News</option>
+                                    </select>
+                                </div>
+                                <div class="space-y-2">
+                                    <label class="text-sm font-black text-slate-900 italic">Authority Metric
+                                        (DR)</label>
+                                    <input type="number" id="site_metric" required placeholder="e.g. 65"
+                                        class="w-full bg-slate-50 border border-slate-100 rounded-2xl px-6 py-4 focus:border-primary-blue focus:bg-white transition-all font-bold text-slate-900 italic outline-none">
+                                </div>
+                            </div>
+                            <div class="space-y-2">
+                                <label class="text-sm font-black text-slate-900 italic">Site Description</label>
+                                <textarea id="site_description" rows="4" required
+                                    placeholder="Describe your audience and authority..."
+                                    class="w-full bg-slate-50 border border-slate-100 rounded-2xl px-6 py-4 focus:border-primary-blue focus:bg-white transition-all font-bold text-slate-900 italic outline-none"></textarea>
+                            </div>
+                        </div>
+
+                        <button type="submit"
+                            class="w-full bg-slate-900 text-white py-6 rounded-3xl font-black text-xl italic tracking-wider hover:bg-primary-blue transition-all shadow-2xl flex items-center justify-center gap-3 active:scale-95">
+                            <span>Submit for Review</span>
+                            <i data-lucide="send" class="w-6 h-6"></i>
+                        </button>
+                    </form>
+
+                    <div id="success-message" class="hidden text-center py-20 animate-fade-in">
+                        <div
+                            class="w-24 h-24 bg-emerald-50 rounded-[40px] flex items-center justify-center mx-auto mb-8 text-emerald-500 shadow-inner">
+                            <i data-lucide="check-check" class="w-12 h-12"></i>
+                        </div>
+                        <h2 class="text-4xl font-black font-heading text-slate-900 italic mb-4">Request Sent!</h2>
+                        <p class="text-slate-500 font-bold italic mb-8">Our team will review your asset within 24-48
+                            hours.</p>
+                        <a href="/"
+                            class="text-primary-blue font-black tracking-widest uppercase text-xs hover:underline">Return
+                            Home</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-50 border-t border-slate-100 pt-16 pb-8">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+                <img src="assets/images/logo.png" alt="BoostSERP Logo"
+                    class="h-10 w-auto opacity-50 grayscale hover:grayscale-0 transition-all">
+                <p class="text-[10px] font-black uppercase tracking-widest text-slate-400">&copy; 2026 BoostSERP. Built
+                    for Founders.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        document.getElementById('submission-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const formData = {
+                id: Date.now(),
+                type: document.querySelector('input[name="submission_type"]:checked').value,
+                name: document.getElementById('site_name').value,
+                url: document.getElementById('site_url').value,
+                category: document.getElementById('site_category').value,
+                dr: document.getElementById('site_metric').value,
+                description: document.getElementById('site_description').value,
+                status: 'pending',
+                timestamp: new Date().toISOString(),
+                logo: `https://logo.clearbit.com/${new URL(document.getElementById('site_url').value).hostname}`
+            };
+            const subs = JSON.parse(localStorage.getItem('boostserp_submissions') || '[]');
+            subs.push(formData);
+            localStorage.setItem('boostserp_submissions', JSON.stringify(subs));
+            this.classList.add('hidden');
+            document.getElementById('success-message').classList.remove('hidden');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+</body>
+
+</html>
