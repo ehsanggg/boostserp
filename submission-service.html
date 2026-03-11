@@ -167,16 +167,18 @@
                         </ul>
 
                         <div class="mb-6 bg-slate-50 p-4 rounded-2xl border border-slate-100 flex items-start gap-3">
-                            <input type="checkbox" id="consent-starter" class="mt-1">
+                            <input type="checkbox" id="consent-starter" class="mt-1 accent-primary-blue plan-consent"
+                                data-btn-id="btn-starter">
                             <label for="consent-starter"
                                 class="text-[10px] text-black font-medium leading-tight cursor-pointer">
                                 I consent to immediate service execution and understand that once the process begins,
-                                the 14-day withdrawal right no longer applies.
+                                the 14-day withdrawal right no longer applies as per our <a href="terms.html"
+                                    class="text-primary-blue hover:underline font-bold">Terms of Service</a>.
                             </label>
                         </div>
 
-                        <a href="checkout.html?plan=Starter"
-                            class="w-full py-4 bg-primary-blue text-white rounded-2xl font-bold flex items-center justify-center gap-2 hover:bg-slate-900 transition-all shadow-lg shadow-primary-blue/20 text-center">
+                        <a href="checkout.html?plan=Starter" id="btn-starter"
+                            class="w-full py-4 bg-slate-300 text-white rounded-2xl font-bold flex items-center justify-center gap-2 transition-all shadow-lg text-center pointer-events-none cursor-not-allowed">
                             <i data-lucide="shopping-cart" class="w-5 h-5"></i>
                             Choose Plan
                         </a>
@@ -224,16 +226,18 @@
                         </ul>
 
                         <div class="mb-6 bg-slate-50 p-4 rounded-2xl border border-slate-100 flex items-start gap-3">
-                            <input type="checkbox" id="consent-pro" class="mt-1 accent-primary-blue">
+                            <input type="checkbox" id="consent-pro" class="mt-1 accent-primary-blue plan-consent"
+                                data-btn-id="btn-pro">
                             <label for="consent-pro"
                                 class="text-[10px] text-black font-medium leading-tight cursor-pointer">
                                 I consent to immediate service execution and understand that once the process begins,
-                                the 14-day withdrawal right no longer applies.
+                                the 14-day withdrawal right no longer applies as per our <a href="terms.html"
+                                    class="text-primary-blue hover:underline font-bold">Terms of Service</a>.
                             </label>
                         </div>
 
-                        <a href="checkout.html?plan=Pro"
-                            class="w-full py-4 bg-primary-blue text-white rounded-2xl font-bold flex items-center justify-center gap-2 hover:bg-slate-900 transition-all shadow-lg shadow-primary-blue/20 text-center">
+                        <a href="checkout.html?plan=Pro" id="btn-pro"
+                            class="w-full py-4 bg-slate-300 text-white rounded-2xl font-bold flex items-center justify-center gap-2 transition-all shadow-lg text-center pointer-events-none cursor-not-allowed">
                             <i data-lucide="shopping-cart" class="w-5 h-5"></i>
                             Choose Plan
                         </a>
@@ -272,15 +276,18 @@
                         </ul>
 
                         <div class="mb-6 bg-slate-50 p-4 rounded-2xl border border-slate-100 flex items-start gap-3">
-                            <input type="checkbox" id="consent-premium" class="mt-1 accent-primary-blue">
+                            <input type="checkbox" id="consent-premium" class="mt-1 accent-primary-blue plan-consent"
+                                data-btn-id="btn-premium">
                             <label for="consent-premium"
                                 class="text-[10px] text-black font-medium leading-tight cursor-pointer">
-                                I consent to immediate service execution and understand that once the process begins.
+                                I consent to immediate service execution and understand that once the process begins,
+                                the 14-day withdrawal right no longer applies as per our <a href="terms.html"
+                                    class="text-primary-blue hover:underline font-bold">Terms of Service</a>.
                             </label>
                         </div>
 
-                        <a href="checkout.html?plan=Premium"
-                            class="w-full py-4 bg-slate-900 text-white rounded-2xl font-bold flex items-center justify-center gap-2 hover:bg-primary-blue transition-colors shadow-lg text-center">
+                        <a href="checkout.html?plan=Premium" id="btn-premium"
+                            class="w-full py-4 bg-slate-300 text-white rounded-2xl font-bold flex items-center justify-center gap-2 transition-all shadow-lg text-center pointer-events-none cursor-not-allowed">
                             <i data-lucide="shopping-cart" class="w-5 h-5"></i>
                             Choose Plan
                         </a>
@@ -288,6 +295,28 @@
                 </div>
             </div>
         </section>
+
+        <script>
+            // Consent Checkbox Logic
+            document.querySelectorAll('.plan-consent').forEach(checkbox => {
+                checkbox.addEventListener('change', function () {
+                    const btnId = this.getAttribute('data-btn-id');
+                    const btn = document.getElementById(btnId);
+
+                    if (this.checked) {
+                        btn.classList.remove('bg-slate-300', 'pointer-events-none', 'cursor-not-allowed');
+                        btn.classList.add('bg-primary-blue', 'hover:bg-slate-900', 'shadow-primary-blue/20');
+                        if (btnId === 'btn-premium') {
+                            btn.classList.remove('bg-primary-blue');
+                            btn.classList.add('bg-slate-900', 'hover:bg-primary-blue');
+                        }
+                    } else {
+                        btn.classList.add('bg-slate-300', 'pointer-events-none', 'cursor-not-allowed');
+                        btn.classList.remove('bg-primary-blue', 'bg-slate-900', 'hover:bg-slate-900', 'hover:bg-primary-blue', 'shadow-primary-blue/20');
+                    }
+                });
+            });
+        </script>
 
         <!-- The Process -->
         <section class="pt-24 pb-4 bg-slate-50">
