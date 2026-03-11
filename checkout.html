@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout | BoostSERP</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-blue': '#0ea5e9',
+                        'stripe-blue': '#0070f3',
+                        'link-teal': '#00d28a',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .stripe-input {
+            transition: all 0.2s ease;
+            border: 1px solid #e6e6e6;
+            box-shadow: 0 1px 1px rgba(0, 0, 0, 0.03), 0 3px 6px rgba(0, 0, 0, 0.02);
+        }
+
+        .stripe-input:focus {
+            border-color: #0ea5e9;
+            box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.1);
+        }
+    </style>
+</head>
+
+<body class="bg-white min-h-screen flex items-center justify-center p-4">
+
+    <div class="max-w-[900px] w-full grid grid-cols-1 md:grid-cols-2 gap-12 items-start py-8">
+
+        <!-- Left Column: Summary -->
+        <div class="space-y-8 pr-0 md:pr-8">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-primary-blue rounded-lg flex items-center justify-center shadow-lg">
+                    <i data-lucide="rocket" class="text-white w-6 h-6"></i>
+                </div>
+                <span class="font-bold text-slate-400">Pay BoostSERP</span>
+            </div>
+
+            <div class="space-y-1">
+                <h1 id="plan-price" class="text-5xl font-extrabold text-slate-900">$199.00</h1>
+            </div>
+
+            <div class="space-y-4 pt-4">
+                <div class="flex justify-between items-start group">
+                    <div class="flex gap-4">
+                        <div class="w-12 h-12 bg-primary-blue/10 rounded-lg flex items-center justify-center shrink-0">
+                            <i data-lucide="package" class="text-primary-blue w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <p id="plan-name" class="font-bold text-slate-900">Pro Plan - Submission to 80 Directories
+                            </p>
+                            <p class="text-xs text-slate-400 mt-1">Manual submission to high-authority directories</p>
+                        </div>
+                    </div>
+                    <span id="plan-amount" class="font-bold text-slate-900">$199.00</span>
+                </div>
+
+                <div class="border-t border-slate-100 pt-4 space-y-3">
+                    <div class="flex justify-between text-sm">
+                        <span class="text-slate-500 font-medium">Subtotal</span>
+                        <span id="subtotal" class="font-bold text-slate-900">$199.00</span>
+                    </div>
+                    <!-- Promo Code Section -->
+                    <div id="promo-container">
+                        <button id="add-promo-btn" class="text-primary-blue text-xs font-bold hover:underline">Add
+                            promotion code</button>
+                        <div id="promo-input-group" class="hidden mt-2 flex flex-col gap-2">
+                            <div class="flex gap-2">
+                                <input type="text" id="promo-code" placeholder="Enter code"
+                                    class="stripe-input px-3 py-2 rounded-lg text-sm flex-grow outline-none border border-slate-200">
+                                <button id="apply-promo-btn" type="button"
+                                    class="bg-slate-900 text-white px-4 py-2 rounded-lg text-xs font-bold hover:bg-primary-blue transition-colors">Apply</button>
+                            </div>
+                            <p id="promo-error" class="hidden text-red-500 text-[10px] font-bold">Invalid promotion code
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="border-t border-slate-100 pt-4 flex justify-between">
+                    <span class="text-slate-500 font-medium">Total due</span>
+                    <span id="total-due" class="font-bold text-slate-900">$199.00</span>
+                </div>
+            </div>
+
+            <!-- Add to order -->
+            <div class="pt-8 space-y-4">
+                <h3 class="text-sm font-bold text-slate-900 uppercase tracking-widest">Add to your order</h3>
+                <div
+                    class="bg-white border border-slate-100 rounded-xl p-4 flex justify-between items-center shadow-sm hover:border-primary-blue/30 transition-all cursor-pointer group">
+                    <div class="flex gap-4 items-center">
+                        <div class="w-10 h-10 bg-emerald-50 rounded-lg flex items-center justify-center shrink-0">
+                            <i data-lucide="zap" class="text-emerald-500 w-5 h-5"></i>
+                        </div>
+                        <div>
+                            <p class="text-sm font-bold text-slate-900">Fast Track Execution</p>
+                            <p class="text-[10px] text-slate-400">Get your submission completed within 48h.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <span class="text-sm font-bold text-slate-900">$20.00</span>
+                        <button
+                            class="bg-slate-50 text-slate-400 border border-slate-100 w-8 h-8 rounded-lg flex items-center justify-center hover:bg-primary-blue hover:text-white hover:border-primary-blue transition-all">
+                            <i data-lucide="plus" class="w-4 h-4"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Column: Form -->
+        <div class="bg-white">
+            <button onclick="window.open('https://paypal.me/YourUserName', '_blank')"
+                class="w-full bg-link-teal text-slate-900 py-3 rounded-lg font-bold flex items-center justify-center gap-2 shadow-lg hover:brightness-95 transition-all mb-4">
+                Pay with <span
+                    class="bg-slate-900 text-white px-1.5 py-0.5 rounded text-[10px] italic font-black">PayPal</span>
+            </button>
+
+            <div class="relative flex items-center justify-center my-8">
+                <div class="w-full h-px bg-slate-100"></div>
+                <span class="absolute bg-white px-4 text-xs font-bold text-slate-300">OR</span>
+            </div>
+
+            <form class="space-y-6">
+                <!-- Contact Info -->
+                <div class="space-y-1.5">
+                    <label class="text-sm font-bold text-slate-900">Contact information</label>
+                    <input type="email" placeholder="Email"
+                        class="stripe-input w-full px-4 py-3 rounded-lg outline-none font-medium text-black">
+                </div>
+
+                <!-- Payment Method (Card Box Restored) -->
+                <div class="space-y-4">
+                    <label class="text-sm font-bold text-slate-900">Payment method</label>
+
+                    <div class="border border-slate-100 rounded-xl overflow-hidden shadow-sm">
+                        <!-- Card Header -->
+                        <div class="p-4 bg-slate-50/50 border-b border-slate-100 flex items-center gap-3">
+                            <div class="w-4 h-4 rounded-full border-4 border-primary-blue bg-white"></div>
+                            <i data-lucide="credit-card" class="w-4 h-4 text-slate-400"></i>
+                            <span class="text-sm font-bold text-slate-900">Card</span>
+                        </div>
+
+                        <!-- Card Details -->
+                        <div class="p-4 space-y-4 bg-white">
+                            <div class="space-y-1">
+                                <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Card
+                                    information</p>
+                                <div class="relative">
+                                    <input type="text" placeholder="1234 1234 1234 1234"
+                                        class="stripe-input w-full px-4 py-3 rounded-lg rounded-b-none outline-none font-medium text-black">
+                                    <div class="absolute right-4 top-1/2 -translate-y-1/2 flex gap-1">
+                                        <div class="w-6 h-4 bg-slate-100 rounded-sm"></div>
+                                        <div class="w-6 h-4 bg-slate-100 rounded-sm"></div>
+                                        <div class="w-6 h-4 bg-slate-100 rounded-sm"></div>
+                                    </div>
+                                </div>
+                                <div class="grid grid-cols-2 gap-0 text-black">
+                                    <input type="text" placeholder="MM / YY"
+                                        class="stripe-input w-full px-4 py-3 rounded-lg rounded-t-none rounded-r-none outline-none font-medium border-t-0">
+                                    <input type="text" placeholder="CVC"
+                                        class="stripe-input w-full px-4 py-3 rounded-lg rounded-t-none rounded-l-none outline-none font-medium border-t-0 border-l-0">
+                                </div>
+                            </div>
+
+                            <div class="space-y-1">
+                                <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Cardholder
+                                    name</p>
+                                <input type="text" placeholder="Full name on card"
+                                    class="stripe-input w-full px-4 py-3 rounded-lg outline-none font-medium text-black">
+                            </div>
+
+                            <div class="space-y-1">
+                                <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Billing
+                                    address</p>
+                                <select
+                                    class="stripe-input w-full px-4 py-3 rounded-lg rounded-b-none outline-none font-medium appearance-none bg-white text-black">
+                                    <option value="US">United States</option>
+                                    <option value="GB">United Kingdom</option>
+                                    <option value="PK">Pakistan</option>
+                                    <option value="CA">Canada</option>
+                                    <option value="AU">Australia</option>
+                                    <option value="DE">Germany</option>
+                                    <option value="FR">France</option>
+                                    <option value="AE">United Arab Emirates</option>
+                                    <option value="SA">Saudi Arabia</option>
+                                    <option value="IN">India</option>
+                                    <option value="AF">Afghanistan</option>
+                                    <option value="AL">Albania</option>
+                                    <option value="DZ">Algeria</option>
+                                    <option value="AD">Andorra</option>
+                                    <option value="AO">Angola</option>
+                                    <option value="AR">Argentina</option>
+                                    <option value="AM">Armenia</option>
+                                    <option value="AT">Austria</option>
+                                    <option value="AZ">Azerbaijan</option>
+                                    <option value="BH">Bahrain</option>
+                                    <option value="BD">Bangladesh</option>
+                                    <option value="BE">Belgium</option>
+                                    <option value="BR">Brazil</option>
+                                    <option value="CH">Switzerland</option>
+                                    <option value="CN">China</option>
+                                    <option value="DK">Denmark</option>
+                                    <option value="EG">Egypt</option>
+                                    <option value="ES">Spain</option>
+                                    <option value="FI">Finland</option>
+                                    <option value="GR">Greece</option>
+                                    <option value="HK">Hong Kong</option>
+                                    <option value="ID">Indonesia</option>
+                                    <option value="IE">Ireland</option>
+                                    <option value="IT">Italy</option>
+                                    <option value="JP">Japan</option>
+                                    <option value="KR">South Korea</option>
+                                    <option value="MY">Malaysia</option>
+                                    <option value="MX">Mexico</option>
+                                    <option value="NL">Netherlands</option>
+                                    <option value="NZ">New Zealand</option>
+                                    <option value="NO">Norway</option>
+                                    <option value="PH">Philippines</option>
+                                    <option value="PL">Poland</option>
+                                    <option value="PT">Portugal</option>
+                                    <option value="QA">Qatar</option>
+                                    <option value="RU">Russia</option>
+                                    <option value="SG">Singapore</option>
+                                    <option value="ZA">South Africa</option>
+                                    <option value="SE">Sweden</option>
+                                    <option value="TH">Thailand</option>
+                                    <option value="TR">Turkey</option>
+                                    <option value="VN">Vietnam</option>
+                                </select>
+                                <input type="text" placeholder="Address line 1"
+                                    class="stripe-input w-full px-4 py-3 outline-none font-medium border-t-0 text-black">
+                                <div class="grid grid-cols-2 gap-0 text-xs text-black">
+                                    <input type="text" placeholder="City"
+                                        class="stripe-input w-full px-4 py-3 rounded-lg rounded-t-none rounded-r-none outline-none font-medium border-t-0">
+                                    <input type="text" placeholder="Postal code"
+                                        class="stripe-input w-full px-4 py-3 rounded-lg rounded-t-none rounded-l-none outline-none font-medium border-t-0 border-l-0">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <label class="flex items-center gap-3 cursor-pointer group">
+                    <input type="checkbox" class="w-4 h-4 rounded border-slate-200 accent-primary-blue">
+                    <span class="text-[11px] font-medium text-slate-600 leading-tight">
+                        Save my information for faster checkout
+                    </span>
+                </label>
+
+                <div class="relative flex items-center justify-center my-6">
+                    <div class="w-full h-px bg-slate-100"></div>
+                    <span
+                        class="absolute bg-white px-4 text-[10px] font-black text-slate-300 uppercase tracking-[0.2em]">Secure
+                        Checkout with PayPal</span>
+                </div>
+
+                <!-- PayPal Button Container -->
+                <div id="paypal-button-container" class="relative z-10"></div>
+            </form>
+
+            <div class="mt-8 flex justify-center gap-4 text-[10px] font-bold text-slate-300 uppercase tracking-widest">
+                <span>Secured by <span class="text-slate-400">BoostSERP</span></span>
+                <span class="text-slate-100">|</span>
+                <a href="terms.html" class="hover:text-slate-400 transition-colors">Terms</a>
+                <a href="privacy.html" class="hover:text-slate-400 transition-colors">Privacy</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- PayPal SDK (Using your Live Client ID) -->
+    <script
+        src="https://www.paypal.com/sdk/js?client-id=AdaHFbKkCb0Veu5WNtQmLwEGj2AS7xplsOULBHcsMmILdBUrfDniWXsBqqJ_9Mm299oZpE91sroFanFZ&currency=USD&disable-funding=credit"></script>
+
+    <script>
+        lucide.createIcons();
+
+        // 1. Dynamic plan loading
+        const params = new URLSearchParams(window.location.search);
+        const plan = params.get('plan') || 'Pro';
+
+        const plans = {
+            'Starter': { name: 'Starter Plan - Submission to 30 Directories', price: 129.00 },
+            'Pro': { name: 'Pro Plan - Submission to 80 Directories', price: 199.00 },
+            'Premium': { name: 'Premium Plan - Submission to 150 Directories', price: 299.00 }
+        };
+
+        const currentPlan = plans[plan] || plans['Pro'];
+
+        document.getElementById('plan-price').innerText = '$' + currentPlan.price.toFixed(2);
+        document.getElementById('plan-name').innerText = currentPlan.name;
+        document.getElementById('plan-amount').innerText = '$' + currentPlan.price.toFixed(2);
+        document.getElementById('subtotal').innerText = '$' + currentPlan.price.toFixed(2);
+        document.getElementById('total-due').innerText = '$' + currentPlan.price.toFixed(2);
+
+        // 2. PayPal Me Logic Update (For manual fallback)
+        function openPayPalMe() {
+            // Updated to handle basic user PayPal.Me
+            const userName = "BoostSERP"; // Aap yahan apna real username change kr den
+            window.open(`https://paypal.me/${userName}/${currentPlan.price}`, '_blank');
+        }
+
+        // 3. Promo Code Logic
+        const addPromoBtn = document.getElementById('add-promo-btn');
+        const promoInputGroup = document.getElementById('promo-input-group');
+        const applyPromoBtn = document.getElementById('apply-promo-btn');
+        const promoError = document.getElementById('promo-error');
+
+        addPromoBtn.addEventListener('click', () => {
+            promoInputGroup.classList.toggle('hidden');
+            addPromoBtn.classList.add('hidden');
+        });
+
+        applyPromoBtn.addEventListener('click', () => {
+            promoError.classList.remove('hidden');
+        });
+
+        // 4. Render PayPal Buttons
+        paypal.Buttons({
+            style: {
+                layout: 'vertical',
+                color: 'blue',
+                shape: 'rect',
+                label: 'pay'
+            },
+            createOrder: function (data, actions) {
+                return actions.order.create({
+                    purchase_units: [{
+                        amount: {
+                            value: currentPlan.price.toString()
+                        },
+                        description: currentPlan.name
+                    }]
+                });
+            },
+            onApprove: function (data, actions) {
+                return actions.order.capture().then(function (details) {
+                    // Redirect directly to success page with plan info
+                    window.location.href = `success.html?plan=${plan}&status=success`;
+                });
+            },
+            onError: function (err) {
+                console.error('PayPal Error:', err);
+                alert('There was an issue processing your payment. Please try again.');
+            }
+        }).render('#paypal-button-container');
+    </script>
+</body>
+
+</html>
