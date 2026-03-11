@@ -67,12 +67,12 @@
                 <a href="directories"
                     class="text-slate-600 hover:text-primary-blue font-bold tracking-tight transition-colors">Directories</a>
                 <a href="submit-site"
-                    class="text-slate-600 hover:text-primary-blue font-bold tracking-tight transition-colors border-b-2 border-primary-blue">Pricing</a>
+                    class="text-slate-600 hover:text-primary-blue font-bold tracking-tight transition-colors">Pricing</a>
                 <a href="contact"
                     class="text-slate-600 hover:text-primary-blue font-bold tracking-tight transition-colors">Contact</a>
-                <a href="submit-app"
+                <a href="contact"
                     class="bg-primary-blue text-white px-6 py-2 rounded-xl font-bold hover:bg-slate-900 transition-all text-center">Submit
-                    Your App</a>
+                    Your Directory</a>
             </div>
         </nav>
     </header>
@@ -114,7 +114,7 @@
                 <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
                     <a href="#pricing"
                         class="bg-primary-blue hover:bg-slate-900 text-white px-10 py-4 rounded-2xl font-bold text-lg shadow-xl shadow-primary-blue/20 transition-all transform hover:-translate-y-1">
-                        ðŸ˜Š Choose Plan
+                        =ƒÿè Fill Out Form
                     </a>
                     <p class="text-sm text-slate-400 font-bold tracking-tight">Trusted by 100+ startup founders</p>
                 </div>
@@ -177,9 +177,8 @@
                             </label>
                         </div>
 
-                        <a href="checkout.html?plan=Starter" id="btn-starter"
-                            class="w-full py-4 bg-primary-blue text-white rounded-2xl font-bold flex items-center justify-center gap-2 hover:bg-slate-900 transition-all shadow-lg shadow-primary-blue/20 text-center plan-btn"
-                            data-checkbox-id="consent-starter">
+                        <a href="checkout?plan=Starter" id="btn-starter"
+                            class="w-full py-4 bg-slate-300 text-white rounded-2xl font-bold flex items-center justify-center gap-2 transition-all shadow-lg text-center pointer-events-none cursor-not-allowed">
                             <i data-lucide="shopping-cart" class="w-5 h-5"></i>
                             Choose Plan
                         </a>
@@ -227,7 +226,8 @@
                         </ul>
 
                         <div class="mb-6 bg-slate-50 p-4 rounded-2xl border border-slate-100 flex items-start gap-3">
-                            <input type="checkbox" id="consent-pro" class="mt-1 accent-primary-blue plan-consent">
+                            <input type="checkbox" id="consent-pro" class="mt-1 accent-primary-blue plan-consent"
+                                data-btn-id="btn-pro">
                             <label for="consent-pro"
                                 class="text-[10px] text-black font-medium leading-tight cursor-pointer">
                                 I consent to immediate service execution and understand that once the process begins,
@@ -236,9 +236,8 @@
                             </label>
                         </div>
 
-                        <a href="checkout.html?plan=Pro" id="btn-pro"
-                            class="w-full py-4 bg-primary-blue text-white rounded-2xl font-bold flex items-center justify-center gap-2 hover:bg-slate-900 transition-all shadow-lg shadow-primary-blue/20 text-center plan-btn"
-                            data-checkbox-id="consent-pro">
+                        <a href="checkout?plan=Pro" id="btn-pro"
+                            class="w-full py-4 bg-slate-300 text-white rounded-2xl font-bold flex items-center justify-center gap-2 transition-all shadow-lg text-center pointer-events-none cursor-not-allowed">
                             <i data-lucide="shopping-cart" class="w-5 h-5"></i>
                             Choose Plan
                         </a>
@@ -277,7 +276,8 @@
                         </ul>
 
                         <div class="mb-6 bg-slate-50 p-4 rounded-2xl border border-slate-100 flex items-start gap-3">
-                            <input type="checkbox" id="consent-premium" class="mt-1 accent-primary-blue plan-consent">
+                            <input type="checkbox" id="consent-premium" class="mt-1 accent-primary-blue plan-consent"
+                                data-btn-id="btn-premium">
                             <label for="consent-premium"
                                 class="text-[10px] text-black font-medium leading-tight cursor-pointer">
                                 I consent to immediate service execution and understand that once the process begins,
@@ -286,9 +286,8 @@
                             </label>
                         </div>
 
-                        <a href="checkout.html?plan=Premium" id="btn-premium"
-                            class="w-full py-4 bg-slate-900 text-white rounded-2xl font-bold flex items-center justify-center gap-2 hover:bg-primary-blue transition-colors shadow-lg text-center plan-btn"
-                            data-checkbox-id="consent-premium">
+                        <a href="checkout?plan=Premium" id="btn-premium"
+                            class="w-full py-4 bg-slate-300 text-white rounded-2xl font-bold flex items-center justify-center gap-2 transition-all shadow-lg text-center pointer-events-none cursor-not-allowed">
                             <i data-lucide="shopping-cart" class="w-5 h-5"></i>
                             Choose Plan
                         </a>
@@ -298,15 +297,22 @@
         </section>
 
         <script>
-            // Plan Button Logic (Show Alert if Consent not checked)
-            document.querySelectorAll('.plan-btn').forEach(button => {
-                button.addEventListener('click', function (e) {
-                    const checkboxId = this.getAttribute('data-checkbox-id');
-                    const checkbox = document.getElementById(checkboxId);
+            // Consent Checkbox Logic
+            document.querySelectorAll('.plan-consent').forEach(checkbox => {
+                checkbox.addEventListener('change', function () {
+                    const btnId = this.getAttribute('data-btn-id');
+                    const btn = document.getElementById(btnId);
 
-                    if (!checkbox.checked) {
-                        e.preventDefault(); // Stop redirection
-                        alert('Please accept the Terms of Service by checking the box before proceeding.');
+                    if (this.checked) {
+                        btn.classList.remove('bg-slate-300', 'pointer-events-none', 'cursor-not-allowed');
+                        btn.classList.add('bg-primary-blue', 'hover:bg-slate-900', 'shadow-primary-blue/20');
+                        if (btnId === 'btn-premium') {
+                            btn.classList.remove('bg-primary-blue');
+                            btn.classList.add('bg-slate-900', 'hover:bg-primary-blue');
+                        }
+                    } else {
+                        btn.classList.add('bg-slate-300', 'pointer-events-none', 'cursor-not-allowed');
+                        btn.classList.remove('bg-primary-blue', 'bg-slate-900', 'hover:bg-slate-900', 'hover:bg-primary-blue', 'shadow-primary-blue/20');
                     }
                 });
             });
@@ -336,7 +342,7 @@
                         </div>
                         <h3 class="text-2xl font-bold text-slate-900 mb-4 font-heading">2. We Launch</h3>
                         <p class="text-black leading-relaxed font-medium">
-                            Our team manually submits your product to curated directories. No bots, no shortcutsâ€”just
+                            Our team manually submits your product to curated directories. No bots, no shortcutsGÇöjust
                             real submissions that get approved and indexed.
                         </p>
                     </div>
@@ -536,7 +542,7 @@
                         class="text-slate-500 hover:text-primary-blue font-bold transition-colors text-sm">Portfolio</a>
                     <a href="contact"
                         class="text-slate-500 hover:text-primary-blue font-bold transition-colors text-sm">Contact</a>
-                    <a href="submit-app"
+                    <a href="contact"
                         class="text-slate-500 hover:text-primary-blue font-bold transition-colors text-sm">Submit
                         Site</a>
                 </div>
@@ -584,3 +590,4 @@
 </body>
 
 </html>
+
