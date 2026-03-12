@@ -138,7 +138,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                 Let us submit your website to <span class="text-primary-blue font-bold">100+ directories</span> while you focus on what you do best - <span class="text-slate-900 font-bold uppercase tracking-wider text-sm">building amazing products.</span>
                             </p>
                             
-                            <a href="submit-site" class="group/btn relative inline-flex items-center gap-2 bg-primary-blue hover:bg-slate-900 text-white px-8 py-4 rounded-xl font-black transition-all text-lg shadow-2xl shadow-primary-blue/20 transform hover:-translate-y-1 active:scale-95 overflow-hidden">
+                            <a href="pricing" class="group/btn relative inline-flex items-center gap-2 bg-primary-blue hover:bg-slate-900 text-white px-8 py-4 rounded-xl font-black transition-all text-lg shadow-2xl shadow-primary-blue/20 transform hover:-translate-y-1 active:scale-95 overflow-hidden">
                                 <span class="relative z-10 font-black italic">Get Started Now</span>
                                 <i data-lucide="arrow-right" class="w-5 h-5 transition-transform group-hover/btn:translate-x-1 relative z-10"></i>
                                 <div class="absolute inset-0 bg-gradient-to-r from-primary-blue to-blue-600 opacity-0 group-hover/btn:opacity-100 transition-opacity"></div>
