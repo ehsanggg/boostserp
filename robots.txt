@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+
+# Don't index admin, transactional, and old pages
+Disallow: /admin-panel.html
+Disallow: /admin-panel
+Disallow: /checkout.html
+Disallow: /checkout
+Disallow: /success.html
+Disallow: /success
+Disallow: /submission-service-old.html
+
+# XML Sitemap Location
+Sitemap: https://boostserp.com/sitemap.xml
