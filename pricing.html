@@ -19,6 +19,16 @@
                     fontFamily: {
                         'sans': ['Arial', 'sans-serif'],
                         'heading': ['"Times New Roman"', 'serif']
+                    },
+                    animation: {
+                        'marquee': 'marquee 40s linear infinite',
+                        'marquee-slow': 'marquee 50s linear infinite',
+                    },
+                    keyframes: {
+                        marquee: {
+                            '0%': { transform: 'translateX(0)' },
+                            '100%': { transform: 'translateX(-50%)' }
+                        }
                     }
                 }
             }
@@ -331,31 +341,217 @@
             </div>
         </section>
 
-        <!-- FAQ -->
-        <section class="py-32 bg-white">
+        <!-- Testimonials Slider -->
+        <section class="py-24 bg-white overflow-hidden border-t border-slate-100">
+            <div class="container mx-auto px-6 mb-16 text-center">
+                <h2 class="text-4xl font-black font-heading text-slate-900 mb-4">Trusted by Ambitious Founders</h2>
+                <p class="text-slate-600 font-medium leading-relaxed tracking-widest uppercase text-sm font-bold">See why top startups choose BoostSERP for authority</p>
+            </div>
+            
+            <!-- Infinite Marquee Wrapper -->
+            <!-- We duplicate the flex container to create a seamless scrolling loop -->
+            <div class="flex overflow-hidden relative group w-full">
+                <!-- Track 1 -->
+                <div class="flex items-center gap-6 animate-marquee whitespace-nowrap px-3">
+                    <!-- Cards (5 reviews per track to equal 10+ total) -->
+                    <!-- R1 -->
+                    <div class="inline-flex flex-col bg-slate-50 p-8 rounded-3xl border border-slate-100 min-w-[350px] shadow-sm whitespace-normal">
+                        <div class="flex items-center gap-1 mb-4">
+                            <i data-lucide="star" class="w-4 h-4 text-yellow-500 fill-yellow-500"></i><i data-lucide="star" class="w-4 h-4 text-yellow-500 fill-yellow-500"></i><i data-lucide="star" class="w-4 h-4 text-yellow-500 fill-yellow-500"></i><i data-lucide="star" class="w-4 h-4 text-yellow-500 fill-yellow-500"></i><i data-lucide="star" class="w-4 h-4 text-yellow-500 fill-yellow-500"></i>
+                        </div>
+                        <p class="text-slate-700 font-medium leading-relaxed mb-6 italic italic text-sm">"The Premium Plan completely transformed our authority metrics. 100+ manual submissions and elite guest posts sky-rocketed our DR in less than 2 months."</p>
+                        <div class="flex items-center gap-4 mt-auto">
+                            <img src="https://i.pravatar.cc/150?img=11" alt="James L." class="w-10 h-10 rounded-full object-cover">
+                            <div>
+                                <p class="text-xs font-bold text-slate-900">James L.</p>
+                                <p class="text-[9px] font-bold text-slate-400 uppercase tracking-widest">SaaS Founder</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- R2 -->
+                    <div class="inline-flex flex-col bg-slate-50 p-8 rounded-3xl border border-slate-100 min-w-[350px] shadow-sm whitespace-normal">
+                        <div class="flex items-center gap-1 mb-4">
+                            <i data-lucide="star" class="w-4 h-4 text-yellow-500 fill-yellow-500"></i><i data-lucide="star" class="w-4 h-4 text-yellow-500 fill-yellow-500"></i><i data-lucide="star" class="w-4 h-4 text-yellow-500 fill-yellow-500"></i><i data-lucide="star" class="w-4 h-4 text-yellow-500 fill-yellow-500"></i><i data-lucide="star" class="w-4 h-4 text-yellow-500 fill-yellow-500"></i>
+                        </div>
+                        <p class="text-slate-700 font-medium leading-relaxed mb-6 italic italic text-sm">"Best ROI for a marketing budget to date. It's truly a done-for-you service; I received a massive spreadsheet showing all lived listings and guest posts within days."</p>
+                        <div class="flex items-center gap-4 mt-auto">
+                            <img src="https://i.pravatar.cc/150?img=5" alt="Sarah K." class="w-10 h-10 rounded-full object-cover">
+                            <div>
+                                <p class="text-xs font-bold text-slate-900">Sarah K.</p>
+                                <p class="text-[9px] font-bold text-slate-400 uppercase tracking-widest">Marketing Director</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- R3 -->
+                    <div class="inline-flex flex-col bg-slate-50 p-8 rounded-3xl border border-slate-100 min-w-[350px] shadow-sm whitespace-normal">
+                        <div class="flex items-center gap-1 mb-4">
+                            <i data-lucide="star" class="w-4 h-4 text-yellow-500 fill-yellow-500"></i><i data-lucide="star" class="w-4 h-4 text-yellow-500 fill-yellow-500"></i><i data-lucide="star" class="w-4 h-4 text-yellow-500 fill-yellow-500"></i><i data-lucide="star" class="w-4 h-4 text-yellow-500 fill-yellow-500"></i><i data-lucide="star" class="w-4 h-4 text-slate-300"></i>
+                        </div>
+                        <p class="text-slate-700 font-medium leading-relaxed mb-6 italic italic text-sm">"I was skeptical of directory submissions in 2026, but the way BoostSERP handles the manual profiles natively to bypass spam filters is genius."</p>
+                        <div class="flex items-center gap-4 mt-auto">
+                            <img src="https://i.pravatar.cc/150?img=8" alt="Rajiv M." class="w-10 h-10 rounded-full object-cover">
+                            <div>
+                                <p class="text-xs font-bold text-slate-900">Rajiv M.</p>
+                                <p class="text-[9px] font-bold text-slate-400 uppercase tracking-widest">AI Startup Co-founder</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- R4 -->
+                    <div class="inline-flex flex-col bg-slate-50 p-8 rounded-3xl border border-slate-100 min-w-[350px] shadow-sm whitespace-normal">
+                        <div class="flex items-center gap-1 mb-4">
+                            <i data-lucide="star" class="w-4 h-4 text-yellow-500 fill-yellow-500"></i><i data-lucide="star" class="w-4 h-4 text-yellow-500 fill-yellow-500"></i><i data-lucide="star" class="w-4 h-4 text-yellow-500 fill-yellow-500"></i><i data-lucide="star" class="w-4 h-4 text-yellow-500 fill-yellow-500"></i><i data-lucide="star" class="w-4 h-4 text-yellow-500 fill-yellow-500"></i>
+                        </div>
+                        <p class="text-slate-700 font-medium leading-relaxed mb-6 italic italic text-sm">"Finding good guest post placements was a nightmare until we upgraded to the Pro Plan. The backlinks started indexing fast and our core keywords moved up."</p>
+                        <div class="flex items-center gap-4 mt-auto">
+                            <img src="https://i.pravatar.cc/150?img=12" alt="Michael T." class="w-10 h-10 rounded-full object-cover">
+                            <div>
+                                <p class="text-xs font-bold text-slate-900">Michael T.</p>
+                                <p class="text-[9px] font-bold text-slate-400 uppercase tracking-widest">SEO Agency Owner</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- R5 -->
+                    <div class="inline-flex flex-col bg-slate-50 p-8 rounded-3xl border border-slate-100 min-w-[350px] shadow-sm whitespace-normal">
+                        <div class="flex items-center gap-1 mb-4">
+                            <i data-lucide="star" class="w-4 h-4 text-yellow-500 fill-yellow-500"></i><i data-lucide="star" class="w-4 h-4 text-yellow-500 fill-yellow-500"></i><i data-lucide="star" class="w-4 h-4 text-yellow-500 fill-yellow-500"></i><i data-lucide="star" class="w-4 h-4 text-yellow-500 fill-yellow-500"></i><i data-lucide="star" class="w-4 h-4 text-yellow-500 fill-yellow-500"></i>
+                        </div>
+                        <p class="text-slate-700 font-medium leading-relaxed mb-6 italic italic text-sm">"Priceless service for busy solo founders! The Starter Plan alone saved me ~30 hours of incredibly tedious manual account creations."</p>
+                        <div class="flex items-center gap-4 mt-auto">
+                            <img src="https://i.pravatar.cc/150?img=1" alt="Elena R." class="w-10 h-10 rounded-full object-cover">
+                            <div>
+                                <p class="text-xs font-bold text-slate-900">Elena R.</p>
+                                <p class="text-[9px] font-bold text-slate-400 uppercase tracking-widest">Solo Entrepreneur</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Track 2 (Duplicate for infinite scroll logic) -->
+                <div class="flex items-center gap-6 animate-marquee whitespace-nowrap px-3">
+                    <!-- R6 -->
+                    <div class="inline-flex flex-col bg-slate-50 p-8 rounded-3xl border border-slate-100 min-w-[350px] shadow-sm whitespace-normal">
+                        <div class="flex items-center gap-1 mb-4">
+                            <i data-lucide="star" class="w-4 h-4 text-yellow-500 fill-yellow-500"></i><i data-lucide="star" class="w-4 h-4 text-yellow-500 fill-yellow-500"></i><i data-lucide="star" class="w-4 h-4 text-yellow-500 fill-yellow-500"></i><i data-lucide="star" class="w-4 h-4 text-yellow-500 fill-yellow-500"></i><i data-lucide="star" class="w-4 h-4 text-yellow-500 fill-yellow-500"></i>
+                        </div>
+                        <p class="text-slate-700 font-medium leading-relaxed mb-6 italic italic text-sm">"Absolutely stellar communication. The transparent reporting Google sheet was completely robust with logins and guest post live URLs. Worth every penny."</p>
+                        <div class="flex items-center gap-4 mt-auto">
+                            <img src="https://i.pravatar.cc/150?img=33" alt="David W." class="w-10 h-10 rounded-full object-cover">
+                            <div>
+                                <p class="text-xs font-bold text-slate-900">David W.</p>
+                                <p class="text-[9px] font-bold text-slate-400 uppercase tracking-widest">Tech Lead</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- R7 -->
+                    <div class="inline-flex flex-col bg-slate-50 p-8 rounded-3xl border border-slate-100 min-w-[350px] shadow-sm whitespace-normal">
+                        <div class="flex items-center gap-1 mb-4">
+                            <i data-lucide="star" class="w-4 h-4 text-yellow-500 fill-yellow-500"></i><i data-lucide="star" class="w-4 h-4 text-yellow-500 fill-yellow-500"></i><i data-lucide="star" class="w-4 h-4 text-yellow-500 fill-yellow-500"></i><i data-lucide="star" class="w-4 h-4 text-yellow-500 fill-yellow-500"></i><i data-lucide="star" class="w-4 h-4 text-slate-300"></i>
+                        </div>
+                        <p class="text-slate-700 font-medium leading-relaxed mb-6 italic italic text-sm">"Highly curated guest posts. I've bought from Fiverr before and regretted it. With BoostSERP, every single DR 30+ site checked out as high-quality."</p>
+                        <div class="flex items-center gap-4 mt-auto">
+                            <img src="https://i.pravatar.cc/150?img=44" alt="Anita B." class="w-10 h-10 rounded-full object-cover">
+                            <div>
+                                <p class="text-xs font-bold text-slate-900">Anita B.</p>
+                                <p class="text-[9px] font-bold text-slate-400 uppercase tracking-widest">Brand Marketer</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- R8 -->
+                    <div class="inline-flex flex-col bg-slate-50 p-8 rounded-3xl border border-slate-100 min-w-[350px] shadow-sm whitespace-normal">
+                        <div class="flex items-center gap-1 mb-4">
+                            <i data-lucide="star" class="w-4 h-4 text-yellow-500 fill-yellow-500"></i><i data-lucide="star" class="w-4 h-4 text-yellow-500 fill-yellow-500"></i><i data-lucide="star" class="w-4 h-4 text-yellow-500 fill-yellow-500"></i><i data-lucide="star" class="w-4 h-4 text-yellow-500 fill-yellow-500"></i><i data-lucide="star" class="w-4 h-4 text-yellow-500 fill-yellow-500"></i>
+                        </div>
+                        <p class="text-slate-700 font-medium leading-relaxed mb-6 italic italic text-sm">"I was amazed by the speed. We purchased the Premium Plan right after Product Hunt launch and had our initial guest posts live in 5 days."</p>
+                        <div class="flex items-center gap-4 mt-auto">
+                            <img src="https://i.pravatar.cc/150?img=52" alt="Chris M." class="w-10 h-10 rounded-full object-cover">
+                            <div>
+                                <p class="text-xs font-bold text-slate-900">Chris M.</p>
+                                <p class="text-[9px] font-bold text-slate-400 uppercase tracking-widest">CMO</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- R9 -->
+                    <div class="inline-flex flex-col bg-slate-50 p-8 rounded-3xl border border-slate-100 min-w-[350px] shadow-sm whitespace-normal">
+                        <div class="flex items-center gap-1 mb-4">
+                            <i data-lucide="star" class="w-4 h-4 text-yellow-500 fill-yellow-500"></i><i data-lucide="star" class="w-4 h-4 text-yellow-500 fill-yellow-500"></i><i data-lucide="star" class="w-4 h-4 text-yellow-500 fill-yellow-500"></i><i data-lucide="star" class="w-4 h-4 text-yellow-500 fill-yellow-500"></i><i data-lucide="star" class="w-4 h-4 text-yellow-500 fill-yellow-500"></i>
+                        </div>
+                        <p class="text-slate-700 font-medium leading-relaxed mb-6 italic italic text-sm">"Such a seamless process. The checkout was easy, their team reached out for onboarding, and weeks later our Ahrefs organic traffic graph went vertical."</p>
+                        <div class="flex items-center gap-4 mt-auto">
+                            <img src="https://i.pravatar.cc/150?img=60" alt="Sam J." class="w-10 h-10 rounded-full object-cover">
+                            <div>
+                                <p class="text-xs font-bold text-slate-900">Sam J.</p>
+                                <p class="text-[9px] font-bold text-slate-400 uppercase tracking-widest">DevOps Founder</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- R10 -->
+                    <div class="inline-flex flex-col bg-slate-50 p-8 rounded-3xl border border-slate-100 min-w-[350px] shadow-sm whitespace-normal">
+                        <div class="flex items-center gap-1 mb-4">
+                            <i data-lucide="star" class="w-4 h-4 text-yellow-500 fill-yellow-500"></i><i data-lucide="star" class="w-4 h-4 text-yellow-500 fill-yellow-500"></i><i data-lucide="star" class="w-4 h-4 text-yellow-500 fill-yellow-500"></i><i data-lucide="star" class="w-4 h-4 text-yellow-500 fill-yellow-500"></i><i data-lucide="star" class="w-4 h-4 text-yellow-500 fill-yellow-500"></i>
+                        </div>
+                        <p class="text-slate-700 font-medium leading-relaxed mb-6 italic italic text-sm">"The pricing is incredibly fair for what you get. 100+ manual directory listings and 15 distinct DR 30+ guest posts? It's basically a full SEO agency in a button."</p>
+                        <div class="flex items-center gap-4 mt-auto">
+                            <img src="https://i.pravatar.cc/150?img=68" alt="Nina G." class="w-10 h-10 rounded-full object-cover">
+                            <div>
+                                <p class="text-xs font-bold text-slate-900">Nina G.</p>
+                                <p class="text-[9px] font-bold text-slate-400 uppercase tracking-widest">B2B SaaS Owner</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQs Section -->
+        <section class="py-32 bg-slate-50 border-t border-slate-100">
             <div class="container mx-auto px-6 max-w-4xl">
-                <h2 class="text-4xl font-black font-heading text-slate-900 mb-12 text-center">Common Questions</h2>
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-black font-heading text-slate-900 mb-4">Frequently Asked Questions</h2>
+                    <p class="text-slate-600 font-medium leading-relaxed tracking-widest uppercase text-sm font-bold">Insights compiled from Top Rated SEO Threads</p>
+                </div>
                 <div class="space-y-6">
-                    <details class="bg-slate-50 p-8 rounded-3xl border border-slate-100 group">
-                        <summary
-                            class="text-xl font-bold text-slate-900 cursor-pointer list-none flex justify-between items-center font-heading">
-                            How do I track my submissions?
-                            <i data-lucide="plus"
-                                class="w-6 h-6 text-primary-blue group-open:rotate-45 transition-transform"></i>
+                    <!-- FAQ 1 -->
+                    <details class="bg-white p-8 rounded-3xl border border-slate-100 group transition-all duration-300 hover:shadow-md">
+                        <summary class="text-xl font-bold text-slate-900 cursor-pointer list-none flex justify-between items-center font-heading">
+                            How do I track my submissions and guest posts?
+                            <i data-lucide="plus" class="w-6 h-6 text-primary-blue group-open:rotate-45 transition-transform"></i>
                         </summary>
-                        <p class="text-slate-600 mt-4 leading-relaxed font-medium">We provide a full report with live
-                            links once our manual process is complete.</p>
+                        <p class="text-slate-600 mt-4 leading-relaxed font-medium">
+                            Upon service completion, we provide an expansive, transparent 'Proof of Play' Analytics Report. This includes a spreadsheet detailing every manual directory logged, active profile links, required credentials/logins, and live URLs connecting to your new DR 30+ Guest Post features.
+                        </p>
                     </details>
-                    <details class="bg-slate-50 p-8 rounded-3xl border border-slate-100 group">
-                        <summary
-                            class="text-xl font-bold text-slate-900 cursor-pointer list-none flex justify-between items-center font-heading">
-                            What makes your service better than a bot?
-                            <i data-lucide="plus"
-                                class="w-6 h-6 text-primary-blue group-open:rotate-45 transition-transform"></i>
+                    
+                    <!-- FAQ 2 -->
+                    <details class="bg-white p-8 rounded-3xl border border-slate-100 group transition-all duration-300 hover:shadow-md">
+                        <summary class="text-xl font-bold text-slate-900 cursor-pointer list-none flex justify-between items-center font-heading">
+                            What makes your service better than cheaper automated bots?
+                            <i data-lucide="plus" class="w-6 h-6 text-primary-blue group-open:rotate-45 transition-transform"></i>
                         </summary>
-                        <p class="text-slate-600 mt-4 leading-relaxed font-medium">Bots often trigger spam filters and
-                            get your product banned. Our manual approach ensures every field is filled correctly and
-                            your submission follows directory-specific guidelines.</p>
+                        <p class="text-slate-600 mt-4 leading-relaxed font-medium">
+                            Spamming multiple submissions with bots is the fastest way to trigger Google's Toxic Penalty filter. Our robust manual approach circumvents bot detection entirely. We fill every unique field correctly, adhere to strict directory-specific guidelines, and craft bespoke, human-written guest posts on authentic DR30+ platforms to yield real search equity without risking algorithmic flags.
+                        </p>
+                    </details>
+
+                    <!-- FAQ 3 -->
+                    <details class="bg-white p-8 rounded-3xl border border-slate-100 group transition-all duration-300 hover:shadow-md">
+                        <summary class="text-xl font-bold text-slate-900 cursor-pointer list-none flex justify-between items-center font-heading">
+                            How long does it typically take to fulfill an order?
+                            <i data-lucide="plus" class="w-6 h-6 text-primary-blue group-open:rotate-45 transition-transform"></i>
+                        </summary>
+                        <p class="text-slate-600 mt-4 leading-relaxed font-medium">
+                            Once payment and required details are secured, our manual execution initiates instantly. Fast fulfillment timelines vary slightly by plan size but reliably average between 3 to 7 business days, allowing us enough time for manual writing and verification.
+                        </p>
+                    </details>
+
+                    <!-- FAQ 4 -->
+                    <details class="bg-white p-8 rounded-3xl border border-slate-100 group transition-all duration-300 hover:shadow-md">
+                        <summary class="text-xl font-bold text-slate-900 cursor-pointer list-none flex justify-between items-center font-heading">
+                            Do you guarantee the guestpost sites will have a Domain Rating of 30+?
+                            <i data-lucide="plus" class="w-6 h-6 text-primary-blue group-open:rotate-45 transition-transform"></i>
+                        </summary>
+                        <p class="text-slate-600 mt-4 leading-relaxed font-medium">
+                            We absolutely guarantee it. We utilize official Ahrefs metrics to rigorously screen our inventory. We guarantee the sites selected for your active guest post campaign harbor an assured DR of 30 or higher—filtering out domains manipulated by artificial metrics in the process.
+                        </p>
                     </details>
                 </div>
             </div>
