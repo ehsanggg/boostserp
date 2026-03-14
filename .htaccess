@@ -1,10 +1,25 @@
 RewriteEngine On
 
-# Redirect /index.html to /
-RewriteCond %{THE_REQUEST} /index\.html [NC]
-RewriteRule ^(.*)index\.html$ /$1 [L,R=301]
+# 1. Force HTTPS and Standardize to non-www
+RewriteCond %{HTTPS} off [OR]
+RewriteCond %{HTTP_HOST} ^www\. [NC]
+RewriteCond %{HTTP_HOST} ^(?:www\.)?(.+)$ [NC]
+RewriteRule ^ https://%1%{REQUEST_URI} [L,NE,R=301]
 
-# Remove .html extension from URLs
+# 2. Redirect /index.html or /index to the root /
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index(?:\.html)?\  [NC]
+RewriteRule ^index(?:\.html)?$ / [L,NE,R=301]
+
+# 3. Strip .html extension from the URL natively
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /([^.]+)\.html\  [NC]
+RewriteRule ^(.*)\.html$ /$1 [L,NE,R=301]
+
+# 4. Enforce URL structure: Remove any trailing slashes (unless it's an actual directory)
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_FILENAME}\.html -f
-RewriteRule ^(.*)$ $1.html [NC,L]
+RewriteRule ^(.*)/$ /$1 [L,R=301]
+
+# 5. Internally route extensionless requests to the .html file to render
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.*)$ $1.html [L]
