@@ -81,43 +81,9 @@
                     <form id="submission-form" class="space-y-10">
                         <!-- Type Selection -->
                         <div class="space-y-4">
-                            <label class="text-[10px] font-black text-slate-400 uppercase tracking-widest">1. Listing
-                                Type</label>
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                <label class="relative cursor-pointer group">
-                                    <input type="radio" name="submission_type" value="Directory" class="peer hidden"
-                                        checked>
-                                    <div
-                                        class="p-6 border-2 border-slate-100 rounded-3xl transition-all peer-checked:border-primary-blue peer-checked:bg-primary-blue/5">
-                                        <div class="flex items-center gap-4 mb-2">
-                                            <div
-                                                class="w-10 h-10 bg-primary-blue/10 rounded-xl flex items-center justify-center text-primary-blue">
-                                                <i data-lucide="folder-search" class="w-5 h-5"></i>
-                                            </div>
-                                            <span
-                                                class="text-lg font-black font-heading italic text-slate-900">Directory</span>
-                                        </div>
-                                        <p class="text-xs text-slate-400 font-bold italic">Searchable startup directory.
-                                        </p>
-                                    </div>
-                                </label>
-                                <label class="relative cursor-pointer group">
-                                    <input type="radio" name="submission_type" value="Guest Post" class="peer hidden">
-                                    <div
-                                        class="p-6 border-2 border-slate-100 rounded-3xl transition-all peer-checked:border-emerald-500 peer-checked:bg-emerald-500/5">
-                                        <div class="flex items-center gap-4 mb-2">
-                                            <div
-                                                class="w-10 h-10 bg-emerald-500/10 rounded-xl flex items-center justify-center text-emerald-500">
-                                                <i data-lucide="file-text" class="w-5 h-5"></i>
-                                            </div>
-                                            <span class="text-lg font-black font-heading italic text-slate-900">Guest
-                                                Post Site</span>
-                                        </div>
-                                        <p class="text-xs text-slate-400 font-bold italic">Authority backlink source.
-                                        </p>
-                                    </div>
-                                </label>
-                            </div>
+                            <label class="text-[10px] font-black text-slate-400 uppercase tracking-widest">1. Submission Details</label>
+                            <!-- Hidden input to maintain javascript logic -->
+                            <input type="hidden" name="submission_type" value="Directory" checked>
                         </div>
 
                         <!-- Site Details -->
